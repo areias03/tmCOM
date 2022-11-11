@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sample metabolite utilization/production</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap" rel="stylesheet">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/d3@5.15.0/dist/d3.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.9.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.0.2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.2.1"></script>
+
+    <style>
+    #vis {
+        width: 1200px;
+        margin: 1em;
+        display: block;
+    }
+    </style>
+  </head>
+  <body>
+  <section class="section">
+    <div class="container">
+      <h1 class="title">
+        Sample metabolite utilization/production
+      </h1>
+      <p class="subtitle">
+        Shows the net utilization (imports) or production (exports) of
+        metabolites of the full microbial community in each sample. If requested
+        exchange reactions and samples were clustered by euclidean average
+        linkage. Fluxes are shown on the log10 scale.<br>
+        Hover over each point to see its annotations. Use the "..." menu in the
+        upper right hand side to export the plot into various formats.
+      </p>
+    </div>
+    <!-- Container for the visualization -->
+    <div class="container">
+    <div id="vis"></div>
+    <a href="#" class="button is-primary" onclick="download_data('exchange_fluxes')">Download as CSV...</a>
+
+    </div>
+    <script>
+      // Assign the specification to a local variable vlSpec.
+      var vlSpec = {
+        $schema: "https://vega.github.io/schema/vega-lite/v4.json",
+        width: 50,
+        height: 140,
+        data: {
+            values: [{"metabolite":"akg_m","sample_id":"sample_2","flux":0.0158304854,"description":"2-Oxoglutarate"},{"metabolite":"glu__L_m","sample_id":"sample_2","flux":0.0177186645,"description":"L-Glutamate"},{"metabolite":"gln__L_m","sample_id":"sample_2","flux":0.0055088104,"description":"L-Glutamine"},{"metabolite":"fru_m","sample_id":"sample_2","flux":0.0003118375,"description":"D-Fructose"},{"metabolite":"lac__D_m","sample_id":"sample_2","flux":0.0011217955,"description":"D-Lactate"},{"metabolite":"succ_m","sample_id":"sample_2","flux":0.001120216,"description":"Succinate"},{"metabolite":"pyr_m","sample_id":"sample_2","flux":0.0034383254,"description":"Pyruvate"},{"metabolite":"mal__L_m","sample_id":"sample_2","flux":0.0008136749,"description":"L-Malate"},{"metabolite":"acald_m","sample_id":"sample_2","flux":0.001616576,"description":"Acetaldehyde"},{"metabolite":"fum_m","sample_id":"sample_2","flux":0.0012602278,"description":"Fumarate"},{"metabolite":"nh4_m","sample_id":"sample_2","flux":1.6081222533,"description":"Ammonium"},{"metabolite":"pi_m","sample_id":"sample_2","flux":1.104276815,"description":"Phosphate"},{"metabolite":"glc__D_m","sample_id":"sample_2","flux":4.8554381815,"description":"D-Glucose"},{"metabolite":"o2_m","sample_id":"sample_2","flux":7.1310157505,"description":"O2"},{"metabolite":"akg_m","sample_id":"sample_3","flux":0.0353269237,"description":"2-Oxoglutarate"},{"metabolite":"glu__L_m","sample_id":"sample_3","flux":0.0399637944,"description":"L-Glutamate"},{"metabolite":"gln__L_m","sample_id":"sample_3","flux":0.0145643114,"description":"L-Glutamine"},{"metabolite":"fru_m","sample_id":"sample_3","flux":0.0009349446,"description":"D-Fructose"},{"metabolite":"lac__D_m","sample_id":"sample_3","flux":0.0028108043,"description":"D-Lactate"},{"metabolite":"succ_m","sample_id":"sample_3","flux":0.008457947,"description":"Succinate"},{"metabolite":"pyr_m","sample_id":"sample_3","flux":0.0071505441,"description":"Pyruvate"},{"metabolite":"mal__L_m","sample_id":"sample_3","flux":0.0050877579,"description":"L-Malate"},{"metabolite":"acald_m","sample_id":"sample_3","flux":0.0051724862,"description":"Acetaldehyde"},{"metabolite":"fum_m","sample_id":"sample_3","flux":0.0065885883,"description":"Fumarate"},{"metabolite":"nh4_m","sample_id":"sample_3","flux":0.9118731067,"description":"Ammonium"},{"metabolite":"pi_m","sample_id":"sample_3","flux":0.6617384457,"description":"Phosphate"},{"metabolite":"glc__D_m","sample_id":"sample_3","flux":3.2157559031,"description":"D-Glucose"},{"metabolite":"o2_m","sample_id":"sample_3","flux":5.0037099835,"description":"O2"},{"metabolite":"akg_m","sample_id":"sample_1","flux":0.0207393591,"description":"2-Oxoglutarate"},{"metabolite":"glu__L_m","sample_id":"sample_1","flux":0.0256456237,"description":"L-Glutamate"},{"metabolite":"gln__L_m","sample_id":"sample_1","flux":0.0079542063,"description":"L-Glutamine"},{"metabolite":"fru_m","sample_id":"sample_1","flux":0.0007147749,"description":"D-Fructose"},{"metabolite":"lac__D_m","sample_id":"sample_1","flux":0.0010712471,"description":"D-Lactate"},{"metabolite":"succ_m","sample_id":"sample_1","flux":0.0048071136,"description":"Succinate"},{"metabolite":"pyr_m","sample_id":"sample_1","flux":0.003916142,"description":"Pyruvate"},{"metabolite":"mal__L_m","sample_id":"sample_1","flux":0.0026729884,"description":"L-Malate"},{"metabolite":"acald_m","sample_id":"sample_1","flux":0.0041250872,"description":"Acetaldehyde"},{"metabolite":"fum_m","sample_id":"sample_1","flux":0.0034958918,"description":"Fumarate"},{"metabolite":"nh4_m","sample_id":"sample_1","flux":1.0971619348,"description":"Ammonium"},{"metabolite":"pi_m","sample_id":"sample_1","flux":0.7681643539,"description":"Phosphate"},{"metabolite":"glc__D_m","sample_id":"sample_1","flux":3.6322852646,"description":"D-Glucose"},{"metabolite":"o2_m","sample_id":"sample_1","flux":5.5212885668,"description":"O2"},{"metabolite":"akg_m","sample_id":"sample_4","flux":0.019877692,"description":"2-Oxoglutarate"},{"metabolite":"glu__L_m","sample_id":"sample_4","flux":0.0243676833,"description":"L-Glutamate"},{"metabolite":"gln__L_m","sample_id":"sample_4","flux":0.0080768942,"description":"L-Glutamine"},{"metabolite":"fru_m","sample_id":"sample_4","flux":0.0007110559,"description":"D-Fructose"},{"metabolite":"lac__D_m","sample_id":"sample_4","flux":0.0012927156,"description":"D-Lactate"},{"metabolite":"succ_m","sample_id":"sample_4","flux":0.0048615214,"description":"Succinate"},{"metabolite":"pyr_m","sample_id":"sample_4","flux":0.003986944,"description":"Pyruvate"},{"metabolite":"mal__L_m","sample_id":"sample_4","flux":0.0027489372,"description":"L-Malate"},{"metabolite":"acald_m","sample_id":"sample_4","flux":0.0039259808,"description":"Acetaldehyde"},{"metabolite":"fum_m","sample_id":"sample_4","flux":0.0036005738,"description":"Fumarate"},{"metabolite":"nh4_m","sample_id":"sample_4","flux":1.0940266238,"description":"Ammonium"},{"metabolite":"pi_m","sample_id":"sample_4","flux":0.7653528353,"description":"Phosphate"},{"metabolite":"glc__D_m","sample_id":"sample_4","flux":3.6053488899,"description":"D-Glucose"},{"metabolite":"o2_m","sample_id":"sample_4","flux":5.5266131515,"description":"O2"}]
+        },
+        mark: {
+            type: "rect",
+            tooltip: {content: "data"}
+        },
+        encoding: {
+          x: {
+            field: "sample_id",
+            type: "nominal",
+            axis: {title: "sample ID"},
+            sort: null
+          },
+          y: {
+            field: "metabolite",
+            type: "nominal",
+            sort: null
+          },
+          color: {
+              field: "flux",
+              type: "quantitative",
+              scale: {type: "log", scheme: "viridis"}
+          }
+        }
+      };
+
+      // Embed the visualization in the container with id `vis`
+      vegaEmbed("#vis", vlSpec, {renderer: "svg"}).then(function(r) {
+        svg = d3.select("#vis svg");
+        svg.attr("width", "100%").attr("height", "auto");
+      });
+
+      files = {'exchange_fluxes': 'metabolite,sample_id,flux,description\nakg_m,sample_2,0.015830485351413213,2-Oxoglutarate\nglu__L_m,sample_2,0.017718664456433105,L-Glutamate\ngln__L_m,sample_2,0.0055088103664769385,L-Glutamine\nfru_m,sample_2,0.0003118374961552167,D-Fructose\nlac__D_m,sample_2,0.0011217954664551246,D-Lactate\nsucc_m,sample_2,0.0011202160183237692,Succinate\npyr_m,sample_2,0.0034383254484428565,Pyruvate\nmal__L_m,sample_2,0.0008136748641573942,L-Malate\nacald_m,sample_2,0.0016165760227651914,Acetaldehyde\nfum_m,sample_2,0.0012602278383490473,Fumarate\nnh4_m,sample_2,1.6081222533107606,Ammonium\npi_m,sample_2,1.1042768149679085,Phosphate\nglc__D_m,sample_2,4.855438181527422,D-Glucose\no2_m,sample_2,7.131015750543541,O2\nakg_m,sample_3,0.035326923681457574,2-Oxoglutarate\nglu__L_m,sample_3,0.03996379441041089,L-Glutamate\ngln__L_m,sample_3,0.01456431137330537,L-Glutamine\nfru_m,sample_3,0.0009349446434827964,D-Fructose\nlac__D_m,sample_3,0.0028108043387156593,D-Lactate\nsucc_m,sample_3,0.008457946978017352,Succinate\npyr_m,sample_3,0.007150544070597306,Pyruvate\nmal__L_m,sample_3,0.005087757874108594,L-Malate\nacald_m,sample_3,0.005172486160647641,Acetaldehyde\nfum_m,sample_3,0.006588588255710315,Fumarate\nnh4_m,sample_3,0.9118731067163841,Ammonium\npi_m,sample_3,0.6617384456895744,Phosphate\nglc__D_m,sample_3,3.2157559030593026,D-Glucose\no2_m,sample_3,5.003709983500298,O2\nakg_m,sample_1,0.02073935905883461,2-Oxoglutarate\nglu__L_m,sample_1,0.02564562368576658,L-Glutamate\ngln__L_m,sample_1,0.007954206321231373,L-Glutamine\nfru_m,sample_1,0.000714774891588876,D-Fructose\nlac__D_m,sample_1,0.001071247103819676,D-Lactate\nsucc_m,sample_1,0.004807113595885243,Succinate\npyr_m,sample_1,0.003916142040477947,Pyruvate\nmal__L_m,sample_1,0.0026729884242974815,L-Malate\nacald_m,sample_1,0.004125087243185218,Acetaldehyde\nfum_m,sample_1,0.003495891767332093,Fumarate\nnh4_m,sample_1,1.0971619347816313,Ammonium\npi_m,sample_1,0.7681643539044881,Phosphate\nglc__D_m,sample_1,3.6322852645714816,D-Glucose\no2_m,sample_1,5.521288566782716,O2\nakg_m,sample_4,0.019877691964844315,2-Oxoglutarate\nglu__L_m,sample_4,0.024367683296596943,L-Glutamate\ngln__L_m,sample_4,0.008076894173177845,L-Glutamine\nfru_m,sample_4,0.0007110559236021243,D-Fructose\nlac__D_m,sample_4,0.0012927155551160467,D-Lactate\nsucc_m,sample_4,0.0048615213632632265,Succinate\npyr_m,sample_4,0.003986944047049102,Pyruvate\nmal__L_m,sample_4,0.002748937171427925,L-Malate\nacald_m,sample_4,0.003925980817200417,Acetaldehyde\nfum_m,sample_4,0.0036005738305601863,Fumarate\nnh4_m,sample_4,1.0940266238169012,Ammonium\npi_m,sample_4,0.765352835334746,Phosphate\nglc__D_m,sample_4,3.605348889921762,D-Glucose\no2_m,sample_4,5.526613151460007,O2\n'};
+
+function download_data(key) {
+    var blob = new Blob([files[key]], {type: "text/csv;charset=utf-8;"}),
+        filename = key + ".csv",
+        url = window.URL.createObjectURL(blob);
+    if (navigator.msSaveBlob) { // IE 10+
+        navigator.msSaveBlob(blob, filename);
+    } else {
+        var link = document.createElement("a");
+        if (link.download !== undefined) { // feature detection
+            // Browsers that support HTML5 download attribute
+            var url = URL.createObjectURL(blob);
+            link.setAttribute("href", url);
+            link.setAttribute("download", filename);
+            link.style.visibility = 'hidden';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+    }
+}
+    </script>
+  </section>
+  </body>
+</html>

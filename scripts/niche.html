@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Taxa niche/production overlap</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap" rel="stylesheet">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/d3@5.15.0/dist/d3.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.9.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.0.2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.2.1"></script>
+
+    <style>
+    #vis {
+        width: 100%;
+        margin: 1em;
+        display: block;
+    }
+    </style>
+  </head>
+  <body>
+  <section class="section">
+    <div class="container">
+      <h1 class="title">
+        Taxa niche/production overlap
+      </h1>
+      <p class="subtitle">
+        Each point denotes the reduced import/export fluxes for a single taxon
+        in a single sample. If two points are close to each other they consume
+        (for direction="import") or produce (for direction="export") the same
+        metabolites.<br>
+        Hover over each point to see its annotations. You can click a point
+        to select only that taxon. Click on an empty part of the plot to
+        reset the selection.<br>
+        Use the "..." menu in the
+        upper right hand side to export the plot into various formats.
+      </p>
+    </div>
+    <!-- Container for the visualization -->
+    <div class="container">
+    <div id="vis"></div>
+    <a href="#" class="button is-primary" onclick="download_data('reduced')">Download as CSV...</a>
+
+    </div>
+    <script>
+      // Assign the specification to a local variable vlSpec.
+      var vlSpec = {
+        $schema: "https://vega.github.io/schema/vega-lite/v4.json",
+        width: 600,
+        height: 500,
+        data: {
+            values: [{"sample_id":"sample_1","taxon":"Escherichia_coli_2","TSNE 1":213.0840759277,"TSNE 2":42.9914665222},{"sample_id":"sample_1","taxon":"Escherichia_coli_3","TSNE 1":-156.486038208,"TSNE 2":-13.8630390167},{"sample_id":"sample_1","taxon":"Escherichia_coli_4","TSNE 1":-166.3116760254,"TSNE 2":-47.205165863},{"sample_id":"sample_2","taxon":"Escherichia_coli_2","TSNE 1":-134.902633667,"TSNE 2":-58.598815918},{"sample_id":"sample_2","taxon":"Escherichia_coli_3","TSNE 1":-178.3361206055,"TSNE 2":57.414680481},{"sample_id":"sample_2","taxon":"Escherichia_coli_4","TSNE 1":222.3569335938,"TSNE 2":11.8293886185},{"sample_id":"sample_3","taxon":"Escherichia_coli_2","TSNE 1":45.9774780273,"TSNE 2":32.557384491},{"sample_id":"sample_3","taxon":"Escherichia_coli_3","TSNE 1":-151.3737487793,"TSNE 2":-31.8795433044},{"sample_id":"sample_3","taxon":"Escherichia_coli_4","TSNE 1":55.7793655396,"TSNE 2":19.0352783203},{"sample_id":"sample_4","taxon":"Escherichia_coli_2","TSNE 1":246.5567321777,"TSNE 2":4.9296793938},{"sample_id":"sample_4","taxon":"Escherichia_coli_3","TSNE 1":-172.4347076416,"TSNE 2":41.2358779907},{"sample_id":"sample_4","taxon":"Escherichia_coli_4","TSNE 1":206.8287200928,"TSNE 2":23.0518722534}]
+        },
+        selection: {"pts": {"type": "single", "fields": ["taxon"]}},
+        mark: {
+            type: "point",
+            filled: true,
+            size: 20,
+            tooltip: {content: "data"}
+        },
+        encoding: {
+          x: {
+            field: "TSNE 1",
+            type: "quantitative",
+            scale: {zero: false}
+          },
+          y: {
+            field: "TSNE 2",
+            type: "quantitative",
+            scale: {zero: false}
+          },
+          color: {
+            condition: {
+              selection: "pts",
+              field: "taxon",
+              type: "nominal"
+            },
+            value: "lightgrey"
+          },
+          opacity: {
+              condition: {
+                  selection: "pts",
+                  value: 0.8
+              },
+              value: 0.2
+          }
+        }
+      };
+
+      // Embed the visualization in the container with id `vis`
+      vegaEmbed("#vis", vlSpec, {renderer: "svg"}).then(function(r) {
+        svg = d3.select("#vis svg");
+        svg.attr("width", "100%").attr("height", "auto");
+      });
+
+      files = {'reduced': 'sample_id,taxon,TSNE 1,TSNE 2\nsample_1,Escherichia_coli_2,213.08408,42.991467\nsample_1,Escherichia_coli_3,-156.48604,-13.863039\nsample_1,Escherichia_coli_4,-166.31168,-47.205166\nsample_2,Escherichia_coli_2,-134.90263,-58.598816\nsample_2,Escherichia_coli_3,-178.33612,57.41468\nsample_2,Escherichia_coli_4,222.35693,11.829389\nsample_3,Escherichia_coli_2,45.977478,32.557384\nsample_3,Escherichia_coli_3,-151.37375,-31.879543\nsample_3,Escherichia_coli_4,55.779366,19.035278\nsample_4,Escherichia_coli_2,246.55673,4.9296794\nsample_4,Escherichia_coli_3,-172.43471,41.235878\nsample_4,Escherichia_coli_4,206.82872,23.051872\n'};
+
+function download_data(key) {
+    var blob = new Blob([files[key]], {type: "text/csv;charset=utf-8;"}),
+        filename = key + ".csv",
+        url = window.URL.createObjectURL(blob);
+    if (navigator.msSaveBlob) { // IE 10+
+        navigator.msSaveBlob(blob, filename);
+    } else {
+        var link = document.createElement("a");
+        if (link.download !== undefined) { // feature detection
+            // Browsers that support HTML5 download attribute
+            var url = URL.createObjectURL(blob);
+            link.setAttribute("href", url);
+            link.setAttribute("download", filename);
+            link.style.visibility = 'hidden';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+    }
+}
+    </script>
+  </section>
+  </body>
+</html>

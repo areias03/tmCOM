@@ -1,0 +1,5 @@
+reactions,metabolites,sample_id,file,found_taxa,total_taxa,found_fraction,found_abundance_fraction
+95,72,sample_1,sample_1.pickle,3.0,4.0,0.75,0.8962432915921288
+95,72,sample_2,sample_2.pickle,3.0,4.0,0.75,0.7542101042502004
+95,72,sample_3,sample_3.pickle,3.0,4.0,0.75,0.8936798582398111
+95,72,sample_4,sample_4.pickle,3.0,4.0,0.75,0.8756626506024097
