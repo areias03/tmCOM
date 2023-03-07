@@ -1,4 +1,4 @@
-name: tmCom
+name: tmcom
 channels:
   - defaults
   - conda-forge
@@ -185,6 +185,7 @@ dependencies:
       - escher==1.7.3
       - et-xmlfile==1.1.0
       - future==0.18.3
+      - gurobipy==10.0.1
       - h11==0.14.0
       - html5lib==1.1
       - httpcore==0.16.3
@@ -200,7 +201,6 @@ dependencies:
       - markdown-it-py==2.2.0
       - markupsafe==2.0.1
       - mdurl==0.1.2
-      - mewpy==0.1.25
       - more-itertools==9.1.0
       - nbconvert==6.4.5
       - networkx==3.0
@@ -230,4 +230,4 @@ dependencies:
       - tenacity==8.2.2
       - testpath==0.6.0
       - tqdm==4.64.1
-prefix: /usr/local/Caskroom/miniforge/base/envs/mcd22
+prefix: /usr/local/Caskroom/miniforge/base/envs/tmcom
