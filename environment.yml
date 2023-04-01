@@ -12,7 +12,7 @@ dependencies:
   - babel=2.11.0=py39hecd8cb5_0
   - backcall=0.2.0=pyhd3eb1b0_0
   - beautifulsoup4=4.11.1=py39hecd8cb5_0
-  - blas=1.0=mkl
+  - blas=1.0=openblas
   - bleach=4.1.0=pyhd3eb1b0_0
   - bottleneck=1.3.5=py39h67323c0_0
   - brotli=1.0.9=hca72f7f_7
@@ -71,8 +71,11 @@ dependencies:
   - libdeflate=1.17=hb664fd8_0
   - libedit=3.1.20221030=h6c40b1e_0
   - libffi=3.3=hb1e8313_2
+  - libgfortran=5.0.0=11_3_0_hecd8cb5_28
+  - libgfortran5=11.3.0=h9dfd629_28
   - libiconv=1.16=hca72f7f_2
   - libllvm12=12.0.0=h9b2ccf5_3
+  - libopenblas=0.3.21=h54e7dc3_0
   - libpng=1.6.37=ha441bb4_0
   - libpq=12.9=h1c9f633_3
   - libsodium=1.0.18=h1de35cc_0
@@ -90,21 +93,22 @@ dependencies:
   - mistune=0.8.4=py39h9ed2024_1000
   - mkl=2021.4.0=hecd8cb5_637
   - mkl-service=2.4.0=py39h9ed2024_0
-  - mkl_fft=1.3.1=py39h4ab4a9b_0
-  - mkl_random=1.2.2=py39hb2f4e1b_0
+  - mkl_fft=1.3.1=py39h7ae3660_1
+  - mkl_random=1.2.2=py39h4d6be9b_0
   - munkres=1.1.4=py_0
   - nbclassic=0.5.2=py39hecd8cb5_0
   - nbclient=0.5.13=py39hecd8cb5_0
   - nbformat=5.7.0=py39hecd8cb5_0
   - ncurses=6.4=hcec6c5f_0
   - nest-asyncio=1.5.6=py39hecd8cb5_0
+  - nomkl=3.0=0
   - notebook=6.5.2=py39hecd8cb5_0
   - notebook-shim=0.2.2=py39hecd8cb5_0
   - nspr=4.33=he9d5cce_0
   - nss=3.74=h47edf6a_0
-  - numexpr=2.8.4=py39he696674_0
-  - numpy=1.23.5=py39he696674_0
-  - numpy-base=1.23.5=py39h9cd3388_0
+  - numexpr=2.8.4=py39h57a7bef_0
+  - numpy=1.23.5=py39h57a7bef_0
+  - numpy-base=1.23.5=py39hc93c6d9_0
   - openssl=1.1.1t=hca72f7f_0
   - packaging=22.0=py39hecd8cb5_0
   - pandas=1.5.2=py39h07fba90_0
@@ -133,6 +137,7 @@ dependencies:
   - python=3.9.12=hdfd78df_1
   - python-dateutil=2.8.2=pyhd3eb1b0_0
   - python-fastjsonschema=2.16.2=py39hecd8cb5_0
+  - python_abi=3.9=2_cp39
   - pytz=2022.7=py39hecd8cb5_0
   - pyzmq=23.2.0=py39he9d5cce_0
   - qt-main=5.15.2=h719ae48_7
@@ -179,11 +184,13 @@ dependencies:
       - bs4==0.0.1
       - certipy==0.1.3
       - cobra==0.26.2
-      - cplex==22.1.0.0
+      - cplex==22.1.1.0
       - depinfo==1.7.0
       - diskcache==5.4.0
+      - docplex==2.25.236
       - escher==1.7.3
       - et-xmlfile==1.1.0
+      - filelock==3.10.7
       - future==0.18.3
       - gurobipy==10.0.1
       - h11==0.14.0
@@ -203,6 +210,7 @@ dependencies:
       - mdurl==0.1.2
       - more-itertools==9.1.0
       - nbconvert==6.4.5
+      - neovim==0.3.1
       - networkx==3.0
       - oauthlib==3.2.2
       - openpyxl==3.1.1
@@ -217,11 +225,13 @@ dependencies:
       - pytest==4.6.11
       - python-json-logger==2.0.7
       - python-libsbml==5.19.7
+      - rdkit-pypi==2022.9.5
       - reframed==1.2.1
       - rfc3986==1.5.0
       - rich==13.3.1
       - ruamel-yaml==0.17.21
       - ruamel-yaml-clib==0.2.7
+      - scikit-learn==1.2.2
       - scipy==1.10.1
       - sqlalchemy==2.0.4
       - statsmodels==0.13.5
@@ -229,5 +239,7 @@ dependencies:
       - tdqm==0.0.1
       - tenacity==8.2.2
       - testpath==0.6.0
+      - torch==2.0.0
+      - torchvision==0.15.1
       - tqdm==4.64.1
 prefix: /usr/local/Caskroom/miniforge/base/envs/tmcom
