@@ -74,8 +74,8 @@ def convert_gpr_to_dnf(model: cobra.Model) -> None:
         if not rxn.gene_reaction_rule:
             continue
         rule = rxn.gene_reaction_rule.replace("or", "|").replace("and", "&")
-        expr = parse_expr(rule,evaluate=False,local_dict=_clash)
-        rxn.gene_reaction_rule = str(to_dnf(expr)).replace("|", "or").replace("&", "and")
+#        expr = parse_expr(rule,evaluate=False,local_dict=_clash)
+        rxn.gene_reaction_rule = str(to_dnf(rule)).replace("|", "or").replace("&", "and")
 
 
 def main(argv: List[str]) -> None:
