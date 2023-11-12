@@ -49,7 +49,7 @@ from sympy.abc import _clash1, _clash2, _clash
 from sympy.logic.boolalg import to_dnf
 from sympy import Basic, Float, Integer, Rational, sqrt, Symbol
 from tqdm import tqdm
-from reframed.io.sbml import parse_gpr_rule
+from reframed.io.sbml import convert_to_dnf,parse_gpr_rule
 
 
 logger = logging.getLogger()
@@ -73,9 +73,8 @@ def convert_gpr_to_dnf(model: cobra.Model) -> None:
     for rxn in tqdm(model.reactions):
         if not rxn.gene_reaction_rule:
             continue
-        rule = rxn.gene_reaction_rule.replace("or", "|").replace("and", "&")
-#        expr = parse_expr(rule,evaluate=False,local_dict=_clash)
-        rxn.gene_reaction_rule = str(to_dnf(rule)).replace("|", "or").replace("&", "and")
+        gpr = parse_gpr_rule(rxn.gene_reaction_rule)
+        rxn.gene_reaction_rule = gpr
 
 
 def main(argv: List[str]) -> None:

@@ -40,9 +40,9 @@ sim = get_simulator(model)
 sim2 = get_simulator(model2)
 
 
-def annotation_scraping(model_path: Union["Model", "CBModel"]):
+def annotation_scraping(model_path: str):
     '''
-    Run a query to find gens, reactions and identifiers in the annotations of the model.
+    Run a query to find genes, reactions, substrate names, substrate SMILES and identifiers in the annotations of the model.
 
     :param model: The filepath to a SBML model.
     :return: A pandas.DataFrame containing the information found in the annotations.
@@ -71,38 +71,42 @@ def annotation_scraping(model_path: Union["Model", "CBModel"]):
             ecnumber = anno.get('ec-code')
             metanetx = anno.get('metanetx.reaction')
             kegg = anno.get('kegg.reaction')
-            res = [gene,rx,rxn_name,seed_id,metanetx,kegg,ecnumber]
+            subs = list(sim.get_substrates(rx).keys())
+            for sub in subs:
+                sub_name = sim.get_metabolite(sub).get('name')
+                if "2,3-C" in sub_name:
+                    sub_name = sub_name.replace("2,3","2',3'")
+                elif "2,3-c" in sub_name:
+                    sub_name = sub_name.replace("2,3","2',3'")
+                elif "3-triphosphate" in sub_name:
+                    sub_name = sub_name.replace("3","3'")
+                else:
+                    pass
+                smile = get_smiles(sub_name)
+                ls_smile.append(smile)
+                ls_sub.append(sub_name)
+            res = [gene,rx,rxn_name,ls_sub,ls_smile,seed_id,metanetx,kegg,ecnumber]
             ls_ge.append(res)
 
-    df_ge = pd.DataFrame(ls_ge,columns=[['Gene','Reaction','Name','ModelSEED_id','MetaNetX','KEGG_id','ecNumber']])
+    df_ge = pd.DataFrame(ls_ge,columns=[['Gene','Reaction','Name','Substrate Name','Substrate SMILES','ModelSEED_id','MetaNetX','KEGG_id','ecNumber']])
 
     return df_ge
 
-def modelseed_query(seed_id):
+def modelseed_query(seed_id: list):
     '''
     Queries the ModelSEED database for other id's for BIGG and KEGG.
 
-    :param df_ge: A pandas.DataFrame containing the information found in the annotations.
-    :return: The input pandas.DataFrame with adicional entry ID's to other databases (BIGG and KEGG), the list of ID's for BIGG.
-    :rtype: pandas.DataFrame
+    :param seed_id: A list or list of lists containing ModelSEED entry ID's.
+    :return: List of entry ID's for BIGG, list of entry ID's for KEGG.
+    :rtype: list,list
     '''
-    #Converting ID's to list
-    seed_id = df_ge['ModelSEED_id'].values.tolist()
-    seed_id = [reduce(lambda x: x, inner_list) for inner_list in seed_id]
-
-    kegg_id = df_ge['KEGG_id'].values.tolist()
-    kegg_id = [reduce(lambda x: x, inner_list) for inner_list in kegg_id]
-
-    #Querying DB
     SOLR_URL='https://modelseed.org'
-    ls_name = []
     ls_kegg = []
     ls_bigg = []
-
-    for mseed_id in tqdm(seed_id):
+    
+    for mseed_id in tqdm(seed_id, 'Querying ModelSEED'):
         i = seed_id.index(mseed_id)
         if mseed_id == None:
-            ls_name.append('None')
             ls_kegg.append('None')
             ls_bigg.append('None')
         else:
@@ -110,7 +114,6 @@ def modelseed_query(seed_id):
                 connection = urlopen(SOLR_URL+f'/solr/reactions/select?wt=json&q=id:{mseed_id}&fl=name,id,formula,charge,aliases')
                 response = json.load(connection)
                 for document in response['response']['docs']:
-                    ms_name = document.get('name')
                     ls_alias = document.get('aliases')
                     ms_bigg = list(filter(lambda a: 'BiGG:' in a, document.get('aliases')))
                     ms_kegg = list(filter(lambda a: 'KEGG:' in a, document.get('aliases')))
@@ -130,16 +133,52 @@ def modelseed_query(seed_id):
                         ms_kegg = ms_kegg.replace('KEGG: ','')
                         ms_bigg = list(ms_bigg)[0]
                         ms_bigg = ms_bigg.replace('BiGG: ','')
-                        ls_name.append(ms_name)
                         ls_bigg.append(ms_bigg)
                         ls_kegg.append(ms_kegg)
             except:
-                ls_name.append('None')
                 ls_kegg.append('None')
                 ls_bigg.append('None')
 
-    new_kegg = [next(filter(None, i)) for i in zip(ls_kegg, kegg_id)]
-    df_ge['BIGG_id'] = ls_bigg
-    df_ge['KEGG_id'] = new_kegg
+    return ls_bigg,ls_kegg
 
-    return df_ge,ls_bigg
+def bigg_query(bigg_id: list):
+    '''
+    Queries the BIGG database for EC numbers.
+    
+    :param bigg_id: A list or list of lists containing BIGG entry ID's.
+    :return: List of EC numbers.
+    :rtype: list
+    '''
+    bigg_ls = []
+
+    for bigg in tqdm(ls_bigg):
+        for bigg_n in bigg:
+            bigg_n = str(bigg_n)
+            bigg_n = bigg_n.split(';')
+            bigg_n = [x.strip(' ') for x in bigg_n]
+            sub_bigg_ls = []
+            for bi in bigg_n:
+                if bi == 'None':
+                    pass
+                else:
+                    url =f'http://bigg.ucsd.edu/api/v2/universal/reactions/{bi}'
+                    with requests.request("GET", url) as resp:
+                        try:
+                            resp.raise_for_status()  # raises exception when not a 2xx response
+                            if resp.status_code != 204:
+                                data = dict(resp.json())
+                                ec_l = data['database_links']
+                                if ec_l == None:
+                                    sub_bigg_ls.append(None)
+                                else:
+                                    ec = [i['id'] for i in ec_l['EC Number']]
+                                    if ec == None:
+                                        sub_bigg_ls.append(None)
+                                    sub_bigg_ls.append(ec)
+                            else: 
+                                sub_bigg_ls.append(None)
+                        except:
+                            sub_bigg_ls.append(None)
+        bigg_ls.append(sub_bigg_ls)
+ 
+    return bigg_ls
