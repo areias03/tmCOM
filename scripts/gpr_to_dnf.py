@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 # Copyright (c) 2021 Moritz E. Beber
 #
 # Redistribution and use in source and binary forms, with or without
