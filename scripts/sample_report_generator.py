@@ -1,24 +1,28 @@
 from cobra.io import read_sbml_model
-from reframed import load_cbmodel
 from mewpy import get_simulator
 from mewpy.cobra.com import *
-from com import CommunityModel
+from tmcom.com import CommunityModel
 from mewpy.simulation import Environment
 from mewpy.cobra.com import SteadyComVA
 
 import numpy as np
+
+import logging
 import time
+from datetime import timedelta
+
+logger = logging.getLogger()
 st = time.time()
 
-bt = read_sbml_model('../models/ec/ec_M_Bacteroides_thetaiotaomicron_VPI_5482.xml')
+bt = read_sbml_model('models/non-ec/VPI5482.xml')
 simbt = get_simulator(bt)
 simbt.set_objective("biomass")
 
-bu = read_sbml_model('../models/non-ec/agora/Bacteroides_uniformis_ATCC_8492.xml')
+bu = read_sbml_model('models/non-ec/agora/Bacteroides_uniformis_ATCC_8492.xml')
 simbu = get_simulator(bu)
 simbu.set_objective("biomass")
 
-ec = read_sbml_model('../models/non-ec/agora/Escherichia_coli_ED1a.xml')
+ec = read_sbml_model('models/non-ec/agora/Escherichia_coli_ED1a.xml')
 simec = get_simulator(ec)
 simec.set_objective("biomass")
 print()
@@ -94,17 +98,17 @@ mets, rxns, over = jaccard_similarity_matrices([bt,bu,ec])
 print('Metabolite overlap\n')
 print(mets)
 print()
-mets_html = mets.to_html("../data/images/metsover_sample_test.html")
+mets_html = mets.to_html("data/images/metsover_sample_test.html")
 
 print('Reactions overlap\n')
 print(rxns)
 print()
-rxns_html = rxns.to_html("../data/images/rxnsover_sample_test.html")
+rxns_html = rxns.to_html("data/images/rxnsover_sample_test.html")
 
 print('Uptake overlap\n')
 print(over)
 print()
-over_html = over.to_html("../data/images/uptakeover_sample_test.html")
+over_html = over.to_html("data/images/uptakeover_sample_test.html")
 print('SMETANA - Species Metabolic Interaction Analysis\n')
 
 print('SCS (species coupling score):\n')

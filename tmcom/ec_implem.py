@@ -1,5 +1,5 @@
 '''
-Implement enzymatics constraints into models through the reaction's annotations.
+Implement enzymatics constraints into models through the reactions' annotations.
 
 :author: Alexandre Castro
 '''
