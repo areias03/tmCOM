@@ -133,6 +133,9 @@ print('By individual:\n')
 
 for ind in MRO.individual_media.keys():
     print(f'Strain:{ind}\t{", ".join(met for met in MRO.individual_media[ind])}\n\n')
+
+
+#TODO: Add visualizations
     
 et = time.time()
 
