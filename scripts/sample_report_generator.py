@@ -14,7 +14,7 @@ from datetime import timedelta
 logger = logging.getLogger()
 st = time.time()
 
-bt = read_sbml_model('models/non-ec/VPI5482.xml')
+bt = read_sbml_model('models/non-ec/agora/Bacteroides_thetaiotaomicron_VPI_5482.xml')
 simbt = get_simulator(bt)
 simbt.set_objective("biomass")
 
@@ -43,7 +43,7 @@ print(f'Number of reactions in the community model: {len(sim.reactions)}\n')
 from mewpy.simulation import Environment
 M9 = Environment.from_model(bt)
 
-print('Environment from model\n')
+print(f'Environment from model: {bt.id}\n')
 print(M9)
 print()
 
@@ -58,13 +58,13 @@ print('FBA - Flux Balance Analysis\n')
 print(f'Community growth: {solution.objective_value}\n')
 
 print('Individual growth\n')
-print(solution.find('R_biomass', sort=True,show_nulls=True))
+print(solution.find('R_biomass', sort=True,show_nulls=True).to_string())
 print()
 
 print('Exchange reactions and fluxes\n')
-print(solution.find('R_EX'))
+print(solution.find('R_EX').to_string())
 print()
-'''
+
 print('SteadyCom\n')
 
 solution = SteadyCom(community, constraints=M9)
@@ -74,7 +74,9 @@ print()
 print('Cross-feeding interactions:\n')
 print(solution.cross_feeding(as_df=True).dropna().sort_values('rate', ascending=False))
 print()
-      
+
+'''
+
 print('SteadyCom - Variability Analysis\n')
       
 l_va = np.linspace(0.1,1.0,num=10)
@@ -96,35 +98,37 @@ print('Jacard Similarity Matrices\n')
 mets, rxns, over = jaccard_similarity_matrices([bt,bu,ec])
 
 print('Metabolite overlap\n')
-print(mets)
+print(mets.to_string())
 print()
 mets_html = mets.to_html("data/images/metsover_sample_test.html")
 
 print('Reactions overlap\n')
-print(rxns)
+print(rxns.to_string())
 print()
 rxns_html = rxns.to_html("data/images/rxnsover_sample_test.html")
 
 print('Uptake overlap\n')
-print(over)
+print(over.to_string())
 print()
 over_html = over.to_html("data/images/uptakeover_sample_test.html")
 print('SMETANA - Species Metabolic Interaction Analysis\n')
 
 print('SCS (species coupling score):\n')
 SCS = sc_score(community)
-print(pd.DataFrame.from_dict(SCS))
+print(pd.DataFrame.from_dict(SCS).to_string())
 print()
       
 print('MUS (metabolite uptake score):\n')
 MUS = mu_score(community)
-print(pd.DataFrame.from_dict(MUS))
+print(pd.DataFrame.from_dict(MUS).to_string())
 print()
 
+'''
 print('MPS (metabolite production score):\n')
 MPS = mp_score(community,environment=M9)
-print(pd.DataFrame.from_dict(MPS))
+print(pd.DataFrame.from_dict(MPS).to_string())
 print()
+'''
       
 print('MRO (metabolic resource overlap):\n')
 score, MRO = mro_score(community,environment=M9)
@@ -144,4 +148,4 @@ for ind in MRO.individual_media.keys():
 et = time.time()
 
 elapsed_time = et - st
-print('Execution time:', elapsed_time, 'seconds')
+print('Execution time:',str(timedelta(seconds=elapsed_time)))
