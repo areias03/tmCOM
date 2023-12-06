@@ -16,7 +16,6 @@ from tqdm import tqdm
 
 logger = logging.getLogger()
 
-
 def convert_gpr_to_dnf(model: cobra.Model) -> None:
     """
     Convert all existing GPR associations to DNF.
@@ -24,16 +23,43 @@ def convert_gpr_to_dnf(model: cobra.Model) -> None:
     gene-protein-reaction (GPR) association.
     """
     sim = get_simulator(model)
+    gp = dict()
     for rxn_id in tqdm(sim.reactions):
         rxn = sim.get_reaction(rxn_id)
         if not rxn.gpr:
             continue
+        gp[rxn_id] = rxn.gpr
         tree = build_tree(rxn.gpr, Boolean)
         gpr = tree.to_infix()
+        print('old:',rxn.gpr)
         # TODO: update the gpr
-        rxn.gpr = gpr
+        objective = sim.objective.get(rxn_id, 0)
+        sim.add_reaction(rxn_id,
+                          name=rxn.name,
+                          stoichiometry=rxn.stoichiometry,
+                          gpr=gpr,
+                          annotations=rxn.annotations,
+                          objective=objective,
+                          replace=True)
+        print('new:',gpr)
 
-
+def convert_gpr_to_dnf2(model: cobra.Model) -> None:
+    """
+    Convert all existing GPR associations to DNF.
+    RBApy can only work with the disjunctive normal form (DNF) of a
+    gene-protein-reaction (GPR) association.
+    """
+    for rxn in tqdm(model.reactions):
+        if not rxn.gene_reaction_rule:
+            continue
+        print('old:',rxn.gene_reaction_rule)
+        rule = rxn.gene_reaction_rule.replace("or", "|").replace("and", "&")
+        expr = build_tree(rule, Boolean)
+        gpr = expr.to_infix()
+        rxn.gene_reaction_rule = str(gpr).replace("|", "or").replace("&", "and")
+        print('new:',rxn.gene_reaction_rule)
+         
+        
 def main(argv: List[str]) -> None:
     """Manage the model conversion."""
     logger.info("Loading model from SBML...")
