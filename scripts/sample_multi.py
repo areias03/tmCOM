@@ -6,99 +6,96 @@ from mewpy.simulation import Environment
 import numpy as np
 import pandas as pd
 
+import sys
+import itertools
 from concurrent.futures import ThreadPoolExecutor
 
-#Non-EC models
+#Abundances
 
-bt = read_sbml_model('../models/non-ec/agora/Bacteroides_thetaiotaomicron_VPI_5482.xml')
-
-bu = read_sbml_model('../models/non-ec/agora/Bacteroides_uniformis_ATCC_8492.xml')
-
-ec = read_sbml_model('../models/non-ec/agora/Escherichia_coli_ED1a.xml')
-
-fn = read_sbml_model('../models/non-ec/agora/Fusobacterium_nucleatum_subsp_nucleatum_ATCC_25586.xml')
-
-ri = read_sbml_model('../models/non-ec/agora/Roseburia_intestinalis_L1_82.xml')
-
-sp = read_sbml_model('../models/non-ec/agora/Streptococcus_parasanguinis_ATCC_15912.xml')
-
-ss = read_sbml_model('../models/non-ec/agora/Streptococcus_salivarius_DSM_20560.xml')
+abundances = {'bt': 1, 'bu': 4, 'cc': 0.25, 'ec': 0.5,'fn': 1,'ri': 1,'sp': 1,'ss': 1}
 
 #EC models
 
 ec_bt = read_sbml_model('../models/ec/ec_Bacteroides_thetaiotaomicron_VPI_5482.xml')
-
 ec_bu = read_sbml_model('../models/ec/ec_Bacteroides_uniformis_ATCC_8492.xml')
-
 ec_ec = read_sbml_model('../models/ec/ec_Escherichia_coli_ED1a.xml')
-
 ec_fn = read_sbml_model('../models/ec/ec_Fusobacterium_nucleatum_subsp_nucleatum_ATCC_25586.xml')
-
 ec_ri = read_sbml_model('../models/ec/ec_Roseburia_intestinalis_L1_82.xml')
-
 ec_sp = read_sbml_model('../models/ec/ec_Streptococcus_parasanguinis_ATCC_15912.xml')
-
 ec_ss = read_sbml_model('../models/ec/ec_Streptococcus_salivarius_DSM_20560.xml')
+ec_cc = read_sbml_model('../models/ec/ec_Coprococcus_comes_ATCC_27758.xml')
 
-#Abundances
+#Non-EC models
 
-abundances = {'bt': 1, 'bu': 4, 'ec': 0.5,'fn': 1,'ri': 1,'sp': 1,'ss': 1}
-
-#Non-ec samples
-
-sample1 = CommunityModel([bt,bu,ec],flavor='reframed', add_compartments=True, merge_biomasses=True,abundances=[abundances['bt'],abundances['bu'],abundances['ec']])
-sample2 = CommunityModel([bt,bu,fn],flavor='reframed', add_compartments=True, merge_biomasses=True,abundances=[abundances['bt'],abundances['bu'],abundances['fn']])
-sample3 = CommunityModel([bt,bu,ri],flavor='reframed', add_compartments=True, merge_biomasses=True,abundances=[abundances['bt'],abundances['bu'],abundances['ri']])
-sample4 = CommunityModel([bt,bu,sp],flavor='reframed', add_compartments=True, merge_biomasses=True,abundances=[abundances['bt'],abundances['bu'],abundances['sp']])
-sample5 = CommunityModel([bt,bu,ss],flavor='reframed', add_compartments=True, merge_biomasses=True,abundances=[abundances['bt'],abundances['bu'],abundances['ss']])
-
-#EC samples
-
-ec_sample1 = CommunityModel([ec_bt,ec_bu,ec_ec],flavor='reframed', add_compartments=True, merge_biomasses=True,abundances=[abundances['bt'],abundances['bu'],abundances['ec']])
-ec_sample2 = CommunityModel([ec_bt,ec_bu,ec_fn],flavor='reframed', add_compartments=True, merge_biomasses=True,abundances=[abundances['bt'],abundances['bu'],abundances['fn']])
-ec_sample3 = CommunityModel([ec_bt,ec_bu,ec_ri],flavor='reframed', add_compartments=True, merge_biomasses=True,abundances=[abundances['bt'],abundances['bu'],abundances['ri']])
-ec_sample4 = CommunityModel([ec_bt,ec_bu,ec_sp],flavor='reframed', add_compartments=True, merge_biomasses=True,abundances=[abundances['bt'],abundances['bu'],abundances['sp']])
-ec_sample5 = CommunityModel([ec_bt,ec_bu,ec_ss],flavor='reframed', add_compartments=True, merge_biomasses=True,abundances=[abundances['bt'],abundances['bu'],abundances['ss']])
+bt = read_sbml_model('../models/non-ec/agora/Bacteroides_thetaiotaomicron_VPI_5482.xml')
+bu = read_sbml_model('../models/non-ec/agora/Bacteroides_uniformis_ATCC_8492.xml')
+ec = read_sbml_model('../models/non-ec/agora/Escherichia_coli_ED1a.xml')
+fn = read_sbml_model('../models/non-ec/agora/Fusobacterium_nucleatum_subsp_nucleatum_ATCC_25586.xml')
+ri = read_sbml_model('../models/non-ec/agora/Roseburia_intestinalis_L1_82.xml')
+sp = read_sbml_model('../models/non-ec/agora/Streptococcus_parasanguinis_ATCC_15912.xml')
+ss = read_sbml_model('../models/non-ec/agora/Streptococcus_salivarius_DSM_20560.xml')
+cc = read_sbml_model('../models/non-ec/agora/Coprococcus_comes_ATCC_27758.xml')
 
 
-def main(sample:int,cons:str = 'Default',ec:bool = False):
+def main(arguments: Tuple[int, bool, str]) -> None:
 
-    if sample == 1 and ec:
-        community = ec_sample1
-        sample_name = 'ec_sample1'
-    elif sample == 1 and not ec:
-        community = sample1
-        sample_name = 'sample1'
-    elif sample == 2 and ec:
-        community = ec_sample2
-        sample_name = 'ec_sample2'
-    elif sample == 2 and not ec:
-        community = sample2
-        sample_name = 'sample2'
-    elif sample == 3 and ec:
-        community = ec_sample3
-        sample_name = 'ec_sample3'
-    elif sample == 3 and not ec:
-        community = sample3
-        sample_name = 'sample3'
-    elif sample == 4 and ec:
-        community = ec_sample4
-        sample_name= 'ec_sample4'
-    elif sample == 4 and not ec:
-        community = sample4
-        sample_name= 'sample4'
-    elif sample == 5 and ec:
-        community = ec_sample5
-        sample_name= 'ec_sample5'
+    sample,enz,cons = arguments
+
+    print(f'Conditions: Sample {sample}, Enzimatic constrained - {enz}, Conditions - {cons}')
+
+    sample_name = 'sample' + str(sample)
+
+     
+    if sample == 1 and enz == True:
+        community = CommunityModel([ec_bt,ec_bu,ec_ec],flavor='reframed', add_compartments=True, merge_biomasses=True,abundances=[abundances['bt'],abundances['bu'],abundances['ec']])
+    elif sample == 1 and not enz:
+        community = CommunityModel([bt,bu,ec],flavor='reframed', add_compartments=True, merge_biomasses=True,abundances=[abundances['bt'],abundances['bu'],abundances['ec']])
+    elif sample == 2 and enz:
+        community = CommunityModel([ec_bt,ec_bu,ec_fn],flavor='reframed', add_compartments=True, merge_biomasses=True,abundances=[abundances['bt'],abundances['bu'],abundances['fn']])
+    elif sample == 2 and not enz:
+        community = CommunityModel([bt,bu,fn],flavor='reframed', add_compartments=True, merge_biomasses=True,abundances=[abundances['bt'],abundances['bu'],abundances['fn']])
+    elif sample == 3 and enz:
+        community = CommunityModel([ec_bt,ec_bu,ec_ri],flavor='reframed', add_compartments=True, merge_biomasses=True,abundances=[abundances['bt'],abundances['bu'],abundances['ri']])
+    elif sample == 3 and not enz:
+        community = CommunityModel([bt,bu,ri],flavor='reframed', add_compartments=True, merge_biomasses=True,abundances=[abundances['bt'],abundances['bu'],abundances['ri']])
+    elif sample == 4 and enz:
+        community = CommunityModel([ec_bt,ec_bu,ec_sp],flavor='reframed', add_compartments=True, merge_biomasses=True,abundances=[abundances['bt'],abundances['bu'],abundances['sp']])
+    elif sample == 4 and not enz:
+        community = CommunityModel([bt,bu,sp],flavor='reframed', add_compartments=True, merge_biomasses=True,abundances=[abundances['bt'],abundances['bu'],abundances['sp']])
+    elif sample == 5 and enz:
+        community = CommunityModel([ec_bt,ec_bu,ec_ss],flavor='reframed', add_compartments=True, merge_biomasses=True,abundances=[abundances['bt'],abundances['bu'],abundances['ss']])
+    elif sample == 5 and not enz:
+        community = CommunityModel([bt,bu,ss],flavor='reframed', add_compartments=True, merge_biomasses=True,abundances=[abundances['bt'],abundances['bu'],abundances['ss']])
+    elif sample == 6 and enz:
+        community = CommunityModel([ec_bt,ec_bu,ec_cc], flavor='reframed', add_compartments=True, merge_biomasses=True,abundances=[abundances['bt'],abundances['bu'],abundances['cc']])
+    elif sample == 6 and not enz:
+        community = CommunityModel([bt,bu,cc], flavor='reframed', add_compartments=True, merge_biomasses=True,abundances=[abundances['bt'],abundances['bu'],abundances['cc']])
     else:
-        community = sample5
-        sample_name= sample5
+        sys.exit('No possible combination found!')
+
+    if enz:
+        sample_name = 'ec_' + sample_name
+
+    if cons == 'Low Iron':
+        sample_name = str(sample_name) + '_li'
+
+    print(f'Writing results to ../data/results/{sample_name}.txt')
 
     with open(f'../data/results/{sample_name}.txt','w') as f:
+
+        f.write(f'Conditions: Sample {sample}, Enzimatic constrained - {enz}, Conditions - {cons}\n')
+        f.write('\n')
 
         f.write('##################################\n')
         f.write('COMMUNITY MODEL CREATION\n')
         f.write('##################################\n')
+
+        model_ids = sorted(community.model_ids)
+
+        f.write(f'Models in the sample:\n')
+        for model in model_ids:
+            f.write(f'{model}\n')
+        f.write('\n')
 
 
         sim = community.get_community_model()
@@ -121,13 +118,12 @@ def main(sample:int,cons:str = 'Default',ec:bool = False):
 
         sim.set_environmental_conditions(M9)
        
-        model_ids = sorted(community.model_ids)
 
-        if ec and cons =='Low iron':
+        if enz and cons =='Low Iron':
             constraints = {'R_EX_fe2(e)':(-0.00007,0),'R_prot_pool_exchange_M_Bacteroides_thetaiotaomicron_VPI_5482':(0,1),'R_prot_pool_exchange_M_Bacteroides_uniformis_ATCC_8492':(0,1),f'R_prot_pool_exchange_{model_ids[2]}':(0,1)}
-        elif ec and cons =='Default':
+        elif enz and cons =='Default':
             constraints = {'R_prot_pool_exchange_M_Bacteroides_thetaiotaomicron_VPI_5482':(0,1),'R_prot_pool_exchange_M_Bacteroides_uniformis_ATCC_8492':(0,1),f'R_prot_pool_exchange_{model_ids[2]}':(0,1)}
-        elif not ec and cons =='Low iron':
+        elif not enz and cons =='Low Iron':
             constraints = {'R_EX_fe2(e)':(-0.00007,0)}
         else:
             constraints = {}
@@ -166,7 +162,7 @@ def main(sample:int,cons:str = 'Default',ec:bool = False):
         f.write(solution.cross_feeding(as_df=True).dropna().sort_values('rate', ascending=False).to_string())
         f.write('\n')
 
-        '''
+        
 
         f.write('SteadyCom - Variability Analysis\n')
               
@@ -178,27 +174,12 @@ def main(sample:int,cons:str = 'Default',ec:bool = False):
             f.write(f'Strain\tMin\tMax\tVariability - {va}')
             for strain, (lower, upper) in variability.items():
                 f.write(f'{strain}\t{lower:.1%}\t{upper:.1%}')
-        '''
+       
+
         f.write('\n')
         f.write('##################################\n')
         f.write('COMMUNITY ANALYSIS\n')
         f.write('##################################\n')
-              
-        f.write('Jacard Similarity Matrices\n')
-
-        mets, rxns, over = jaccard_similarity_matrices([bt,bu,ec])
-
-        f.write('Metabolite overlap\n')
-        f.write(mets.to_string())
-        f.write('\n')
-
-        f.write('Reactions overlap\n')
-        f.write(rxns.to_string())
-        f.write('\n')
-
-        f.write('Uptake overlap\n')
-        f.write(over.to_string())
-        f.write('\n')
 
         f.write('SMETANA - Species Metabolic Interaction Analysis\n')
 
@@ -231,8 +212,18 @@ def main(sample:int,cons:str = 'Default',ec:bool = False):
         for ind in MRO.individual_media.keys():
             f.write(f'Strain:{ind}\t{", ".join(met for met in MRO.individual_media[ind])}\n\n')
         f.close()
+    
 
 
 if __name__ == "__main__":
+
+    sample: List[int] = list(range(1, 7))
+    enz: List[bool] = [True, False]
+    li: List[str] = ["Default", "Low Iron"]
+
+    args: List[Tuple[int, bool, str]] = list(itertools.product(sample, enz, li))
+
+    print('Possible combinations:', f"Sample: {sample} | Enz. constraints: {enz} | Conditions: {li}")
+
     with ThreadPoolExecutor() as pool:
-        pool.map(main,zip((1,2,3,4,5),(True,False),('Default','Low iron')))
+        pool.map(main,args)
