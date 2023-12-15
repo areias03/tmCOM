@@ -1,0 +1,1424 @@
+Conditions: Sample 3, Enzimatic constrained - False, Conditions - Default
+
+##################################
+COMMUNITY MODEL CREATION
+##################################
+Models in the sample:
+M_Bacteroides_thetaiotaomicron_VPI_5482
+M_Bacteroides_uniformis_ATCC_8492
+M_Roseburia_intestinalis_L1_82
+
+
+Number of reactions in the community model: 7703
+
+Environment from model: M_Bacteroides_uniformis_ATCC_8492
+
+EX_1hibup_S(e)	-1000.0	1000.0
+EX_1hibupglu_S(e)	-1000.0	1000.0
+EX_1hmdgluc(e)	-1000.0	1000.0
+EX_1ohmdz(e)	-1000.0	1000.0
+EX_2hatvacid(e)	-1000.0	1000.0
+EX_2hatvacidgluc(e)	-1000.0	1000.0
+EX_2hatvlac(e)	-1000.0	1000.0
+EX_2hatvlacgluc(e)	-1000.0	1000.0
+EX_2hibup_S(e)	-1000.0	1000.0
+EX_2hibupglu_S(e)	-1000.0	1000.0
+EX_2oh_cbz(e)	-1000.0	1000.0
+EX_2oh_cbz_glc(e)	-1000.0	1000.0
+EX_2oh_mtz(e)	-1000.0	1000.0
+EX_2oh_mtz_glc(e)	-1000.0	1000.0
+EX_3hibup_S(e)	-1000.0	1000.0
+EX_3hibupglu_S(e)	-1000.0	1000.0
+EX_3meacmp(e)	-1000.0	1000.0
+EX_3oh_cbz(e)	-1000.0	1000.0
+EX_3oh_cbz_glc(e)	-1000.0	1000.0
+EX_3oh_dlor(e)	-1000.0	1000.0
+EX_3oh_dlor_glc(e)	-1000.0	1000.0
+EX_3oh_mdea(e)	-1000.0	1000.0
+EX_3oh_mdea_glc(e)	-1000.0	1000.0
+EX_3oh_mxn(e)	-1000.0	1000.0
+EX_3oh_mxn_glc(e)	-1000.0	1000.0
+EX_4abut(e)	-1000.0	1000.0
+EX_4dh_tpno(e)	-1000.0	1000.0
+EX_4dh_tpno_1glc(e)	-1000.0	1000.0
+EX_4hmdgluc(e)	-1000.0	1000.0
+EX_4oh_dcf(e)	-1000.0	1000.0
+EX_4oh_dcf_glc(e)	-1000.0	1000.0
+EX_4oh_kp(e)	-1000.0	1000.0
+EX_4oh_kp_glc(e)	-1000.0	1000.0
+EX_4oh_levole(e)	-1000.0	1000.0
+EX_4oh_levole_glc(e)	-1000.0	1000.0
+EX_4oh_meth(e)	-1000.0	1000.0
+EX_4oh_meth_glc(e)	-1000.0	1000.0
+EX_4oh_propl(e)	-1000.0	1000.0
+EX_4oh_propl_glc(e)	-1000.0	1000.0
+EX_4oh_trz(e)	-1000.0	1000.0
+EX_4oh_trz_glc(e)	-1000.0	1000.0
+EX_4oh_vcz(e)	-1000.0	1000.0
+EX_4oh_vcz_glc(e)	-1000.0	1000.0
+EX_4ohmdz(e)	-1000.0	1000.0
+EX_5oh_sulfp(e)	-1000.0	1000.0
+EX_5oh_sulfp_glc(e)	-1000.0	1000.0
+EX_5ohfvs(e)	-1000.0	1000.0
+EX_5ohfvsglu(e)	-1000.0	1000.0
+EX_6bhglz(e)	-1000.0	1000.0
+EX_6bhglzglc(e)	-1000.0	1000.0
+EX_6ohfvs(e)	-1000.0	1000.0
+EX_6ohfvsglu(e)	-1000.0	1000.0
+EX_7a_czp(e)	-1000.0	1000.0
+EX_7bhglz(e)	-1000.0	1000.0
+EX_7bhglzglc(e)	-1000.0	1000.0
+EX_7oh_efv(e)	-1000.0	1000.0
+EX_7oh_efv_glc(e)	-1000.0	1000.0
+EX_814dioh_efv(e)	-1000.0	1000.0
+EX_814dioh_efv_glc(e)	-1000.0	1000.0
+EX_8oh_efv(e)	-1000.0	1000.0
+EX_8oh_efv_glc(e)	-1000.0	1000.0
+EX_C02528(e)	-1000.0	1000.0
+EX_N_oh_phtn(e)	-1000.0	1000.0
+EX_N_oh_phtn_glc(e)	-1000.0	1000.0
+EX_R_6oh_warf(e)	-1000.0	1000.0
+EX_R_6oh_warf_glc(e)	-1000.0	1000.0
+EX_R_7oh_warf(e)	-1000.0	1000.0
+EX_R_7oh_warf_glc(e)	-1000.0	1000.0
+EX_R_8oh_warf(e)	-1000.0	1000.0
+EX_R_8oh_warf_glc(e)	-1000.0	1000.0
+EX_S_4oh_warf(e)	-1000.0	1000.0
+EX_S_4oh_warf_glc(e)	-1000.0	1000.0
+EX_S_6oh_warf(e)	-1000.0	1000.0
+EX_S_6oh_warf_glc(e)	-1000.0	1000.0
+EX_Tyr_ggn(e)	-1000.0	1000.0
+EX_ac(e)	-1000.0	1000.0
+EX_ac_amn_b_gly(e)	-1000.0	1000.0
+EX_ac_amn_b_gly_glc(e)	-1000.0	1000.0
+EX_acgal(e)	-1000.0	1000.0
+EX_acgam(e)	-1000.0	1000.0
+EX_acmp(e)	-1000.0	1000.0
+EX_acmp_glc(e)	-1000.0	1000.0
+EX_acmpglu(e)	-1000.0	1000.0
+EX_adn(e)	-1000.0	1000.0
+EX_adocbl(e)	-1000.0	1000.0
+EX_alpz_4oh(e)	-1000.0	1000.0
+EX_alpz_4oh_glc(e)	-1000.0	1000.0
+EX_alpz_aoh(e)	-1000.0	1000.0
+EX_alpz_aoh_glc(e)	-1000.0	1000.0
+EX_am14(e)	-1000.0	1000.0
+EX_am14_glc(e)	-1000.0	1000.0
+EX_am1ccs(e)	-1000.0	1000.0
+EX_am1cglc(e)	-1000.0	1000.0
+EX_am5(e)	-1000.0	1000.0
+EX_am5_glc(e)	-1000.0	1000.0
+EX_am6(e)	-1000.0	1000.0
+EX_am6_glc(e)	-1000.0	1000.0
+EX_amio(e)	-1000.0	1000.0
+EX_amio_c(e)	-1000.0	1000.0
+EX_amio_c_glc(e)	-1000.0	1000.0
+EX_amio_glc(e)	-1000.0	1000.0
+EX_amn_b_gly(e)	-1000.0	1000.0
+EX_amn_b_gly_glc(e)	-1000.0	1000.0
+EX_amntd_m6(e)	-1000.0	1000.0
+EX_amntd_m6_glc(e)	-1000.0	1000.0
+EX_amylopect900(e)	-1000.0	1000.0
+EX_anzp(e)	-1000.0	1000.0
+EX_arab_L(e)	-1000.0	1000.0
+EX_arabinogal(e)	-1000.0	1000.0
+EX_arabttr(e)	-1000.0	1000.0
+EX_atvacid(e)	-1000.0	1000.0
+EX_atvacylgluc(e)	-1000.0	1000.0
+EX_atvethgluc(e)	-1000.0	1000.0
+EX_atvlac(e)	-1000.0	1000.0
+EX_atvlacgluc(e)	-1000.0	1000.0
+EX_bhpm(e)	-1000.0	1000.0
+EX_bhpm_glc(e)	-1000.0	1000.0
+EX_bilr_355(e)	-1000.0	1000.0
+EX_bilr_M10(e)	-1000.0	1000.0
+EX_bilr_M12(e)	-1000.0	1000.0
+EX_bilr_M14(e)	-1000.0	1000.0
+EX_bilr_M15(e)	-1000.0	1000.0
+EX_bilr_M16(e)	-1000.0	1000.0
+EX_bilr_M7(e)	-1000.0	1000.0
+EX_biomass(e)	-1000.0	1000.0
+EX_brv(e)	-1000.0	1000.0
+EX_bsn(e)	-1000.0	1000.0
+EX_bsn_glc(e)	-1000.0	1000.0
+EX_bvu(e)	-1000.0	1000.0
+EX_bz(e)	-1000.0	1000.0
+EX_bz_glc(e)	-1000.0	1000.0
+EX_ca2(e)	-1000.0	1000.0
+EX_caribup_s(e)	-1000.0	1000.0
+EX_caribupglu_S(e)	-1000.0	1000.0
+EX_cbl1(e)	-1000.0	1000.0
+EX_cbl2(e)	-1000.0	1000.0
+EX_cbz(e)	-1000.0	1000.0
+EX_cbz_glc(e)	-1000.0	1000.0
+EX_cd2(e)	-1000.0	1000.0
+EX_cd6168(e)	-1000.0	1000.0
+EX_cd6168_glc(e)	-1000.0	1000.0
+EX_cellb(e)	-1000.0	1000.0
+EX_chlphncl(e)	-1000.0	1000.0
+EX_chlphncl_glc(e)	-1000.0	1000.0
+EX_cholate(e)	-1000.0	1000.0
+EX_cit(e)	-1000.0	1000.0
+EX_cl(e)	-1000.0	1000.0
+EX_clcxb(e)	-1000.0	1000.0
+EX_clcxb_c(e)	-1000.0	1000.0
+EX_clcxb_c_glc(e)	-1000.0	1000.0
+EX_clcxb_glc(e)	-1000.0	1000.0
+EX_clobi_c(e)	-1000.0	1000.0
+EX_clobi_glc(e)	-1000.0	1000.0
+EX_co2(e)	-1000.0	1000.0
+EX_cobalt2(e)	-1000.0	1000.0
+EX_cro4(e)	-1000.0	1000.0
+EX_crvsm1(e)	-1000.0	1000.0
+EX_crvsm23(e)	-1000.0	1000.0
+EX_cu2(e)	-1000.0	1000.0
+EX_cvm1gluc(e)	-1000.0	1000.0
+EX_cvm23gluc(e)	-1000.0	1000.0
+EX_cytd(e)	-1000.0	1000.0
+EX_czp(e)	-1000.0	1000.0
+EX_daa(e)	-1000.0	1000.0
+EX_daa_glc(e)	-1000.0	1000.0
+EX_dad_2(e)	-1000.0	1000.0
+EX_dcf(e)	-1000.0	1000.0
+EX_dcf_glc(e)	-1000.0	1000.0
+EX_dcyt(e)	-1000.0	1000.0
+EX_ddea(e)	-1000.0	1000.0
+EX_ddea_glc(e)	-1000.0	1000.0
+EX_des_astzl(e)	-1000.0	1000.0
+EX_des_astzl_glc(e)	-1000.0	1000.0
+EX_dextran40(e)	-1000.0	1000.0
+EX_dfdcytd(e)	-1000.0	1000.0
+EX_dfduri(e)	-1000.0	1000.0
+EX_dgchol(e)	-1000.0	1000.0
+EX_dgsn(e)	-1000.0	1000.0
+EX_dhna(e)	-1000.0	1000.0
+EX_digoxin(e)	-1000.0	1000.0
+EX_digoxin_glc(e)	-1000.0	1000.0
+EX_din(e)	-1000.0	1000.0
+EX_dlb(e)	-1000.0	1000.0
+EX_dlb_glc(e)	-1000.0	1000.0
+EX_dnpz_5des(e)	-1000.0	1000.0
+EX_dnpz_6des(e)	-1000.0	1000.0
+EX_dnpz_m11(e)	-1000.0	1000.0
+EX_dnpz_m12(e)	-1000.0	1000.0
+EX_dnpz_m13(e)	-1000.0	1000.0
+EX_dnpz_m14(e)	-1000.0	1000.0
+EX_dnpz_m9(e)	-1000.0	1000.0
+EX_doh_etr(e)	-1000.0	1000.0
+EX_doh_etr_glc(e)	-1000.0	1000.0
+EX_doh_vcz(e)	-1000.0	1000.0
+EX_doh_vcz_glc(e)	-1000.0	1000.0
+EX_duri(e)	-1000.0	1000.0
+EX_dxo(e)	-1000.0	1000.0
+EX_dxo_glc(e)	-1000.0	1000.0
+EX_efv(e)	-1000.0	1000.0
+EX_efv_glc(e)	-1000.0	1000.0
+EX_eltr(e)	-1000.0	1000.0
+EX_eltr_glc(e)	-1000.0	1000.0
+EX_eltr_m3(e)	-1000.0	1000.0
+EX_eltr_m4(e)	-1000.0	1000.0
+EX_estradiol(e)	-1000.0	1000.0
+EX_estradiolglc(e)	-1000.0	1000.0
+EX_estriol(e)	-1000.0	1000.0
+EX_estriolglc(e)	-1000.0	1000.0
+EX_estrone(e)	-1000.0	1000.0
+EX_estroneglc(e)	-1000.0	1000.0
+EX_eztmb(e)	-1000.0	1000.0
+EX_eztmb_glc(e)	-1000.0	1000.0
+EX_fe2(e)	-1000.0	1000.0
+EX_fe3(e)	-1000.0	1000.0
+EX_for(e)	-1000.0	1000.0
+EX_fru(e)	-1000.0	1000.0
+EX_fuc_L(e)	-1000.0	1000.0
+EX_fum(e)	-1000.0	1000.0
+EX_fvs(e)	-1000.0	1000.0
+EX_fvsgluc(e)	-1000.0	1000.0
+EX_fvstet(e)	-1000.0	1000.0
+EX_fvstetglu(e)	-1000.0	1000.0
+EX_gal(e)	-1000.0	1000.0
+EX_galmannan(e)	-1000.0	1000.0
+EX_galt(e)	-1000.0	1000.0
+EX_galur(e)	-1000.0	1000.0
+EX_gam(e)	-1000.0	1000.0
+EX_gchola(e)	-1000.0	1000.0
+EX_glc3meacp(e)	-1000.0	1000.0
+EX_glc_D(e)	-1000.0	1000.0
+EX_glcmannan(e)	-1000.0	1000.0
+EX_glcur(e)	-1000.0	1000.0
+EX_gltmn(e)	-1000.0	1000.0
+EX_gltmn_glc(e)	-1000.0	1000.0
+EX_gly(e)	-1000.0	1000.0
+EX_glygn2(e)	-1000.0	1000.0
+EX_glygn4(e)	-1000.0	1000.0
+EX_glygn5(e)	-1000.0	1000.0
+EX_gmfl(e)	-1000.0	1000.0
+EX_gmfl_glc(e)	-1000.0	1000.0
+EX_gmfl_mI(e)	-1000.0	1000.0
+EX_gmfl_mII(e)	-1000.0	1000.0
+EX_gmfl_mIII(e)	-1000.0	1000.0
+EX_gmfl_mIII_glc(e)	-1000.0	1000.0
+EX_gmfl_mII_glc(e)	-1000.0	1000.0
+EX_gmfl_mI_glc(e)	-1000.0	1000.0
+EX_gsn(e)	-1000.0	1000.0
+EX_gtacmp(e)	-1000.0	1000.0
+EX_h(e)	-1000.0	1000.0
+EX_h2(e)	-1000.0	1000.0
+EX_h2o(e)	-1000.0	1000.0
+EX_hg2(e)	-1000.0	1000.0
+EX_hst(e)	-1000.0	1000.0
+EX_hst_37_diglc(e)	-1000.0	1000.0
+EX_hst_3_glc(e)	-1000.0	1000.0
+EX_hst_3_s(e)	-1000.0	1000.0
+EX_hst_3glc_7s(e)	-1000.0	1000.0
+EX_hst_7_glc(e)	-1000.0	1000.0
+EX_hst_7_s(e)	-1000.0	1000.0
+EX_hst_7glc_3s(e)	-1000.0	1000.0
+EX_ibup_S(e)	-1000.0	1000.0
+EX_ibupgluc(e)	-1000.0	1000.0
+EX_imn(e)	-1000.0	1000.0
+EX_imn_glc(e)	-1000.0	1000.0
+EX_indole(e)	-1000.0	1000.0
+EX_ins(e)	-1000.0	1000.0
+EX_inulin(e)	-1000.0	1000.0
+EX_inv(e)	-1000.0	1000.0
+EX_inv_m1(e)	-1000.0	1000.0
+EX_isobut(e)	-1000.0	1000.0
+EX_isocapr(e)	-1000.0	1000.0
+EX_isosorbide_5mn(e)	-1000.0	1000.0
+EX_isosorbide_5mn_glc(e)	-1000.0	1000.0
+EX_isoval(e)	-1000.0	1000.0
+EX_k(e)	-1000.0	1000.0
+EX_kesto(e)	-1000.0	1000.0
+EX_kestopt(e)	-1000.0	1000.0
+EX_kestottr(e)	-1000.0	1000.0
+EX_kprofen(e)	-1000.0	1000.0
+EX_kprofen_glc(e)	-1000.0	1000.0
+EX_lac_D(e)	-1000.0	1000.0
+EX_lactl(e)	-1000.0	1000.0
+EX_lcts(e)	-1000.0	1000.0
+EX_leu_L(e)	-1000.0	1000.0
+EX_lichn(e)	-1000.0	1000.0
+EX_lmn2(e)	-1000.0	1000.0
+EX_lmn30(e)	-1000.0	1000.0
+EX_lst4exp(e)	-1000.0	1000.0
+EX_lstn(e)	-1000.0	1000.0
+EX_lstn1gluc(e)	-1000.0	1000.0
+EX_lstnm4(e)	-1000.0	1000.0
+EX_lstnm7(e)	-1000.0	1000.0
+EX_malt(e)	-1000.0	1000.0
+EX_malttr(e)	-1000.0	1000.0
+EX_man(e)	-1000.0	1000.0
+EX_mantr(e)	-1000.0	1000.0
+EX_mdz(e)	-1000.0	1000.0
+EX_mdz_glc(e)	-1000.0	1000.0
+EX_mdzglc(e)	-1000.0	1000.0
+EX_melib(e)	-1000.0	1000.0
+EX_meoh(e)	-1000.0	1000.0
+EX_met_L(e)	-1000.0	1000.0
+EX_mg2(e)	-1000.0	1000.0
+EX_miso(e)	-1000.0	1000.0
+EX_miso_glc(e)	-1000.0	1000.0
+EX_mn2(e)	-1000.0	1000.0
+EX_mqn8(e)	-1000.0	1000.0
+EX_mrphn(e)	-1000.0	1000.0
+EX_mrphn_3glc(e)	-1000.0	1000.0
+EX_mrphn_6glc(e)	-1000.0	1000.0
+EX_mtz(e)	-1000.0	1000.0
+EX_mtz_glc(e)	-1000.0	1000.0
+EX_na1(e)	-1000.0	1000.0
+EX_nac(e)	-1000.0	1000.0
+EX_nchlphncl(e)	-1000.0	1000.0
+EX_nh4(e)	-1000.0	1000.0
+EX_no2(e)	-1000.0	1000.0
+EX_nsldp_m5(e)	-1000.0	1000.0
+EX_nsldp_m5_glc(e)	-1000.0	1000.0
+EX_nverp(e)	-1000.0	1000.0
+EX_nverp_glc(e)	-1000.0	1000.0
+EX_nzp(e)	-1000.0	1000.0
+EX_o2(e)	-1000.0	1000.0
+EX_odsm_egltmn(e)	-1000.0	1000.0
+EX_odsm_egltmn_glc(e)	-1000.0	1000.0
+EX_odsm_gltmn(e)	-1000.0	1000.0
+EX_odsm_gltmn_glc(e)	-1000.0	1000.0
+EX_oh_etr(e)	-1000.0	1000.0
+EX_oh_etr_glc(e)	-1000.0	1000.0
+EX_oh_pbl(e)	-1000.0	1000.0
+EX_oh_pbl_glc(e)	-1000.0	1000.0
+EX_pac(e)	-1000.0	1000.0
+EX_pb(e)	-1000.0	1000.0
+EX_pcresol(e)	-1000.0	1000.0
+EX_pecticgal(e)	-1000.0	1000.0
+EX_phe_L(e)	-1000.0	1000.0
+EX_phppa(e)	-1000.0	1000.0
+EX_phppa_glc(e)	-1000.0	1000.0
+EX_phtn_glc(e)	-1000.0	1000.0
+EX_pi(e)	-1000.0	1000.0
+EX_pime(e)	-1000.0	1000.0
+EX_ppa(e)	-1000.0	1000.0
+EX_ppi(e)	-1000.0	1000.0
+EX_prob(e)	-1000.0	1000.0
+EX_prob_glc(e)	-1000.0	1000.0
+EX_pront(e)	-1000.0	1000.0
+EX_pront_glc(e)	-1000.0	1000.0
+EX_propl(e)	-1000.0	1000.0
+EX_propl_glc(e)	-1000.0	1000.0
+EX_prx_mI(e)	-1000.0	1000.0
+EX_prx_mII(e)	-1000.0	1000.0
+EX_prx_mII_glc(e)	-1000.0	1000.0
+EX_prx_mI_glc(e)	-1000.0	1000.0
+EX_psics_D(e)	-1000.0	1000.0
+EX_ptrc(e)	-1000.0	1000.0
+EX_ptvst(e)	-1000.0	1000.0
+EX_ptvstgluc(e)	-1000.0	1000.0
+EX_pullulan1200(e)	-1000.0	1000.0
+EX_pvs(e)	-1000.0	1000.0
+EX_pvsgluc(e)	-1000.0	1000.0
+EX_pydam(e)	-1000.0	1000.0
+EX_pydx(e)	-1000.0	1000.0
+EX_pydxn(e)	-1000.0	1000.0
+EX_r406(e)	-1000.0	1000.0
+EX_r406_glc(e)	-1000.0	1000.0
+EX_r529(e)	-1000.0	1000.0
+EX_r529_glc(e)	-1000.0	1000.0
+EX_r788(e)	-1000.0	1000.0
+EX_raffin(e)	-1000.0	1000.0
+EX_regfnb(e)	-1000.0	1000.0
+EX_regfnb_glc(e)	-1000.0	1000.0
+EX_rep(e)	-1000.0	1000.0
+EX_rep_glc(e)	-1000.0	1000.0
+EX_rib_D(e)	-1000.0	1000.0
+EX_rmn(e)	-1000.0	1000.0
+EX_rpn_104557(e)	-1000.0	1000.0
+EX_rpn_104557_cb_glc(e)	-1000.0	1000.0
+EX_rpn_96990(e)	-1000.0	1000.0
+EX_rpn_96990_glc(e)	-1000.0	1000.0
+EX_rpn_oh(e)	-1000.0	1000.0
+EX_rpn_oh_glc(e)	-1000.0	1000.0
+EX_rsv(e)	-1000.0	1000.0
+EX_rsvgluc(e)	-1000.0	1000.0
+EX_sb_611855(e)	-1000.0	1000.0
+EX_sb_y(e)	-1000.0	1000.0
+EX_sch_488128(e)	-1000.0	1000.0
+EX_sch_57871(e)	-1000.0	1000.0
+EX_sch_57871_glc(e)	-1000.0	1000.0
+EX_sfnd_1689(e)	-1000.0	1000.0
+EX_sfnd_1689_glc(e)	-1000.0	1000.0
+EX_sftz(e)	-1000.0	1000.0
+EX_sftz_glc(e)	-1000.0	1000.0
+EX_simvgluc(e)	-1000.0	1000.0
+EX_smap(e)	-1000.0	1000.0
+EX_smap_glc(e)	-1000.0	1000.0
+EX_smvacid(e)	-1000.0	1000.0
+EX_sn38(e)	-1000.0	1000.0
+EX_sn38g(e)	-1000.0	1000.0
+EX_so4(e)	-1000.0	1000.0
+EX_spmd(e)	-1000.0	1000.0
+EX_spz(e)	-1000.0	1000.0
+EX_spz_glc(e)	-1000.0	1000.0
+EX_spz_sfn(e)	-1000.0	1000.0
+EX_spz_sfn_glc(e)	-1000.0	1000.0
+EX_srv(e)	-1000.0	1000.0
+EX_stg(e)	-1000.0	1000.0
+EX_stg_m3(e)	-1000.0	1000.0
+EX_stg_m4(e)	-1000.0	1000.0
+EX_stys(e)	-1000.0	1000.0
+EX_succ(e)	-1000.0	1000.0
+EX_sucr(e)	-1000.0	1000.0
+EX_tat(e)	-1000.0	1000.0
+EX_taur(e)	-1000.0	1000.0
+EX_tchola(e)	-1000.0	1000.0
+EX_tdchola(e)	-1000.0	1000.0
+EX_tgz(e)	-1000.0	1000.0
+EX_tgz_glc(e)	-1000.0	1000.0
+EX_thsacmp(e)	-1000.0	1000.0
+EX_thymd(e)	-1000.0	1000.0
+EX_tlf_a(e)	-1000.0	1000.0
+EX_tlf_a_1a(e)	-1000.0	1000.0
+EX_tlf_a_1b(e)	-1000.0	1000.0
+EX_tlf_a_1x(e)	-1000.0	1000.0
+EX_tlf_a_2(e)	-1000.0	1000.0
+EX_tlf_a_2a(e)	-1000.0	1000.0
+EX_tlf_a_3(e)	-1000.0	1000.0
+EX_tlf_a_4(e)	-1000.0	1000.0
+EX_tlf_a_m1(e)	-1000.0	1000.0
+EX_tlf_a_m2(e)	-1000.0	1000.0
+EX_tlf_a_m3(e)	-1000.0	1000.0
+EX_tlf_a_m4(e)	-1000.0	1000.0
+EX_tlf_a_m4a(e)	-1000.0	1000.0
+EX_tlf_a_m5(e)	-1000.0	1000.0
+EX_tlf_a_m5a(e)	-1000.0	1000.0
+EX_tlf_a_m5b(e)	-1000.0	1000.0
+EX_tlf_a_m6(e)	-1000.0	1000.0
+EX_tlf_a_m9(e)	-1000.0	1000.0
+EX_tlms(e)	-1000.0	1000.0
+EX_tlms_glc(e)	-1000.0	1000.0
+EX_tmacmp(e)	-1000.0	1000.0
+EX_tolcp(e)	-1000.0	1000.0
+EX_tolcp_ac(e)	-1000.0	1000.0
+EX_tolcp_ac_glc(e)	-1000.0	1000.0
+EX_tolcp_am(e)	-1000.0	1000.0
+EX_tolcp_am_glc(e)	-1000.0	1000.0
+EX_tolcp_glc(e)	-1000.0	1000.0
+EX_tpno_1glc_4g(e)	-1000.0	1000.0
+EX_tpno_4g(e)	-1000.0	1000.0
+EX_tpno_4glc(e)	-1000.0	1000.0
+EX_tpnoh(e)	-1000.0	1000.0
+EX_trp_L(e)	-1000.0	1000.0
+EX_tsacmgluc(e)	-1000.0	1000.0
+EX_urea(e)	-1000.0	1000.0
+EX_uri(e)	-1000.0	1000.0
+EX_val_L(e)	-1000.0	1000.0
+EX_xyl_D(e)	-1000.0	1000.0
+EX_xylan(e)	-1000.0	1000.0
+EX_xyluglc(e)	-1000.0	1000.0
+EX_zn2(e)	-1000.0	1000.0
+
+##################################
+SIMULATION
+##################################
+Constraints
+Empty DataFrame
+Columns: []
+Index: []
+FBA - Flux Balance Analysis
+Community growth: 17.85116016832073
+Individual growth
+                                                   Flux rate
+Reaction ID                                                 
+R_biomass_M_Bacteroides_thetaiotaomicron_VPI_5482  17.851160
+R_biomass_M_Roseburia_intestinalis_L1_82           38.224315
+R_biomass_M_Bacteroides_uniformis_ATCC_8492        71.404641
+Exchange reactions and fluxes
+                                                             Flux rate
+Reaction ID                                                           
+R_EX_7a_czp(e)_M_Bacteroides_thetaiotaomicron_VPI_5482     1000.000000
+R_EX_7dhcdchol(e)_M_Bacteroides_thetaiotaomicron_VPI_5482  1000.000000
+R_EX_7ocholate(e)_M_Bacteroides_thetaiotaomicron_VPI_5482  1000.000000
+R_EX_C02528(e)_M_Bacteroides_thetaiotaomicron_VPI_5482    -1000.000000
+R_EX_ac(e)_M_Bacteroides_thetaiotaomicron_VPI_5482         -475.675979
+R_EX_acgam(e)_M_Bacteroides_thetaiotaomicron_VPI_5482        -2.679888
+R_EX_adn(e)_M_Bacteroides_thetaiotaomicron_VPI_5482       -1000.000000
+R_EX_anzp(e)_M_Bacteroides_thetaiotaomicron_VPI_5482       -623.212890
+R_EX_biomass(e)_M_Bacteroides_thetaiotaomicron_VPI_5482      17.851160
+R_EX_ca2(e)_M_Bacteroides_thetaiotaomicron_VPI_5482          -0.055276
+R_EX_cgly(e)_M_Bacteroides_thetaiotaomicron_VPI_5482         -1.525123
+R_EX_chlphncl(e)_M_Bacteroides_thetaiotaomicron_VPI_5482   1000.000000
+R_EX_cholate(e)_M_Bacteroides_thetaiotaomicron_VPI_5482   -1000.000000
+R_EX_cit(e)_M_Bacteroides_thetaiotaomicron_VPI_5482          -0.110552
+R_EX_cl(e)_M_Bacteroides_thetaiotaomicron_VPI_5482           -0.055276
+R_EX_co2(e)_M_Bacteroides_thetaiotaomicron_VPI_5482        1000.000000
+R_EX_cobalt2(e)_M_Bacteroides_thetaiotaomicron_VPI_5482      -0.055276
+R_EX_cu2(e)_M_Bacteroides_thetaiotaomicron_VPI_5482          -0.055276
+R_EX_cytd(e)_M_Bacteroides_thetaiotaomicron_VPI_5482         -1.787347
+R_EX_czp(e)_M_Bacteroides_thetaiotaomicron_VPI_5482       -1000.000000
+R_EX_dad_2(e)_M_Bacteroides_thetaiotaomicron_VPI_5482       996.000198
+R_EX_dgsn(e)_M_Bacteroides_thetaiotaomicron_VPI_5482       -996.000198
+R_EX_eltr_m3(e)_M_Bacteroides_thetaiotaomicron_VPI_5482      -0.027638
+R_EX_fe2(e)_M_Bacteroides_thetaiotaomicron_VPI_5482          -0.110552
+R_EX_fe3(e)_M_Bacteroides_thetaiotaomicron_VPI_5482          -0.055276
+R_EX_for(e)_M_Bacteroides_thetaiotaomicron_VPI_5482         347.556235
+R_EX_fru(e)_M_Bacteroides_thetaiotaomicron_VPI_5482        1000.000000
+R_EX_galur(e)_M_Bacteroides_thetaiotaomicron_VPI_5482     -1000.000000
+R_EX_glcur(e)_M_Bacteroides_thetaiotaomicron_VPI_5482         0.027638
+R_EX_gsn(e)_M_Bacteroides_thetaiotaomicron_VPI_5482         994.435552
+R_EX_h(e)_M_Bacteroides_thetaiotaomicron_VPI_5482          1000.000000
+R_EX_h2o(e)_M_Bacteroides_thetaiotaomicron_VPI_5482         768.099980
+R_EX_inulin(e)_M_Bacteroides_thetaiotaomicron_VPI_5482      -33.333333
+R_EX_isobut(e)_M_Bacteroides_thetaiotaomicron_VPI_5482      812.609674
+R_EX_k(e)_M_Bacteroides_thetaiotaomicron_VPI_5482            -0.055276
+R_EX_lac_D(e)_M_Bacteroides_thetaiotaomicron_VPI_5482       563.296855
+R_EX_leu_L(e)_M_Bacteroides_thetaiotaomicron_VPI_5482        -8.221780
+R_EX_lys_L(e)_M_Bacteroides_thetaiotaomicron_VPI_5482        -5.095435
+R_EX_met_L(e)_M_Bacteroides_thetaiotaomicron_VPI_5482        -2.336654
+R_EX_mg2(e)_M_Bacteroides_thetaiotaomicron_VPI_5482          -0.055276
+R_EX_mn2(e)_M_Bacteroides_thetaiotaomicron_VPI_5482          -0.055276
+R_EX_mqn8(e)_M_Bacteroides_thetaiotaomicron_VPI_5482         -0.110552
+R_EX_nac(e)_M_Bacteroides_thetaiotaomicron_VPI_5482          -0.110552
+R_EX_nchlphncl(e)_M_Bacteroides_thetaiotaomicron_VPI_5482 -1000.000000
+R_EX_nh4(e)_M_Bacteroides_thetaiotaomicron_VPI_5482        1000.000000
+R_EX_no2(e)_M_Bacteroides_thetaiotaomicron_VPI_5482        -293.388583
+R_EX_nzp(e)_M_Bacteroides_thetaiotaomicron_VPI_5482         623.212890
+R_EX_o2(e)_M_Bacteroides_thetaiotaomicron_VPI_5482        -1000.000000
+R_EX_pac(e)_M_Bacteroides_thetaiotaomicron_VPI_5482          53.617084
+R_EX_phe_L(e)_M_Bacteroides_thetaiotaomicron_VPI_5482       -56.375445
+R_EX_pheme(e)_M_Bacteroides_thetaiotaomicron_VPI_5482        -0.055276
+R_EX_pi(e)_M_Bacteroides_thetaiotaomicron_VPI_5482          -16.284533
+R_EX_pro_L(e)_M_Bacteroides_thetaiotaomicron_VPI_5482       -54.563874
+R_EX_ptrc(e)_M_Bacteroides_thetaiotaomicron_VPI_5482         -0.055276
+R_EX_pydx(e)_M_Bacteroides_thetaiotaomicron_VPI_5482         -0.055276
+R_EX_q8(e)_M_Bacteroides_thetaiotaomicron_VPI_5482           -0.055276
+R_EX_sb_611855(e)_M_Bacteroides_thetaiotaomicron_VPI_5482     0.027638
+R_EX_so4(e)_M_Bacteroides_thetaiotaomicron_VPI_5482          -0.055276
+R_EX_spmd(e)_M_Bacteroides_thetaiotaomicron_VPI_5482         -0.055276
+R_EX_succ(e)_M_Bacteroides_thetaiotaomicron_VPI_5482       1000.000000
+R_EX_thymd(e)_M_Bacteroides_thetaiotaomicron_VPI_5482        -0.732986
+R_EX_trp_L(e)_M_Bacteroides_thetaiotaomicron_VPI_5482        -0.842610
+R_EX_uri(e)_M_Bacteroides_thetaiotaomicron_VPI_5482          -1.621457
+R_EX_val_L(e)_M_Bacteroides_thetaiotaomicron_VPI_5482      -683.572995
+R_EX_xyl_D(e)_M_Bacteroides_thetaiotaomicron_VPI_5482       -16.689397
+R_EX_zn2(e)_M_Bacteroides_thetaiotaomicron_VPI_5482          -0.055276
+R_EX_3meacmp(e)_M_Bacteroides_uniformis_ATCC_8492             7.468840
+R_EX_4abut(e)_M_Bacteroides_uniformis_ATCC_8492              16.318071
+R_EX_7a_czp(e)_M_Bacteroides_uniformis_ATCC_8492            685.584677
+R_EX_ac(e)_M_Bacteroides_uniformis_ATCC_8492                964.010502
+R_EX_acgam(e)_M_Bacteroides_uniformis_ATCC_8492             -11.884017
+R_EX_adn(e)_M_Bacteroides_uniformis_ATCC_8492             -1000.000000
+R_EX_anzp(e)_M_Bacteroides_uniformis_ATCC_8492            -1000.000000
+R_EX_biomass(e)_M_Bacteroides_uniformis_ATCC_8492            71.404641
+R_EX_ca2(e)_M_Bacteroides_uniformis_ATCC_8492                -0.557627
+R_EX_chlphncl(e)_M_Bacteroides_uniformis_ATCC_8492         1000.000000
+R_EX_cit(e)_M_Bacteroides_uniformis_ATCC_8492                -1.115255
+R_EX_cl(e)_M_Bacteroides_uniformis_ATCC_8492                 -0.557627
+R_EX_co2(e)_M_Bacteroides_uniformis_ATCC_8492              1000.000000
+R_EX_cobalt2(e)_M_Bacteroides_uniformis_ATCC_8492            -0.557627
+R_EX_cu2(e)_M_Bacteroides_uniformis_ATCC_8492                -0.557627
+R_EX_cytd(e)_M_Bacteroides_uniformis_ATCC_8492              -10.112825
+R_EX_czp(e)_M_Bacteroides_uniformis_ATCC_8492              -685.584677
+R_EX_dad_2(e)_M_Bacteroides_uniformis_ATCC_8492             998.884745
+R_EX_dgsn(e)_M_Bacteroides_uniformis_ATCC_8492             -998.884745
+R_EX_duri(e)_M_Bacteroides_uniformis_ATCC_8492               -2.626763
+R_EX_fe2(e)_M_Bacteroides_uniformis_ATCC_8492                -0.557627
+R_EX_fe3(e)_M_Bacteroides_uniformis_ATCC_8492                -0.557627
+R_EX_for(e)_M_Bacteroides_uniformis_ATCC_8492              1000.000000
+R_EX_fru(e)_M_Bacteroides_uniformis_ATCC_8492              1000.000000
+R_EX_fum(e)_M_Bacteroides_uniformis_ATCC_8492              -926.602513
+R_EX_galur(e)_M_Bacteroides_uniformis_ATCC_8492           -1000.000000
+R_EX_glc3meacp(e)_M_Bacteroides_uniformis_ATCC_8492          -7.468840
+R_EX_glcur(e)_M_Bacteroides_uniformis_ATCC_8492             915.634874
+R_EX_gsn(e)_M_Bacteroides_uniformis_ATCC_8492               998.884745
+R_EX_h(e)_M_Bacteroides_uniformis_ATCC_8492                1000.000000
+R_EX_h2o(e)_M_Bacteroides_uniformis_ATCC_8492             -1000.000000
+R_EX_indole(e)_M_Bacteroides_uniformis_ATCC_8492           -497.968155
+R_EX_isobut(e)_M_Bacteroides_uniformis_ATCC_8492            554.117623
+R_EX_k(e)_M_Bacteroides_uniformis_ATCC_8492                  -0.557627
+R_EX_leu_L(e)_M_Bacteroides_uniformis_ATCC_8492             -31.322360
+R_EX_met_L(e)_M_Bacteroides_uniformis_ATCC_8492             -18.690036
+R_EX_mg2(e)_M_Bacteroides_uniformis_ATCC_8492                -0.557627
+R_EX_mn2(e)_M_Bacteroides_uniformis_ATCC_8492                -0.557627
+R_EX_nac(e)_M_Bacteroides_uniformis_ATCC_8492                -1.115255
+R_EX_nchlphncl(e)_M_Bacteroides_uniformis_ATCC_8492       -1000.000000
+R_EX_nh4(e)_M_Bacteroides_uniformis_ATCC_8492               421.369085
+R_EX_no2(e)_M_Bacteroides_uniformis_ATCC_8492               -67.859560
+R_EX_nverp(e)_M_Bacteroides_uniformis_ATCC_8492             908.166034
+R_EX_nverp_glc(e)_M_Bacteroides_uniformis_ATCC_8492        -908.166034
+R_EX_nzp(e)_M_Bacteroides_uniformis_ATCC_8492              1000.000000
+R_EX_o2(e)_M_Bacteroides_uniformis_ATCC_8492              -1000.000000
+R_EX_pac(e)_M_Bacteroides_uniformis_ATCC_8492               987.107178
+R_EX_phe_L(e)_M_Bacteroides_uniformis_ATCC_8492           -1000.000000
+R_EX_pi(e)_M_Bacteroides_uniformis_ATCC_8492                -89.999466
+R_EX_pydx(e)_M_Bacteroides_uniformis_ATCC_8492               -0.557627
+R_EX_so4(e)_M_Bacteroides_uniformis_ATCC_8492                -0.557627
+R_EX_succ(e)_M_Bacteroides_uniformis_ATCC_8492              909.077789
+R_EX_sucr(e)_M_Bacteroides_uniformis_ATCC_8492             -500.000000
+R_EX_trp_L(e)_M_Bacteroides_uniformis_ATCC_8492             494.029690
+R_EX_uri(e)_M_Bacteroides_uniformis_ATCC_8492               -10.015929
+R_EX_val_L(e)_M_Bacteroides_uniformis_ATCC_8492            -492.270091
+R_EX_xyl_D(e)_M_Bacteroides_uniformis_ATCC_8492            -111.692081
+R_EX_zn2(e)_M_Bacteroides_uniformis_ATCC_8492                -0.557627
+R_EX_7a_czp(e)_M_Roseburia_intestinalis_L1_82             -1000.000000
+R_EX_ac(e)_M_Roseburia_intestinalis_L1_82                  1000.000000
+R_EX_ala_L(e)_M_Roseburia_intestinalis_L1_82                 14.268410
+R_EX_alaglu(e)_M_Roseburia_intestinalis_L1_82               -34.125369
+R_EX_alahis(e)_M_Roseburia_intestinalis_L1_82                -3.540451
+R_EX_alathr(e)_M_Roseburia_intestinalis_L1_82                -9.428027
+R_EX_anzp(e)_M_Roseburia_intestinalis_L1_82                 313.549205
+R_EX_biomass(e)_M_Roseburia_intestinalis_L1_82               38.224315
+R_EX_ca2(e)_M_Roseburia_intestinalis_L1_82                   -0.298509
+R_EX_chlphncl(e)_M_Roseburia_intestinalis_L1_82           -1000.000000
+R_EX_cl(e)_M_Roseburia_intestinalis_L1_82                    -0.298509
+R_EX_co2(e)_M_Roseburia_intestinalis_L1_82                  966.257822
+R_EX_cobalt2(e)_M_Roseburia_intestinalis_L1_82               -0.298509
+R_EX_cu2(e)_M_Roseburia_intestinalis_L1_82                   -0.298509
+R_EX_czp(e)_M_Roseburia_intestinalis_L1_82                 1000.000000
+R_EX_etoh(e)_M_Roseburia_intestinalis_L1_82                1000.000000
+R_EX_fe2(e)_M_Roseburia_intestinalis_L1_82                   -0.298509
+R_EX_fe3(e)_M_Roseburia_intestinalis_L1_82                   -0.298509
+R_EX_fru(e)_M_Roseburia_intestinalis_L1_82                  373.738984
+R_EX_fum(e)_M_Roseburia_intestinalis_L1_82                   36.347692
+R_EX_gal(e)_M_Roseburia_intestinalis_L1_82                 -192.937741
+R_EX_glyasn(e)_M_Roseburia_intestinalis_L1_82                -8.970482
+R_EX_glycys(e)_M_Roseburia_intestinalis_L1_82                -3.998217
+R_EX_glyleu(e)_M_Roseburia_intestinalis_L1_82              -974.430754
+R_EX_glymet(e)_M_Roseburia_intestinalis_L1_82                -6.006928
+R_EX_glyphe(e)_M_Roseburia_intestinalis_L1_82                -6.901782
+R_EX_glytyr(e)_M_Roseburia_intestinalis_L1_82                -5.131614
+R_EX_h(e)_M_Roseburia_intestinalis_L1_82                     23.217441
+R_EX_h2o(e)_M_Roseburia_intestinalis_L1_82                -1000.000000
+R_EX_ile_L(e)_M_Roseburia_intestinalis_L1_82                -10.800280
+R_EX_k(e)_M_Roseburia_intestinalis_L1_82                     -0.298509
+R_EX_lac_D(e)_M_Roseburia_intestinalis_L1_82              -1000.000000
+R_EX_lac_L(e)_M_Roseburia_intestinalis_L1_82                837.459587
+R_EX_leu_L(e)_M_Roseburia_intestinalis_L1_82                957.663276
+R_EX_mg2(e)_M_Roseburia_intestinalis_L1_82                   -0.298509
+R_EX_mn2(e)_M_Roseburia_intestinalis_L1_82                   -0.298509
+R_EX_na1(e)_M_Roseburia_intestinalis_L1_82                -1000.000000
+R_EX_nac(e)_M_Roseburia_intestinalis_L1_82                   -0.597018
+R_EX_nchlphncl(e)_M_Roseburia_intestinalis_L1_82           1000.000000
+R_EX_nh4(e)_M_Roseburia_intestinalis_L1_82                  789.887126
+R_EX_nzp(e)_M_Roseburia_intestinalis_L1_82                 -313.549205
+R_EX_pi(e)_M_Roseburia_intestinalis_L1_82                   -56.574616
+R_EX_pnto_R(e)_M_Roseburia_intestinalis_L1_82                -0.597018
+R_EX_pro_L(e)_M_Roseburia_intestinalis_L1_82                 -8.234664
+R_EX_ribflv(e)_M_Roseburia_intestinalis_L1_82                -0.597018
+R_EX_so4(e)_M_Roseburia_intestinalis_L1_82                   -0.298509
+R_EX_sucr(e)_M_Roseburia_intestinalis_L1_82                -373.738984
+R_EX_trp_L(e)_M_Roseburia_intestinalis_L1_82                 -2.108339
+R_EX_ura(e)_M_Roseburia_intestinalis_L1_82                  -11.293374
+R_EX_val_L(e)_M_Roseburia_intestinalis_L1_82                -15.733128
+R_EX_zn2(e)_M_Roseburia_intestinalis_L1_82                   -0.298509
+R_EX_3meacmp[e]                                               7.468840
+R_EX_4abut[e]                                                16.318071
+R_EX_7a_czp[e]                                              685.584677
+R_EX_7dhcdchol[e]                                          1000.000000
+R_EX_7ocholate[e]                                          1000.000000
+R_EX_C02528[e]                                            -1000.000000
+R_EX_ac[e]                                                 1488.334523
+R_EX_acgam[e]                                               -14.563905
+R_EX_adn[e]                                               -2000.000000
+R_EX_anzp[e]                                              -1309.663685
+R_EX_ca2[e]                                                  -0.911412
+R_EX_cgly[e]                                                 -1.525123
+R_EX_chlphncl[e]                                           1000.000000
+R_EX_cholate[e]                                           -1000.000000
+R_EX_cit[e]                                                  -1.225807
+R_EX_cl[e]                                                   -0.911412
+R_EX_co2[e]                                                2966.257822
+R_EX_cobalt2[e]                                              -0.911412
+R_EX_cu2[e]                                                  -0.911412
+R_EX_cytd[e]                                                -11.900172
+R_EX_czp[e]                                                -685.584677
+R_EX_dad_2[e]                                              1994.884943
+R_EX_dgsn[e]                                              -1994.884943
+R_EX_duri[e]                                                 -2.626763
+R_EX_eltr_m3[e]                                              -0.027638
+R_EX_fe2[e]                                                  -0.966689
+R_EX_fe3[e]                                                  -0.911412
+R_EX_for[e]                                                1347.556235
+R_EX_fru[e]                                                2373.738984
+R_EX_fum[e]                                                -890.254821
+R_EX_gal[e]                                                -192.937741
+R_EX_galur[e]                                             -2000.000000
+R_EX_glc3meacp[e]                                            -7.468840
+R_EX_glcur[e]                                               915.662512
+R_EX_gsn[e]                                                1993.320298
+R_EX_h2o[e]                                               -1231.900020
+R_EX_h[e]                                                  2023.217441
+R_EX_indole[e]                                             -497.968155
+R_EX_inulin[e]                                              -33.333333
+R_EX_isobut[e]                                             1366.727298
+R_EX_k[e]                                                    -0.911412
+R_EX_lac_D[e]                                              -436.703145
+R_EX_lac_L[e]                                               837.459587
+R_EX_leu_L[e]                                               918.119136
+R_EX_lys_L[e]                                                -5.095435
+R_EX_met_L[e]                                               -21.026691
+R_EX_mg2[e]                                                  -0.911412
+R_EX_mn2[e]                                                  -0.911412
+R_EX_mqn8[e]                                                 -0.110552
+R_EX_na1[e]                                               -1000.000000
+R_EX_nac[e]                                                  -1.822825
+R_EX_nchlphncl[e]                                         -1000.000000
+R_EX_nh4[e]                                                2211.256210
+R_EX_no2[e]                                                -361.248144
+R_EX_nverp[e]                                               908.166034
+R_EX_nverp_glc[e]                                          -908.166034
+R_EX_nzp[e]                                                1309.663685
+R_EX_o2[e]                                                -2000.000000
+R_EX_pac[e]                                                1040.724262
+R_EX_phe_L[e]                                             -1056.375445
+R_EX_pheme[e]                                                -0.055276
+R_EX_pi[e]                                                 -162.858615
+R_EX_pro_L[e]                                               -62.798538
+R_EX_ptrc[e]                                                 -0.055276
+R_EX_pydx[e]                                                 -0.612904
+R_EX_q8[e]                                                   -0.055276
+R_EX_sb_611855[e]                                             0.027638
+R_EX_so4[e]                                                  -0.911412
+R_EX_spmd[e]                                                 -0.055276
+R_EX_succ[e]                                               1909.077789
+R_EX_sucr[e]                                               -873.738984
+R_EX_thymd[e]                                                -0.732986
+R_EX_trp_L[e]                                               491.078741
+R_EX_ura[e]                                                 -11.293374
+R_EX_uri[e]                                                 -11.637386
+R_EX_val_L[e]                                             -1191.576214
+R_EX_xyl_D[e]                                              -128.381478
+R_EX_zn2[e]                                                  -0.911412
+R_EX_ala_L[e]                                                14.268410
+R_EX_alaglu[e]                                              -34.125369
+R_EX_alahis[e]                                               -3.540451
+R_EX_alathr[e]                                               -9.428027
+R_EX_etoh[e]                                               1000.000000
+R_EX_glyasn[e]                                               -8.970482
+R_EX_glycys[e]                                               -3.998217
+R_EX_glyleu[e]                                             -974.430754
+R_EX_glymet[e]                                               -6.006928
+R_EX_glyphe[e]                                               -6.901782
+R_EX_glytyr[e]                                               -5.131614
+R_EX_ile_L[e]                                               -10.800280
+R_EX_pnto_R[e]                                               -0.597018
+R_EX_ribflv[e]                                               -0.597018
+Iron exchange reactions and fluxes
+                                                     Flux rate
+Reaction ID                                                   
+R_EX_fe2(e)_M_Bacteroides_thetaiotaomicron_VPI_5482  -0.110552
+R_EX_fe2(e)_M_Bacteroides_uniformis_ATCC_8492        -0.557627
+R_EX_fe2(e)_M_Roseburia_intestinalis_L1_82           -0.298509
+R_EX_fe2[e]                                          -0.966689
+SteadyCom
+Community growth: -3.0415925854343495e-12
+M_Bacteroides_thetaiotaomicron_VPI_5482	-24083420467222.902
+M_Bacteroides_uniformis_ATCC_8492	-0.0
+M_Roseburia_intestinalis_L1_82	1.0
+
+Cross-feeding interactions:
+Empty DataFrame
+Columns: [donor, receiver, compound, rate]
+Index: []
+SteadyCom - Variability Analysis
+
+Strain	Min	Max	Variability - 0.1
+M_Bacteroides_thetaiotaomicron_VPI_5482	0.0%	100.0%
+M_Bacteroides_uniformis_ATCC_8492	0.0%	100.0%
+M_Roseburia_intestinalis_L1_82	0.0%	100.0%
+Strain	Min	Max	Variability - 0.2
+M_Bacteroides_thetaiotaomicron_VPI_5482	0.0%	100.0%
+M_Bacteroides_uniformis_ATCC_8492	0.0%	100.0%
+M_Roseburia_intestinalis_L1_82	0.0%	100.0%
+Strain	Min	Max	Variability - 0.3
+M_Bacteroides_thetaiotaomicron_VPI_5482	0.0%	100.0%
+M_Bacteroides_uniformis_ATCC_8492	0.0%	100.0%
+M_Roseburia_intestinalis_L1_82	0.0%	100.0%
+Strain	Min	Max	Variability - 0.4
+M_Bacteroides_thetaiotaomicron_VPI_5482	0.0%	100.0%
+M_Bacteroides_uniformis_ATCC_8492	0.0%	100.0%
+M_Roseburia_intestinalis_L1_82	0.0%	100.0%
+Strain	Min	Max	Variability - 0.5
+M_Bacteroides_thetaiotaomicron_VPI_5482	0.0%	100.0%
+M_Bacteroides_uniformis_ATCC_8492	0.0%	100.0%
+M_Roseburia_intestinalis_L1_82	0.0%	100.0%
+Strain	Min	Max	Variability - 0.6
+M_Bacteroides_thetaiotaomicron_VPI_5482	0.0%	100.0%
+M_Bacteroides_uniformis_ATCC_8492	0.0%	100.0%
+M_Roseburia_intestinalis_L1_82	0.0%	100.0%
+Strain	Min	Max	Variability - 0.7
+M_Bacteroides_thetaiotaomicron_VPI_5482	0.0%	100.0%
+M_Bacteroides_uniformis_ATCC_8492	0.0%	100.0%
+M_Roseburia_intestinalis_L1_82	0.0%	100.0%
+Strain	Min	Max	Variability - 0.8
+M_Bacteroides_thetaiotaomicron_VPI_5482	0.0%	100.0%
+M_Bacteroides_uniformis_ATCC_8492	0.0%	100.0%
+M_Roseburia_intestinalis_L1_82	0.0%	100.0%
+Strain	Min	Max	Variability - 0.9
+M_Bacteroides_thetaiotaomicron_VPI_5482	0.0%	100.0%
+M_Bacteroides_uniformis_ATCC_8492	0.0%	100.0%
+M_Roseburia_intestinalis_L1_82	0.0%	100.0%
+Strain	Min	Max	Variability - 1.0
+M_Bacteroides_thetaiotaomicron_VPI_5482	0.0%	100.0%
+M_Bacteroides_uniformis_ATCC_8492	0.0%	100.0%
+M_Roseburia_intestinalis_L1_82	0.0%	100.0%
+
+##################################
+COMMUNITY ANALYSIS
+##################################
+SMETANA - Species Metabolic Interaction Analysis
+SCS (species coupling score):
+                                         M_Bacteroides_thetaiotaomicron_VPI_5482  M_Bacteroides_uniformis_ATCC_8492  M_Roseburia_intestinalis_L1_82
+M_Bacteroides_uniformis_ATCC_8492                                            0.0                                NaN                             0.0
+M_Roseburia_intestinalis_L1_82                                               0.0                                0.0                             NaN
+M_Bacteroides_thetaiotaomicron_VPI_5482                                      NaN                                0.0                             0.0
+MUS (metabolite uptake score):
+                       M_Bacteroides_thetaiotaomicron_VPI_5482  M_Bacteroides_uniformis_ATCC_8492  M_Roseburia_intestinalis_L1_82
+12ppd_S[e]                                                0.00                                NaN                             NaN
+1hibup_S[e]                                               0.00                                0.0                            0.00
+1hibupglu_S[e]                                            0.00                                0.0                            0.00
+1hmdgluc[e]                                               0.00                                0.0                            0.00
+1ohmdz[e]                                                 0.00                                0.0                            0.00
+2hatvacid[e]                                              0.00                                0.0                            0.00
+2hatvacidgluc[e]                                          0.00                                0.0                            0.00
+2hatvlac[e]                                               0.00                                0.0                            0.00
+2hatvlacgluc[e]                                           0.00                                0.0                            0.00
+2hibup_S[e]                                               0.00                                0.0                            0.00
+2hibupglu_S[e]                                            0.00                                0.0                            0.00
+2oh_cbz[e]                                                0.00                                0.0                            0.00
+2oh_cbz_glc[e]                                            0.00                                0.0                            0.00
+2oh_mtz[e]                                                0.00                                0.0                            0.00
+2oh_mtz_glc[e]                                            0.00                                0.0                            0.00
+2omfuc[e]                                                 0.00                                NaN                             NaN
+2omxyl[e]                                                 0.00                                NaN                             NaN
+3ddlhept[e]                                               0.00                                NaN                             NaN
+3hibup_S[e]                                               0.00                                0.0                            0.00
+3hibupglu_S[e]                                            0.00                                0.0                            0.00
+3meacmp[e]                                                0.00                                0.0                            0.00
+3oh_cbz[e]                                                0.00                                0.0                            0.00
+3oh_cbz_glc[e]                                            0.00                                0.0                            0.00
+3oh_dlor[e]                                               0.00                                0.0                            0.00
+3oh_dlor_glc[e]                                           0.00                                0.0                            0.00
+3oh_mdea[e]                                               0.00                                0.0                            0.00
+3oh_mdea_glc[e]                                           0.00                                0.0                            0.00
+3oh_mxn[e]                                                0.00                                0.0                            0.00
+3oh_mxn_glc[e]                                            0.00                                0.0                            0.00
+4abut[e]                                                  0.00                                0.0                             NaN
+4dh_tpno[e]                                               0.00                                0.0                            0.00
+4dh_tpno_1glc[e]                                          0.00                                0.0                            0.00
+4hmdgluc[e]                                               0.00                                0.0                            0.00
+4oh_dcf[e]                                                0.00                                0.0                            0.00
+4oh_dcf_glc[e]                                            0.00                                0.0                            0.00
+4oh_kp[e]                                                 0.00                                0.0                            0.00
+4oh_kp_glc[e]                                             0.00                                0.0                            0.00
+4oh_levole[e]                                             0.00                                0.0                            0.00
+4oh_levole_glc[e]                                         0.00                                0.0                            0.00
+4oh_meth[e]                                               0.00                                0.0                            0.00
+4oh_meth_glc[e]                                           0.00                                0.0                            0.00
+4oh_propl[e]                                              0.00                                0.0                            0.00
+4oh_propl_glc[e]                                          0.00                                0.0                            0.00
+4oh_trz[e]                                                0.00                                0.0                            0.00
+4oh_trz_glc[e]                                            0.00                                0.0                            0.00
+4oh_vcz[e]                                                0.00                                0.0                            0.00
+4oh_vcz_glc[e]                                            0.00                                0.0                            0.00
+4ohmdz[e]                                                 0.00                                0.0                            0.00
+5oh_sulfp[e]                                              0.00                                0.0                            0.00
+5oh_sulfp_glc[e]                                          0.00                                0.0                            0.00
+5ohfvs[e]                                                 0.00                                0.0                            0.00
+5ohfvsglu[e]                                              0.00                                0.0                            0.00
+6bhglz[e]                                                 0.00                                0.0                            0.00
+6bhglzglc[e]                                              0.00                                0.0                            0.00
+6ohfvs[e]                                                 0.00                                0.0                            0.00
+6ohfvsglu[e]                                              0.00                                0.0                            0.00
+7a_czp[e]                                                 0.00                                0.0                            0.00
+7bhglz[e]                                                 0.00                                0.0                            0.00
+7bhglzglc[e]                                              0.00                                0.0                            0.00
+7dhcdchol[e]                                              0.00                                NaN                             NaN
+7ocholate[e]                                              0.00                                NaN                             NaN
+7oh_efv[e]                                                0.00                                0.0                            0.00
+7oh_efv_glc[e]                                            0.00                                0.0                            0.00
+814dioh_efv[e]                                            0.00                                0.0                            0.00
+814dioh_efv_glc[e]                                        0.00                                0.0                            0.00
+8oh_efv[e]                                                0.00                                0.0                            0.00
+8oh_efv_glc[e]                                            0.00                                0.0                            0.00
+C02528[e]                                                 0.00                                0.0                            0.00
+N_oh_phtn[e]                                              0.00                                0.0                            0.00
+N_oh_phtn_glc[e]                                          0.00                                0.0                            0.00
+R_6oh_warf[e]                                             0.00                                0.0                            0.00
+R_6oh_warf_glc[e]                                         0.00                                0.0                            0.00
+R_7oh_warf[e]                                             0.00                                0.0                            0.00
+R_7oh_warf_glc[e]                                         0.00                                0.0                            0.00
+R_8oh_warf[e]                                             0.00                                0.0                            0.00
+R_8oh_warf_glc[e]                                         0.00                                0.0                            0.00
+S_4oh_warf[e]                                             0.00                                0.0                            0.00
+S_4oh_warf_glc[e]                                         0.00                                0.0                            0.00
+S_6oh_warf[e]                                             0.00                                0.0                            0.00
+S_6oh_warf_glc[e]                                         0.00                                0.0                            0.00
+Ser_Thr[e]                                                0.00                                NaN                             NaN
+T_antigen[e]                                              0.00                                NaN                             NaN
+Tn_antigen[e]                                             0.00                                NaN                             NaN
+Tyr_ggn[e]                                                0.00                                0.0                            0.00
+ac[e]                                                     0.00                                0.0                            0.00
+ac_amn_b_gly[e]                                           0.00                                0.0                            0.00
+ac_amn_b_gly_glc[e]                                       0.00                                0.0                            0.00
+acerA[e]                                                  0.00                                NaN                             NaN
+acgal[e]                                                  0.00                                0.0                             NaN
+acgalglcur[e]                                             0.00                                NaN                             NaN
+acgalidour[e]                                             0.00                                NaN                             NaN
+acgalidour2s[e]                                           0.00                                NaN                             NaN
+acgam[e]                                                  0.00                                0.0                            0.29
+acmp[e]                                                   0.00                                0.0                            0.00
+acmp_glc[e]                                               0.00                                0.0                            0.00
+acmpglu[e]                                                0.00                                0.0                            0.00
+acnam[e]                                                  0.00                                NaN                             NaN
+adn[e]                                                    0.00                                0.0                             NaN
+adocbl[e]                                                 0.00                                0.0                            0.00
+alpz_4oh[e]                                               0.00                                0.0                            0.00
+alpz_4oh_glc[e]                                           0.00                                0.0                            0.00
+alpz_aoh[e]                                               0.00                                0.0                            0.00
+alpz_aoh_glc[e]                                           0.00                                0.0                            0.00
+am14[e]                                                   0.00                                0.0                            0.00
+am14_glc[e]                                               0.00                                0.0                            0.00
+am1ccs[e]                                                 0.00                                0.0                            0.00
+am1cglc[e]                                                0.00                                0.0                            0.00
+am5[e]                                                    0.00                                0.0                            0.00
+am5_glc[e]                                                0.00                                0.0                            0.00
+am6[e]                                                    0.00                                0.0                            0.00
+am6_glc[e]                                                0.00                                0.0                            0.00
+amio[e]                                                   0.00                                0.0                            0.00
+amio_c[e]                                                 0.00                                0.0                            0.00
+amio_c_glc[e]                                             0.00                                0.0                            0.00
+amio_glc[e]                                               0.00                                0.0                            0.00
+amn_b_gly[e]                                              0.00                                0.0                            0.00
+amn_b_gly_glc[e]                                          0.00                                0.0                            0.00
+amntd_m6[e]                                               0.00                                0.0                            0.00
+amntd_m6_glc[e]                                           0.00                                0.0                            0.00
+amylopect900[e]                                           0.03                                0.0                            0.16
+amylose300[e]                                             0.01                                NaN                             NaN
+anzp[e]                                                   0.00                                0.0                            0.00
+apio_D[e]                                                 0.00                                NaN                             NaN
+arab_L[e]                                                 0.00                                0.0                            0.00
+arabinan101[e]                                            0.00                                NaN                             NaN
+arabinogal[e]                                             0.00                                0.0                             NaN
+arabinoxyl[e]                                             0.00                                NaN                            0.00
+arabttr[e]                                                0.00                                0.0                            0.00
+arsenb[e]                                                 0.00                                NaN                             NaN
+atvacid[e]                                                0.00                                0.0                            0.00
+atvacylgluc[e]                                            0.00                                0.0                            0.00
+atvethgluc[e]                                             0.00                                0.0                            0.00
+atvlac[e]                                                 0.00                                0.0                            0.00
+atvlacgluc[e]                                             0.00                                0.0                            0.00
+bhpm[e]                                                   0.00                                0.0                            0.00
+bhpm_glc[e]                                               0.00                                0.0                            0.00
+bilr_355[e]                                               0.00                                0.0                            0.00
+bilr_M10[e]                                               0.00                                0.0                            0.00
+bilr_M12[e]                                               0.00                                0.0                            0.00
+bilr_M14[e]                                               0.00                                0.0                            0.00
+bilr_M15[e]                                               0.00                                0.0                            0.00
+bilr_M16[e]                                               0.00                                0.0                            0.00
+bilr_M7[e]                                                0.00                                0.0                            0.00
+biomass[c]                                                0.00                                0.0                            0.00
+brv[e]                                                    0.00                                0.0                             NaN
+bsn[e]                                                    0.00                                0.0                            0.00
+bsn_glc[e]                                                0.00                                0.0                            0.00
+bvu[e]                                                    0.00                                0.0                             NaN
+bz[e]                                                     0.00                                0.0                            0.00
+bz_glc[e]                                                 0.00                                0.0                            0.00
+bzam[e]                                                   0.00                                NaN                             NaN
+ca2[e]                                                    1.00                                1.0                            1.00
+caribup_s[e]                                              0.00                                0.0                            0.00
+caribupglu_S[e]                                           0.00                                0.0                            0.00
+cbl1[e]                                                   0.00                                0.0                            0.00
+cbl2[e]                                                   0.00                                0.0                            0.00
+cbz[e]                                                    0.00                                0.0                            0.00
+cbz_glc[e]                                                0.00                                0.0                            0.00
+cd2[e]                                                    0.00                                0.0                            0.00
+cd6168[e]                                                 0.00                                0.0                            0.00
+cd6168_glc[e]                                             0.00                                0.0                            0.00
+cgly[e]                                                   0.01                                NaN                            0.53
+chlphncl[e]                                               0.00                                0.0                            0.00
+chlphncl_glc[e]                                           0.00                                0.0                            0.00
+cholate[e]                                                0.00                                0.0                            0.00
+cit[e]                                                    0.00                                0.0                            0.00
+cl[e]                                                     1.00                                1.0                            1.00
+clcxb[e]                                                  0.00                                0.0                            0.00
+clcxb_c[e]                                                0.00                                0.0                            0.00
+clcxb_c_glc[e]                                            0.00                                0.0                            0.00
+clcxb_glc[e]                                              0.00                                0.0                            0.00
+clobi_c[e]                                                0.00                                0.0                            0.00
+clobi_glc[e]                                              0.00                                0.0                            0.00
+co2[e]                                                    0.00                                0.0                            0.00
+cobalt2[e]                                                1.00                                1.0                            1.00
+core2[e]                                                  0.00                                NaN                             NaN
+core3[e]                                                  0.00                                NaN                             NaN
+core4[e]                                                  0.00                                NaN                             NaN
+core5[e]                                                  0.00                                NaN                             NaN
+core6[e]                                                  0.00                                NaN                             NaN
+core7[e]                                                  0.00                                NaN                             NaN
+core8[e]                                                  0.00                                NaN                             NaN
+cro4[e]                                                   0.00                                0.0                             NaN
+crvsm1[e]                                                 0.00                                0.0                            0.00
+crvsm23[e]                                                0.00                                0.0                            0.00
+cspg_a[e]                                                 0.04                                NaN                             NaN
+cspg_a_degr[e]                                            0.01                                NaN                             NaN
+cspg_ab_rest[e]                                           0.00                                NaN                             NaN
+cspg_b[e]                                                 0.04                                NaN                             NaN
+cspg_b_degr[e]                                            0.02                                NaN                             NaN
+cspg_c[e]                                                 0.05                                NaN                             NaN
+cspg_c_degr[e]                                            0.00                                NaN                             NaN
+cspg_c_rest[e]                                            0.00                                NaN                             NaN
+ctbt[e]                                                   0.00                                NaN                             NaN
+cu2[e]                                                    1.00                                1.0                            1.00
+cvm1gluc[e]                                               0.00                                0.0                            0.00
+cvm23gluc[e]                                              0.00                                0.0                            0.00
+cytd[e]                                                   0.00                                0.0                             NaN
+czp[e]                                                    0.00                                0.0                            0.00
+daa[e]                                                    0.00                                0.0                            0.00
+daa_glc[e]                                                0.00                                0.0                            0.00
+dad_2[e]                                                  0.00                                0.0                             NaN
+dcf[e]                                                    0.00                                0.0                            0.00
+dcf_glc[e]                                                0.00                                0.0                            0.00
+dcyt[e]                                                   0.00                                0.0                             NaN
+ddea[e]                                                   0.00                                0.0                            0.00
+ddea_glc[e]                                               0.00                                0.0                            0.00
+des_astzl[e]                                              0.00                                0.0                            0.00
+des_astzl_glc[e]                                          0.00                                0.0                            0.00
+dextran40[e]                                              0.00                                0.0                             NaN
+dextrin[e]                                                0.00                                NaN                            0.00
+dfdcytd[e]                                                0.00                                0.0                            0.00
+dfduri[e]                                                 0.00                                0.0                            0.00
+dgsn[e]                                                   0.00                                0.0                             NaN
+digoxin[e]                                                0.00                                0.0                            0.00
+digoxin_glc[e]                                            0.00                                0.0                            0.00
+din[e]                                                    0.00                                0.0                             NaN
+dlb[e]                                                    0.00                                0.0                            0.00
+dlb_glc[e]                                                0.00                                0.0                            0.00
+dma[e]                                                    0.00                                NaN                             NaN
+dnpz_5des[e]                                              0.00                                0.0                            0.00
+dnpz_6des[e]                                              0.00                                0.0                            0.00
+dnpz_m11[e]                                               0.00                                0.0                            0.00
+dnpz_m12[e]                                               0.00                                0.0                            0.00
+dnpz_m13[e]                                               0.00                                0.0                            0.00
+dnpz_m14[e]                                               0.00                                0.0                            0.00
+dnpz_m9[e]                                                0.00                                0.0                            0.00
+doh_etr[e]                                                0.00                                0.0                            0.00
+doh_etr_glc[e]                                            0.00                                0.0                            0.00
+doh_vcz[e]                                                0.00                                0.0                            0.00
+doh_vcz_glc[e]                                            0.00                                0.0                            0.00
+dsT_antigen[e]                                            0.00                                NaN                             NaN
+duri[e]                                                   0.00                                0.0                             NaN
+dxo[e]                                                    0.00                                0.0                            0.00
+dxo_glc[e]                                                0.00                                0.0                            0.00
+efv[e]                                                    0.00                                0.0                            0.00
+efv_glc[e]                                                0.00                                0.0                            0.00
+eltr[e]                                                   0.00                                0.0                            0.00
+eltr_glc[e]                                               0.00                                0.0                            0.00
+eltr_m3[e]                                                0.00                                0.0                            0.00
+eltr_m4[e]                                                0.00                                0.0                            0.00
+estradiol[e]                                              0.00                                0.0                            0.00
+estradiolglc[e]                                           0.00                                0.0                            0.00
+estriol[e]                                                0.00                                0.0                            0.00
+estriolglc[e]                                             0.00                                0.0                            0.00
+estrone[e]                                                0.00                                0.0                            0.00
+estroneglc[e]                                             0.00                                0.0                            0.00
+eztmb[e]                                                  0.00                                0.0                            0.00
+eztmb_glc[e]                                              0.00                                0.0                            0.00
+f1a[e]                                                    0.00                                NaN                             NaN
+fe2[e]                                                    1.00                                1.0                            1.00
+fe3[e]                                                    0.06                                0.0                            1.00
+for[e]                                                    0.00                                0.0                            0.00
+fru[e]                                                    0.00                                0.0                            0.00
+fuc_L[e]                                                  0.00                                0.0                             NaN
+fum[e]                                                    0.00                                0.0                            0.00
+fvs[e]                                                    0.00                                0.0                            0.00
+fvsgluc[e]                                                0.00                                0.0                            0.00
+fvstet[e]                                                 0.00                                0.0                            0.00
+fvstetglu[e]                                              0.00                                0.0                            0.00
+gal[e]                                                    0.00                                0.0                            0.00
+galactan[e]                                               0.00                                NaN                             NaN
+galt[e]                                                   0.00                                0.0                             NaN
+galur[e]                                                  0.00                                0.0                            0.00
+gam[e]                                                    0.00                                0.0                            0.18
+gam26s[e]                                                 0.01                                NaN                             NaN
+gbbtn[e]                                                  0.00                                NaN                             NaN
+glc3meacp[e]                                              0.00                                0.0                            0.00
+glc_D[e]                                                  0.00                                0.0                            0.00
+glcur[e]                                                  0.00                                0.0                            0.00
+gltmn[e]                                                  0.00                                0.0                            0.00
+gltmn_glc[e]                                              0.00                                0.0                            0.00
+glu_L[e]                                                  0.00                                NaN                            0.00
+glyb[e]                                                   0.00                                NaN                             NaN
+glygn2[e]                                                 0.00                                0.0                            0.00
+glygn4[e]                                                 0.00                                0.0                            0.00
+glygn5[e]                                                 0.00                                0.0                            0.11
+gmfl[e]                                                   0.00                                0.0                            0.00
+gmfl_glc[e]                                               0.00                                0.0                            0.00
+gmfl_mI[e]                                                0.00                                0.0                            0.00
+gmfl_mII[e]                                               0.00                                0.0                            0.00
+gmfl_mIII[e]                                              0.00                                0.0                            0.00
+gmfl_mIII_glc[e]                                          0.00                                0.0                            0.00
+gmfl_mII_glc[e]                                           0.00                                0.0                            0.00
+gmfl_mI_glc[e]                                            0.00                                0.0                            0.00
+gncore1[e]                                                0.00                                NaN                             NaN
+gncore2[e]                                                0.00                                NaN                             NaN
+gsn[e]                                                    0.00                                0.0                             NaN
+gtacmp[e]                                                 0.00                                0.0                            0.00
+h[e]                                                      0.00                                0.0                            0.00
+h2[e]                                                     0.00                                0.0                            0.00
+h2o[e]                                                    0.00                                0.0                            0.00
+ha[e]                                                     0.00                                NaN                             NaN
+ha_deg1[e]                                                0.00                                NaN                             NaN
+ha_pre1[e]                                                0.00                                NaN                             NaN
+hg2[e]                                                    0.00                                0.0                            0.00
+homogal[e]                                                0.00                                NaN                             NaN
+hspg[e]                                                   0.40                                NaN                             NaN
+hspg_degr_1[e]                                            0.05                                NaN                             NaN
+hspg_degr_10[e]                                           0.01                                NaN                             NaN
+hspg_degr_11[e]                                           0.00                                NaN                             NaN
+hspg_degr_12[e]                                           0.00                                NaN                             NaN
+hspg_degr_13[e]                                           0.00                                NaN                             NaN
+hspg_degr_14[e]                                           0.00                                NaN                             NaN
+hspg_degr_15[e]                                           0.00                                NaN                             NaN
+hspg_degr_2[e]                                            0.05                                NaN                             NaN
+hspg_degr_3[e]                                            0.06                                NaN                             NaN
+hspg_degr_4[e]                                            0.06                                NaN                             NaN
+hspg_degr_5[e]                                            0.04                                NaN                             NaN
+hspg_degr_6[e]                                            0.00                                NaN                             NaN
+hspg_degr_7[e]                                            0.04                                NaN                             NaN
+hspg_degr_8[e]                                            0.03                                NaN                             NaN
+hspg_degr_9[e]                                            0.03                                NaN                             NaN
+hspg_rest[e]                                              0.00                                NaN                             NaN
+hst[e]                                                    0.00                                0.0                            0.00
+hst_37_diglc[e]                                           0.00                                0.0                            0.00
+hst_3_glc[e]                                              0.00                                0.0                            0.00
+hst_3_s[e]                                                0.00                                0.0                            0.00
+hst_3glc_7s[e]                                            0.00                                0.0                            0.00
+hst_7_glc[e]                                              0.00                                0.0                            0.00
+hst_7_s[e]                                                0.00                                0.0                            0.00
+hst_7glc_3s[e]                                            0.00                                0.0                            0.00
+ibup_S[e]                                                 0.00                                0.0                            0.00
+ibupgluc[e]                                               0.00                                0.0                            0.00
+idour[e]                                                  0.00                                NaN                             NaN
+imn[e]                                                    0.00                                0.0                            0.00
+imn_glc[e]                                                0.00                                0.0                            0.00
+indole[e]                                                 0.00                                0.0                             NaN
+ins[e]                                                    0.00                                0.0                             NaN
+inulin[e]                                                 0.00                                0.0                            0.04
+inv[e]                                                    0.00                                0.0                            0.00
+inv_m1[e]                                                 0.00                                0.0                            0.00
+isobut[e]                                                 0.00                                0.0                             NaN
+isocapr[e]                                                0.00                                0.0                             NaN
+isosorbide_5mn[e]                                         0.00                                0.0                            0.00
+isosorbide_5mn_glc[e]                                     0.00                                0.0                            0.00
+isoval[e]                                                 0.00                                0.0                             NaN
+k[e]                                                      1.00                                1.0                            1.00
+kdo[e]                                                    0.00                                NaN                             NaN
+kesto[e]                                                  0.00                                0.0                            0.00
+kestopt[e]                                                0.00                                0.0                            0.00
+kestottr[e]                                               0.00                                0.0                            0.00
+kprofen[e]                                                0.00                                0.0                            0.00
+kprofen_glc[e]                                            0.00                                0.0                            0.00
+lac_D[e]                                                  0.00                                0.0                            0.00
+lac_L[e]                                                  0.00                                NaN                            0.00
+lactl[e]                                                  0.00                                0.0                            0.00
+lcts[e]                                                   0.00                                0.0                             NaN
+leu_L[e]                                                  0.00                                0.0                            0.00
+levan1000[e]                                              0.01                                NaN                             NaN
+levanb[e]                                                 0.00                                NaN                             NaN
+levanttr[e]                                               0.00                                NaN                             NaN
+levantttr[e]                                              0.00                                NaN                             NaN
+lst4exp[e]                                                0.00                                0.0                            0.00
+lstn[e]                                                   0.00                                0.0                            0.00
+lstn1gluc[e]                                              0.00                                0.0                            0.00
+lstnm4[e]                                                 0.00                                0.0                            0.00
+lstnm7[e]                                                 0.00                                0.0                            0.00
+lys_L[e]                                                  1.00                                NaN                             NaN
+malt[e]                                                   0.00                                0.0                            0.00
+malttr[e]                                                 0.00                                0.0                            0.00
+man[e]                                                    0.00                                0.0                            0.00
+mannan[e]                                                 0.00                                NaN                             NaN
+mantr[e]                                                  0.00                                0.0                            0.00
+mdz[e]                                                    0.00                                0.0                            0.00
+mdz_glc[e]                                                0.00                                0.0                            0.00
+mdzglc[e]                                                 0.00                                0.0                            0.00
+melib[e]                                                  0.00                                0.0                            0.00
+meoh[e]                                                   0.00                                0.0                             NaN
+met_L[e]                                                  1.00                                1.0                            0.00
+mg2[e]                                                    1.00                                1.0                            1.00
+miso[e]                                                   0.00                                0.0                            0.00
+miso_glc[e]                                               0.00                                0.0                            0.00
+mn2[e]                                                    1.00                                1.0                            1.00
+mqn8[e]                                                   0.00                                0.0                             NaN
+mrphn[e]                                                  0.00                                0.0                            0.00
+mrphn_3glc[e]                                             0.00                                0.0                            0.00
+mrphn_6glc[e]                                             0.00                                0.0                            0.00
+mtz[e]                                                    0.00                                0.0                            0.00
+mtz_glc[e]                                                0.00                                0.0                            0.00
+na1[e]                                                    0.00                                0.0                            0.00
+nac[e]                                                    0.00                                0.0                            0.32
+nchlphncl[e]                                              0.00                                0.0                            0.00
+nh4[e]                                                    0.00                                0.0                            0.00
+no2[e]                                                    0.00                                0.0                             NaN
+nsldp_m5[e]                                               0.00                                0.0                            0.00
+nsldp_m5_glc[e]                                           0.00                                0.0                            0.00
+nverp[e]                                                  0.00                                0.0                            0.00
+nverp_glc[e]                                              0.00                                0.0                            0.00
+nzp[e]                                                    0.00                                0.0                            0.00
+o2[e]                                                     1.00                                1.0                            0.68
+odsm_egltmn[e]                                            0.00                                0.0                            0.00
+odsm_egltmn_glc[e]                                        0.00                                0.0                            0.00
+odsm_gltmn[e]                                             0.00                                0.0                            0.00
+odsm_gltmn_glc[e]                                         0.00                                0.0                            0.00
+oh_etr[e]                                                 0.00                                0.0                            0.00
+oh_etr_glc[e]                                             0.00                                0.0                            0.00
+oh_pbl[e]                                                 0.00                                0.0                            0.00
+oh_pbl_glc[e]                                             0.00                                0.0                            0.00
+pac[e]                                                    0.00                                0.0                             NaN
+pb[e]                                                     0.00                                0.0                            0.00
+pcresol[e]                                                0.00                                0.0                            0.00
+pect[e]                                                   0.00                                NaN                             NaN
+pecticgal[e]                                              0.00                                0.0                             NaN
+phe_L[e]                                                  0.00                                0.0                            0.00
+pheme[e]                                                  1.00                                NaN                             NaN
+phenol[e]                                                 0.00                                NaN                             NaN
+phppa[e]                                                  0.00                                0.0                            0.00
+phppa_glc[e]                                              0.00                                0.0                            0.00
+phtn_glc[e]                                               0.00                                0.0                            0.00
+pi[e]                                                     0.46                                0.7                            1.00
+pime[e]                                                   0.00                                0.0                            0.00
+ppa[e]                                                    0.00                                0.0                             NaN
+ppi[e]                                                    0.00                                0.0                             NaN
+pro_L[e]                                                  1.00                                NaN                            0.00
+prob[e]                                                   0.00                                0.0                            0.00
+prob_glc[e]                                               0.00                                0.0                            0.00
+pront[e]                                                  0.00                                0.0                            0.00
+pront_glc[e]                                              0.00                                0.0                            0.00
+propl[e]                                                  0.00                                0.0                            0.00
+propl_glc[e]                                              0.00                                0.0                            0.00
+prx_mI[e]                                                 0.00                                0.0                            0.00
+prx_mII[e]                                                0.00                                0.0                            0.00
+prx_mII_glc[e]                                            0.00                                0.0                            0.00
+prx_mI_glc[e]                                             0.00                                0.0                            0.00
+psics_D[e]                                                0.00                                0.0                             NaN
+ptrc[e]                                                   0.00                                0.0                            0.00
+ptvst[e]                                                  0.00                                0.0                            0.00
+ptvstgluc[e]                                              0.00                                0.0                            0.00
+pullulan1200[e]                                           0.01                                0.0                            0.05
+pvs[e]                                                    0.00                                0.0                            0.00
+pvsgluc[e]                                                0.00                                0.0                            0.00
+pydam[e]                                                  0.35                                0.0                             NaN
+pydx[e]                                                   0.31                                0.0                             NaN
+pydxn[e]                                                  0.34                                0.0                            0.00
+q8[e]                                                     1.00                                NaN                             NaN
+r406[e]                                                   0.00                                0.0                            0.00
+r406_glc[e]                                               0.00                                0.0                            0.00
+r529[e]                                                   0.00                                0.0                            0.00
+r529_glc[e]                                               0.00                                0.0                            0.00
+r788[e]                                                   0.54                                0.3                             NaN
+raffin[e]                                                 0.00                                0.0                            0.01
+regfnb[e]                                                 0.00                                0.0                            0.00
+regfnb_glc[e]                                             0.00                                0.0                            0.00
+rep[e]                                                    0.00                                0.0                            0.00
+rep_glc[e]                                                0.00                                0.0                            0.00
+rhamnogalurI[e]                                           0.00                                NaN                             NaN
+rhamnogalurII[e]                                          0.00                                NaN                             NaN
+rib_D[e]                                                  0.00                                0.0                            0.00
+rmn[e]                                                    0.00                                0.0                             NaN
+rpn_104557[e]                                             0.00                                0.0                            0.00
+rpn_104557_cb_glc[e]                                      0.00                                0.0                            0.00
+rpn_96990[e]                                              0.00                                0.0                            0.00
+rpn_96990_glc[e]                                          0.00                                0.0                            0.00
+rpn_oh[e]                                                 0.00                                0.0                            0.00
+rpn_oh_glc[e]                                             0.00                                0.0                            0.00
+rsv[e]                                                    0.00                                0.0                            0.00
+rsvgluc[e]                                                0.00                                0.0                            0.00
+sT_antigen[e]                                             0.00                                NaN                             NaN
+sTn_antigen[e]                                            0.00                                NaN                             NaN
+sb_611855[e]                                              0.00                                0.0                            0.00
+sb_y[e]                                                   0.00                                0.0                            0.00
+sch_488128[e]                                             0.00                                0.0                            0.00
+sch_57871[e]                                              0.00                                0.0                            0.00
+sch_57871_glc[e]                                          0.00                                0.0                            0.00
+sfnd_1689[e]                                              0.00                                0.0                            0.00
+sfnd_1689_glc[e]                                          0.00                                0.0                            0.00
+sftz[e]                                                   0.00                                0.0                            0.00
+sftz_glc[e]                                               0.00                                0.0                            0.00
+simvgluc[e]                                               0.00                                0.0                            0.00
+smap[e]                                                   0.00                                0.0                            0.00
+smap_glc[e]                                               0.00                                0.0                            0.00
+smvacid[e]                                                0.00                                0.0                            0.00
+sn38[e]                                                   0.00                                0.0                            0.00
+sn38g[e]                                                  0.00                                0.0                            0.00
+so4[e]                                                    0.06                                1.0                            1.00
+spmd[e]                                                   1.00                                0.0                            0.00
+spz[e]                                                    0.00                                0.0                            0.00
+spz_glc[e]                                                0.00                                0.0                            0.00
+spz_sfn[e]                                                0.00                                0.0                            0.00
+spz_sfn_glc[e]                                            0.00                                0.0                            0.00
+srv[e]                                                    0.00                                0.0                             NaN
+stg[e]                                                    0.00                                0.0                            0.00
+stg_m3[e]                                                 0.00                                0.0                            0.00
+stg_m4[e]                                                 0.00                                0.0                            0.00
+strch1[e]                                                 0.00                                NaN                            0.01
+strch2[e]                                                 0.00                                NaN                            0.00
+stys[e]                                                   0.00                                0.0                            0.00
+succ[e]                                                   0.00                                0.0                            0.00
+sucr[e]                                                   0.00                                0.0                            0.00
+tat[e]                                                    0.00                                0.0                            0.00
+tgz[e]                                                    0.00                                0.0                            0.00
+tgz_glc[e]                                                0.00                                0.0                            0.00
+thsacmp[e]                                                0.00                                0.0                            0.00
+thymd[e]                                                  0.00                                0.0                             NaN
+tlf_a[e]                                                  0.00                                0.0                            0.00
+tlf_a_1a[e]                                               0.00                                0.0                            0.00
+tlf_a_1b[e]                                               0.00                                0.0                            0.00
+tlf_a_1x[e]                                               0.00                                0.0                            0.00
+tlf_a_2[e]                                                0.00                                0.0                            0.00
+tlf_a_2a[e]                                               0.00                                0.0                            0.00
+tlf_a_3[e]                                                0.00                                0.0                            0.00
+tlf_a_4[e]                                                0.00                                0.0                            0.00
+tlf_a_m1[e]                                               0.00                                0.0                            0.00
+tlf_a_m2[e]                                               0.00                                0.0                            0.00
+tlf_a_m3[e]                                               0.00                                0.0                            0.00
+tlf_a_m4[e]                                               0.00                                0.0                            0.00
+tlf_a_m4a[e]                                              0.00                                0.0                            0.00
+tlf_a_m5[e]                                               0.00                                0.0                            0.00
+tlf_a_m5a[e]                                              0.00                                0.0                            0.00
+tlf_a_m5b[e]                                              0.00                                0.0                            0.00
+tlf_a_m6[e]                                               0.00                                0.0                            0.00
+tlf_a_m9[e]                                               0.00                                0.0                            0.00
+tlms[e]                                                   0.00                                0.0                            0.00
+tlms_glc[e]                                               0.00                                0.0                            0.00
+tmacmp[e]                                                 0.00                                0.0                            0.00
+tolcp[e]                                                  0.00                                0.0                            0.00
+tolcp_ac[e]                                               0.00                                0.0                            0.00
+tolcp_ac_glc[e]                                           0.00                                0.0                            0.00
+tolcp_am[e]                                               0.00                                0.0                            0.00
+tolcp_am_glc[e]                                           0.00                                0.0                            0.00
+tolcp_glc[e]                                              0.00                                0.0                            0.00
+tpno_1glc_4g[e]                                           0.00                                0.0                            0.00
+tpno_4g[e]                                                0.00                                0.0                            0.00
+tpno_4glc[e]                                              0.00                                0.0                            0.00
+tpnoh[e]                                                  0.00                                0.0                            0.00
+tre[e]                                                    0.00                                NaN                             NaN
+trp_L[e]                                                  0.00                                1.0                            0.00
+tsacmgluc[e]                                              0.00                                0.0                            0.00
+ura[e]                                                    0.00                                NaN                            0.00
+uri[e]                                                    0.00                                0.0                             NaN
+val_L[e]                                                  0.00                                0.0                            0.00
+xan[e]                                                    0.00                                NaN                             NaN
+xyl_D[e]                                                  0.00                                0.0                            0.00
+xylottr[e]                                                0.00                                NaN                            0.00
+zn2[e]                                                    1.00                                1.0                            1.00
+cellb[e]                                                   NaN                                0.0                            0.00
+dgchol[e]                                                  NaN                                0.0                            0.00
+dhna[e]                                                    NaN                                0.0                             NaN
+galmannan[e]                                               NaN                                0.0                            0.02
+gchola[e]                                                  NaN                                0.0                            0.00
+glcmannan[e]                                               NaN                                0.0                            0.12
+gly[e]                                                     NaN                                0.0                            0.00
+lichn[e]                                                   NaN                                0.0                             NaN
+lmn2[e]                                                    NaN                                0.0                             NaN
+lmn30[e]                                                   NaN                                0.0                             NaN
+taur[e]                                                    NaN                                0.0                            0.00
+tchola[e]                                                  NaN                                0.0                            0.00
+tdchola[e]                                                 NaN                                0.0                            0.00
+urea[e]                                                    NaN                                0.0                             NaN
+xylan[e]                                                   NaN                                0.0                            0.00
+xyluglc[e]                                                 NaN                                0.0                             NaN
+4ahmmp[e]                                                  NaN                                NaN                            0.00
+acald[e]                                                   NaN                                NaN                            0.01
+ala_L[e]                                                   NaN                                NaN                            0.00
+alaasp[e]                                                  NaN                                NaN                            0.00
+alagln[e]                                                  NaN                                NaN                            0.53
+alaglu[e]                                                  NaN                                NaN                            0.47
+alagly[e]                                                  NaN                                NaN                            0.00
+alahis[e]                                                  NaN                                NaN                            0.00
+alaleu[e]                                                  NaN                                NaN                            0.00
+alathr[e]                                                  NaN                                NaN                            0.00
+arbt[e]                                                    NaN                                NaN                            0.00
+btn[e]                                                     NaN                                NaN                            0.00
+but[e]                                                     NaN                                NaN                            0.00
+drib[e]                                                    NaN                                NaN                            0.00
+etoh[e]                                                    NaN                                NaN                            0.00
+fol[e]                                                     NaN                                NaN                            0.00
+glyasn[e]                                                  NaN                                NaN                            0.00
+glyasp[e]                                                  NaN                                NaN                            0.00
+glyc[e]                                                    NaN                                NaN                            0.00
+glycys[e]                                                  NaN                                NaN                            0.47
+glygln[e]                                                  NaN                                NaN                            0.00
+glyglu[e]                                                  NaN                                NaN                            0.00
+glyleu[e]                                                  NaN                                NaN                            0.00
+glymet[e]                                                  NaN                                NaN                            0.00
+glyphe[e]                                                  NaN                                NaN                            0.00
+glypro[e]                                                  NaN                                NaN                            0.00
+glytyr[e]                                                  NaN                                NaN                            0.00
+ile_L[e]                                                   NaN                                NaN                            0.00
+lnlc[e]                                                    NaN                                NaN                            0.00
+lnlncg[e]                                                  NaN                                NaN                            0.00
+malthx[e]                                                  NaN                                NaN                            0.00
+met_D[e]                                                   NaN                                NaN                            0.00
+metala[e]                                                  NaN                                NaN                            0.00
+metsox_S_L[e]                                              NaN                                NaN                            0.00
+pnto_R[e]                                                  NaN                                NaN                            0.00
+rbflvrd[e]                                                 NaN                                NaN                            0.40
+ribflv[e]                                                  NaN                                NaN                            0.60
+salcn[e]                                                   NaN                                NaN                            0.00
+thm[e]                                                     NaN                                NaN                            0.00
+tsul[e]                                                    NaN                                NaN                            0.00
+MPS (metabolite production score):

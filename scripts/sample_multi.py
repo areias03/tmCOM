@@ -8,7 +8,7 @@ import pandas as pd
 
 import sys
 import itertools
-from concurrent.futures import ThreadPoolExecutor
+from concurrent.futures import ProcessPoolExecutor
 
 #Abundances
 
@@ -120,11 +120,11 @@ def main(arguments: Tuple[int, bool, str]) -> None:
        
 
         if enz and cons =='Low Iron':
-            constraints = {'R_EX_fe2(e)':(-0.00007,0),'R_prot_pool_exchange_M_Bacteroides_thetaiotaomicron_VPI_5482':(0,1),'R_prot_pool_exchange_M_Bacteroides_uniformis_ATCC_8492':(0,1),f'R_prot_pool_exchange_{model_ids[2]}':(0,1)}
+            constraints = {'R_EX_fe2[e]':(-0.00007,0),'R_prot_pool_exchange_M_Bacteroides_thetaiotaomicron_VPI_5482':(0,1),'R_prot_pool_exchange_M_Bacteroides_uniformis_ATCC_8492':(0,1),f'R_prot_pool_exchange_{model_ids[2]}':(0,1)}
         elif enz and cons =='Default':
             constraints = {'R_prot_pool_exchange_M_Bacteroides_thetaiotaomicron_VPI_5482':(0,1),'R_prot_pool_exchange_M_Bacteroides_uniformis_ATCC_8492':(0,1),f'R_prot_pool_exchange_{model_ids[2]}':(0,1)}
         elif not enz and cons =='Low Iron':
-            constraints = {'R_EX_fe2(e)':(-0.00007,0)}
+            constraints = {'R_EX_fe2[e]':(-0.00007,0)}
         else:
             constraints = {}
         
@@ -165,15 +165,16 @@ def main(arguments: Tuple[int, bool, str]) -> None:
         
 
         f.write('SteadyCom - Variability Analysis\n')
+        f.write('\n')
               
         l_va = np.linspace(0.1,1.0,num=10)
 
         for va in l_va:
             va = round(va, 1)
             variability = SteadyComVA(community, obj_frac=va, constraints=M9)
-            f.write(f'Strain\tMin\tMax\tVariability - {va}')
+            f.write(f'Strain\tMin\tMax\tVariability - {va}\n')
             for strain, (lower, upper) in variability.items():
-                f.write(f'{strain}\t{lower:.1%}\t{upper:.1%}')
+                f.write(f'{strain}\t{lower:.1%}\t{upper:.1%}\n')
        
 
         f.write('\n')
@@ -225,5 +226,5 @@ if __name__ == "__main__":
 
     print('Possible combinations:', f"Sample: {sample} | Enz. constraints: {enz} | Conditions: {li}")
 
-    with ThreadPoolExecutor() as pool:
+    with ProcessPoolExecutor() as pool:
         pool.map(main,args)
