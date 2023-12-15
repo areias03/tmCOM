@@ -6,6 +6,7 @@ from mewpy.simulation import Environment
 import numpy as np
 import pandas as pd
 
+from typing import List,Tuple
 import sys
 import itertools
 from concurrent.futures import ProcessPoolExecutor
@@ -120,7 +121,7 @@ def main(arguments: Tuple[int, bool, str]) -> None:
        
 
         if enz and cons =='Low Iron':
-            constraints = {'R_EX_fe2[e]':(-0.00007,0),'R_prot_pool_exchange_M_Bacteroides_thetaiotaomicron_VPI_5482':(0,1),'R_prot_pool_exchange_M_Bacteroides_uniformis_ATCC_8492':(0,1),f'R_prot_pool_exchange_{model_ids[2]}':(0,1)}
+            constraints = {'R_EX_fe2[e]': (-0.00007, 0), 'R_prot_pool_exchange_M_Bacteroides_thetaiotaomicron_VPI_5482': (0, 1), 'R_prot_pool_exchange_M_Bacteroides_uniformis_ATCC_8492': (0, 1), f'R_prot_pool_exchange_{model_ids[2]}': (0, 1)}
         elif enz and cons =='Default':
             constraints = {'R_prot_pool_exchange_M_Bacteroides_thetaiotaomicron_VPI_5482':(0,1),'R_prot_pool_exchange_M_Bacteroides_uniformis_ATCC_8492':(0,1),f'R_prot_pool_exchange_{model_ids[2]}':(0,1)}
         elif not enz and cons =='Low Iron':
@@ -139,7 +140,7 @@ def main(arguments: Tuple[int, bool, str]) -> None:
         f.write(f'Community growth: {solution.objective_value}\n')
 
         f.write('Individual growth\n')
-        f.write(solution.find('R_biomass', sort=True,show_nulls=True).to_string())
+        f.write(solution.find('R_biomass', sort=True, show_nulls=True).to_string())
         f.write('\n')
 
         f.write('Exchange reactions and fluxes\n')
@@ -153,21 +154,19 @@ def main(arguments: Tuple[int, bool, str]) -> None:
         f.write('SteadyCom\n')
         try:
             solution = SteadyCom(community, constraints=constraints)
-            print(solution,file= f)
+            print(solution, file=f)
+            f.write('Cross-feeding interactions:\n')
+            f.write(solution.cross_feeding(as_df=True).dropna().sort_values('rate', ascending=False).to_string())
+            f.write('\n')
+
         except ZeroDivisionError:
             f.write('No possible solution.\n')
         f.write('\n')
 
-        f.write('Cross-feeding interactions:\n')
-        f.write(solution.cross_feeding(as_df=True).dropna().sort_values('rate', ascending=False).to_string())
-        f.write('\n')
-
-        
-
         f.write('SteadyCom - Variability Analysis\n')
         f.write('\n')
-              
-        l_va = np.linspace(0.1,1.0,num=10)
+
+        l_va = np.linspace(0.1, 1.0, num=10)
 
         for va in l_va:
             va = round(va, 1)
@@ -175,7 +174,6 @@ def main(arguments: Tuple[int, bool, str]) -> None:
             f.write(f'Strain\tMin\tMax\tVariability - {va}\n')
             for strain, (lower, upper) in variability.items():
                 f.write(f'{strain}\t{lower:.1%}\t{upper:.1%}\n')
-       
 
         f.write('\n')
         f.write('##################################\n')
@@ -194,12 +192,10 @@ def main(arguments: Tuple[int, bool, str]) -> None:
         f.write(pd.DataFrame.from_dict(MUS).to_string())
         f.write('\n')
 
-        
         f.write('MPS (metabolite production score):\n')
         MPS = mp_score(community,environment=M9)
         f.write(pd.DataFrame.from_dict(MPS).to_string())
         f.write('\n')
-        
               
         f.write('MRO (metabolic resource overlap):\n')
         score, MRO = mro_score(community,environment=M9)
@@ -213,7 +209,6 @@ def main(arguments: Tuple[int, bool, str]) -> None:
         for ind in MRO.individual_media.keys():
             f.write(f'Strain:{ind}\t{", ".join(met for met in MRO.individual_media[ind])}\n\n')
         f.close()
-    
 
 
 if __name__ == "__main__":
