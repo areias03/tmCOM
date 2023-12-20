@@ -29,11 +29,11 @@ args = parser.parse_args()
 filepath = args.model
 organism = args.organism
 
-#Reading models
+# Reading models
 model = read_sbml_model(filepath)
 model2 = load_cbmodel(filepath)
 
-#Getting sims
+# Getting sims
 sim = get_simulator(model)
 sim2 = get_simulator(model2)
 
@@ -48,14 +48,13 @@ def annotation_scraping(model_path: str):
     '''
     ls_ge = []
 
-    #Reading models
+    # Reading models
     model = read_sbml_model(model_path)
     model2 = load_cbmodel(model_path)
 
-    #Getting sims
+    # Getting sims
     sim = get_simulator(model)
     sim2 = get_simulator(model2)
-
 
     for ge in sim.genes:
         i = sim.genes.index(ge)
@@ -75,6 +74,7 @@ def annotation_scraping(model_path: str):
 
     return df_ge
 
+
 def modelseed_query(seed_id: str):
     '''
     Queries the ModelSEED database for other id's for BIGG and KEGG.
@@ -84,8 +84,8 @@ def modelseed_query(seed_id: str):
     :rtype: str,str
     '''
     SOLR_URL='https://modelseed.org'
-    
-    if seed_id == None:
+
+    if seed_id:
         bigg_id = 'None'
         kegg_id = 'None'
     else:
@@ -112,22 +112,23 @@ def modelseed_query(seed_id: str):
                     bigg_id = list(bigg_id)[0]
                     bigg_id = bigg_id.replace('BiGG: ','')
         except:
+
             bigg_id = 'None'
             kegg_id = 'None'
 
     return bigg_id,kegg_id
 
+
 def bigg_query(bigg: str):
     '''
     Queries the BIGG database for EC numbers.
-    
+
     :param bigg: A BIGG entry ID.
     :return: List of EC numbers.
     :rtype: list
     '''
-    
     bigg_ls = []
-    url =f'http://bigg.ucsd.edu/api/v2/universal/reactions/{bigg}'
+    url = f'http://bigg.ucsd.edu/api/v2/universal/reactions/{bigg}'
 
     with requests.request("GET", url) as resp:
         try:
@@ -135,14 +136,14 @@ def bigg_query(bigg: str):
             if resp.status_code != 204:
                 data = dict(resp.json())
                 ec_l = data['database_links']
-                if ec_l == None:
+                if ec_l:
                     bigg_ls.append(None)
                 else:
                     ec = [i['id'] for i in ec_l['EC Number']]
-                    if ec == None:
+                    if ec:
                         bigg_ls.append(None)
                     bigg_ls.append(ec)
-            else: 
+            else:
                 bigg_ls.append(None)
         except:
             bigg_ls.append(None)
@@ -155,16 +156,16 @@ def convert_to_irreversible(model: Union[Simulator, "Model", "CBModel"], inline:
     guarentees that all reactions in the model will only allow
     positive flux values, which is useful for some modeling problems.
 
-    :param model: A COBRApy or REFRAMED Model or an instance of 
+    :param model: A COBRApy or REFRAMED Model or an instance of
         mewpy.simulation.simulation.Simulator
     :return: a irreversible model simulator, a reverse mapping.
     :rtype:(Simulator,dict)
     """
-    
+
     sim = get_simulator(deepcopy(model))
 
     objective = sim.objective.copy()
-    irrev_map=dict()
+    irrev_map = dict()
     for r_id in tqdm(sim.reactions, "Converting to irreversible"):
         lb, _ = sim.get_reaction_bounds(r_id)
         if lb < 0:
@@ -183,9 +184,7 @@ def convert_to_irreversible(model: Union[Simulator, "Model", "CBModel"], inline:
 
             sim.add_reaction(rev_rxn_id, **rev_rxn)
             sim.set_reaction_bounds(r_id, 0, rxn.ub, False)
-            
             irrev_map[r_id] = rev_rxn_id
-            
             if r_id in objective:
                 objective[rev_rxn_id] = -objective[r_id]
 
@@ -196,7 +195,7 @@ def convert_to_irreversible(model: Union[Simulator, "Model", "CBModel"], inline:
 def split_isozymes(model: Union[Simulator, "Model", "CBModel"], inline: bool = False):
     """Splits reactions with isozymes into separated reactions
 
-    :param model: A COBRApy or REFRAMED Model or an instance of 
+    :param model: A COBRApy or REFRAMED Model or an instance of
         mewpy.simulation.simulation.Simulator
     :param (boolean) inline: apply the modifications to the same of generate a new model. Default generates a new model.
     :return: a simulator and a mapping from original to splitted reactions
