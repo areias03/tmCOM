@@ -13,13 +13,10 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +1 scripts/media_testing.py
-badd +26 scripts/model_tuning.py
-badd +373 tmcom/ec/ec_implem.py
+badd +7 ~/Documents/Mestrado/DISSERTAÇÃO/tmCOM/scripts/media_testing.py
 argglobal
 %argdel
-$argadd ~/Documents/Mestrado/DISSERTAÇÃO/tmCOM/
-edit scripts/media_testing.py
+edit ~/Documents/Mestrado/DISSERTAÇÃO/tmCOM/scripts/media_testing.py
 argglobal
 setlocal fdm=manual
 setlocal fde=0
@@ -30,16 +27,18 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-12,13fold
-16,17fold
+42,45fold
+36,50fold
+58,59fold
+56,59fold
+53,62fold
 let &fdl = &fdl
-let s:l = 10 - ((9 * winheight(0) + 36) / 73)
+let s:l = 1 - ((0 * winheight(0) + 30) / 61)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 10
-normal! 0
-if exists(':tcd') == 2 | tcd ~/Documents/Mestrado/DISSERTAÇÃO/tmCOM | endif
+keepjumps 1
+normal! 019|
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf

@@ -117,11 +117,11 @@ def main(arguments: Tuple[int, bool, str]) -> None:
         sim.set_environmental_conditions(M9)
 
         if enz and cons == 'Low Iron':
-            constraints = {'R_EX_fe2[e]': (-0.00007, 0), 'R_prot_pool_exchange_M_Bacteroides_thetaiotaomicron_VPI_5482': (0, 1), 'R_prot_pool_exchange_M_Bacteroides_uniformis_ATCC_8492': (0, 1), f'R_prot_pool_exchange_{model_ids[2]}': (0, 1)}
+            constraints = {'R_EX_fe2[e]': (-0.00007, 0), 'R_EX_pheme[e]': (-0.00007, 0), 'R_prot_pool_exchange_M_Bacteroides_thetaiotaomicron_VPI_5482': (0, 1), 'R_prot_pool_exchange_M_Bacteroides_uniformis_ATCC_8492': (0, 1), f'R_prot_pool_exchange_{model_ids[2]}': (0, 1)}
         elif enz and cons == 'Default':
             constraints = {'R_prot_pool_exchange_M_Bacteroides_thetaiotaomicron_VPI_5482': (0,1), 'R_prot_pool_exchange_M_Bacteroides_uniformis_ATCC_8492': (0,1), f'R_prot_pool_exchange_{model_ids[2]}': (0,1)}
         elif not enz and cons == 'Low Iron':
-            constraints = {'R_EX_fe2[e]': (-0.00007, 0)}
+            constraints = {'R_EX_fe2[e]': (-0.00007, 0), 'R_EX_pheme[e]': (-0.00007, 0)}
         else:
             constraints = {}
 
@@ -143,8 +143,12 @@ def main(arguments: Tuple[int, bool, str]) -> None:
         f.write(solution.find('R_EX').to_string())
         f.write('\n')
 
-        f.write('Iron exchange reactions and fluxes\n')
+        f.write('Inorganic iron exchange reactions and fluxes\n')
         f.write(solution.find('R_EX_fe2').to_string())
+        f.write('\n')
+
+        f.write('Organic iron (heme) exchange reactions and fluxes\n')
+        f.write(solution.find('R_EX_pheme').to_string())
         f.write('\n')
 
         f.write('SteadyCom\n')
