@@ -1,0 +1,11 @@
+Constraints,Escherichia_coli_ED1a
+"{'EX_fe2(e)_REV': (0, 3.3e-08), 'prot_pool_exchange': (0, 1.0)}",0.007673848925718473
+"{'EX_fe2(e)_REV': (0, 0), 'EX_pheme(e)_REV': (0, 0), 'prot_pool_exchange': (0, 1.0)}",0.007658944556916572
+"{'EX_fe2(e)_REV': (0, 8.2e-09), 'EX_pheme(e)_REV': (0, 7e-10), 'prot_pool_exchange': (0, 1.0)}",0.007658944995980034
+"{'EX_fe2(e)_REV': (0, 3.3e-08), 'EX_pheme(e)_REV': (0, 2.7e-09), 'prot_pool_exchange': (0, 1.0)}",0.0076589462504470796
+"{'EX_pheme(e)_REV': (0, 2.7e-09), 'prot_pool_exchange': (0, 1.0)}",0.0076589462504470796
+"{'EX_fe2(e)_REV': (0, 1.25e-07), 'prot_pool_exchange': (0, 1.0)}",0.007673848925718473
+"{'EX_pheme(e)_REV': (0, 1.25e-07), 'prot_pool_exchange': (0, 1.0)}",0.007659022961106505
+"{'EX_fe2(e)_REV': (0, 2e-06), 'EX_pheme(e)_REV': (0, 1.25e-07), 'prot_pool_exchange': (0, 1.0)}",0.007659022961106508
+"{'EX_fe2(e)_REV': (0, 1.25e-07), 'EX_pheme(e)_REV': (0, 1.25e-07), 'prot_pool_exchange': (0, 1.0)}",0.007659022961106508
+"{'prot_pool_exchange': (0, 1.0)}",0.007673848925718473

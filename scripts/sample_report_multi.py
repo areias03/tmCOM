@@ -1,12 +1,12 @@
 from cobra.io import read_sbml_model
 from mewpy.cobra.com import *
 from mewpy.model.com import CommunityModel
-from mewpy.simulation import Environment 
+from mewpy.simulation import Environment
 
 import numpy as np
 import pandas as pd
 
-from typing import List,Tuple
+from typing import List, Tuple
 import sys
 import itertools
 from concurrent.futures import ProcessPoolExecutor
@@ -47,17 +47,17 @@ def main(arguments: Tuple[int, bool, str]) -> None:
     sample_name = 'sample' + str(sample)
 
     if sample == 1 and enz:
-        community = CommunityModel([ec_bt,ec_bu,ec_ec],flavor='reframed', add_compartments=True, merge_biomasses=True,abundances=[abundances['bt'],abundances['bu'],abundances['ec']])
+        community = CommunityModel([ec_bt, ec_ec], flavor='reframed', add_compartments=True, merge_biomasses=True, abundances=[abundances['bt'], abundances['ec']])
     elif sample == 1 and not enz:
-        community = CommunityModel([bt,bu,ec],flavor='reframed', add_compartments=True, merge_biomasses=True,abundances=[abundances['bt'],abundances['bu'],abundances['ec']])
+        community = CommunityModel([bt,ec],flavor='reframed', add_compartments=True, merge_biomasses=True,abundances=[abundances['bt'], abundances['ec']])
     elif sample == 2 and enz:
-        community = CommunityModel([ec_bt,ec_bu,ec_fn],flavor='reframed', add_compartments=True, merge_biomasses=True,abundances=[abundances['bt'],abundances['bu'],abundances['fn']])
+        community = CommunityModel([ec_bu,ec_ec],flavor='reframed', add_compartments=True, merge_biomasses=True,abundances=[abundances['bu'],abundances['ec']])
     elif sample == 2 and not enz:
-        community = CommunityModel([bt,bu,fn],flavor='reframed', add_compartments=True, merge_biomasses=True,abundances=[abundances['bt'],abundances['bu'],abundances['fn']])
+        community = CommunityModel([bu,ec],flavor='reframed', add_compartments=True, merge_biomasses=True,abundances=[abundances['bu'], abundances['ec']])
     elif sample == 3 and enz:
-        community = CommunityModel([ec_bt,ec_bu,ec_ri],flavor='reframed', add_compartments=True, merge_biomasses=True,abundances=[abundances['bt'],abundances['bu'],abundances['ri']])
+        community = CommunityModel([ec_bt,ec_cc],flavor='reframed', add_compartments=True, merge_biomasses=True,abundances=[abundances['bt'], abundances['cc']])
     elif sample == 3 and not enz:
-        community = CommunityModel([bt,bu,ri],flavor='reframed', add_compartments=True, merge_biomasses=True,abundances=[abundances['bt'],abundances['bu'],abundances['ri']])
+        community = CommunityModel([bt,cc],flavor='reframed', add_compartments=True, merge_biomasses=True,abundances=[abundances['bt'], abundances['cc']])
     elif sample == 4 and enz:
         community = CommunityModel([ec_bt,ec_bu,ec_sp],flavor='reframed', add_compartments=True, merge_biomasses=True,abundances=[abundances['bt'],abundances['bu'],abundances['sp']])
     elif sample == 4 and not enz:

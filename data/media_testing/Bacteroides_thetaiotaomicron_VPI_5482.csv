@@ -1,0 +1,11 @@
+Constraints,Bacteroides_thetaiotaomicron_VPI_5482
+"{'EX_fe2(e)_REV': (0, 3.3e-08), 'EX_pheme(e)_REV': (0, 0), 'prot_pool_exchange': (0, 1.0)}",0.0
+"{'EX_fe2(e)_REV': (0, 0), 'EX_pheme(e)_REV': (0, 0), 'prot_pool_exchange': (0, 1.0)}",0.0
+"{'EX_fe2(e)_REV': (0, 8.2e-09), 'EX_pheme(e)_REV': (0, 7e-10), 'prot_pool_exchange': (0, 1.0)}",2.2606168254480864e-07
+"{'EX_fe2(e)_REV': (0, 3.3e-08), 'EX_pheme(e)_REV': (0, 2.7e-09), 'prot_pool_exchange': (0, 1.0)}",8.719522041014049e-07
+"{'EX_pheme(e)_REV': (0, 2.7e-09), 'prot_pool_exchange': (0, 1.0)}",8.719522041014049e-07
+"{'EX_fe2(e)_REV': (0, 1.25e-07), 'prot_pool_exchange': (0, 1.0)}",2.018407879864363e-05
+"{'EX_pheme(e)_REV': (0, 1.25e-07), 'prot_pool_exchange': (0, 1.0)}",4.036815759728726e-05
+"{'EX_fe2(e)_REV': (0, 2e-06), 'EX_pheme(e)_REV': (0, 1.25e-07), 'prot_pool_exchange': (0, 1.0)}",4.036815759728726e-05
+"{'EX_fe2(e)_REV': (0, 1.25e-07), 'EX_pheme(e)_REV': (0, 1.25e-07), 'prot_pool_exchange': (0, 1.0)}",2.018407879864363e-05
+"{'prot_pool_exchange': (0, 1.0)}",0.0003697298473531761

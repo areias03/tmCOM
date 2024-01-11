@@ -1,0 +1,11 @@
+Constraints,Bacteroides_uniformis_ATCC_8492
+"{'EX_fe2(e)_REV': (0, 3.3e-08), 'prot_pool_exchange': (0, 1.0)}",4.225676748533818e-06
+"{'EX_fe2(e)_REV': (0, 0), 'DM_pheme(c)': (0, 0), 'prot_pool_exchange': (0, 1.0)}",0.0
+"{'EX_fe2(e)_REV': (0, 8.2e-09), 'DM_pheme(c)': (0, 7e-10), 'prot_pool_exchange': (0, 1.0)}",1.0500166466053731e-06
+"{'EX_fe2(e)_REV': (0, 3.3e-08), 'DM_pheme(c)': (0, 2.7e-09), 'prot_pool_exchange': (0, 1.0)}",4.225676748533818e-06
+"{'DM_pheme(c)': (0, 2.7e-09), 'prot_pool_exchange': (0, 1.0)}",0.0008178832479437068
+"{'EX_fe2(e)_REV': (0, 1.25e-07), 'prot_pool_exchange': (0, 1.0)}",1.6006351320203857e-05
+"{'DM_pheme(c)': (0, 1.25e-07), 'prot_pool_exchange': (0, 1.0)}",0.0008178832479437059
+"{'EX_fe2(e)_REV': (0, 2e-06), 'DM_pheme(c)': (0, 1.25e-07), 'prot_pool_exchange': (0, 1.0)}",0.0002561016211232617
+"{'EX_fe2(e)_REV': (0, 1.25e-07), 'DM_pheme(c)': (0, 1.25e-07), 'prot_pool_exchange': (0, 1.0)}",1.6006351320203857e-05
+"{'prot_pool_exchange': (0, 1.0)}",0.0008178832479437052
