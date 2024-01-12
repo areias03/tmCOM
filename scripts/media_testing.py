@@ -92,6 +92,8 @@ def media_growth_test(model: Model):
     data = {'Constraints': media_name_l, model_id: sol_list}
     df = pd.DataFrame(data)
     df = df.set_index('Constraints')
+    print(model.id)
+    print(df)
     return df
 
 
@@ -103,7 +105,7 @@ def main(model: Model):
 
 if __name__ == "__main__":
     merged: List = []
-    model_l = [ec_bt, ec_bu]
+    model_l = [ec_bt, ec_bu, ec_ec, ec_fn, ec_ri, ec_sp, ec_ss]
 
     with ProcessPoolExecutor() as p:
         solution_list = []
