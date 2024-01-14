@@ -59,17 +59,17 @@ def main(arguments: Tuple[int, bool, str]) -> None:
     elif sample == 3 and not enz:
         community = CommunityModel([bt,cc],flavor='reframed', add_compartments=True, merge_biomasses=True,abundances=[abundances['bt'], abundances['cc']])
     elif sample == 4 and enz:
-        community = CommunityModel([ec_bt,ec_bu,ec_sp],flavor='reframed', add_compartments=True, merge_biomasses=True,abundances=[abundances['bt'],abundances['bu'],abundances['sp']])
+        community = CommunityModel([ec_bu, ec_cc],flavor='reframed', add_compartments=True, merge_biomasses=True,abundances=[abundances['bu'],abundances['cc']])
     elif sample == 4 and not enz:
-        community = CommunityModel([bt,bu,sp],flavor='reframed', add_compartments=True, merge_biomasses=True,abundances=[abundances['bt'],abundances['bu'],abundances['sp']])
+        community = CommunityModel([bu, cc],flavor='reframed', add_compartments=True, merge_biomasses=True,abundances=[abundances['bu'],abundances['cc']])
     elif sample == 5 and enz:
-        community = CommunityModel([ec_bt,ec_bu,ec_ss],flavor='reframed', add_compartments=True, merge_biomasses=True,abundances=[abundances['bt'],abundances['bu'],abundances['ss']])
+        community = CommunityModel([ec_bt, ec_ss],flavor='reframed', add_compartments=True, merge_biomasses=True,abundances=[abundances['bt'], abundances['ss']])
     elif sample == 5 and not enz:
-        community = CommunityModel([bt,bu,ss],flavor='reframed', add_compartments=True, merge_biomasses=True,abundances=[abundances['bt'],abundances['bu'],abundances['ss']])
+        community = CommunityModel([bt, ss],flavor='reframed', add_compartments=True, merge_biomasses=True,abundances=[abundances['bt'], abundances['ss']])
     elif sample == 6 and enz:
-        community = CommunityModel([ec_bt,ec_bu,ec_cc], flavor='reframed', add_compartments=True, merge_biomasses=True,abundances=[abundances['bt'],abundances['bu'],abundances['cc']])
+        community = CommunityModel([ec_bu, ec_ss],flavor='reframed', add_compartments=True, merge_biomasses=True,abundances=[abundances['bu'], abundances['ss']])
     elif sample == 6 and not enz:
-        community = CommunityModel([bt,bu,cc], flavor='reframed', add_compartments=True, merge_biomasses=True,abundances=[abundances['bt'],abundances['bu'],abundances['cc']])
+        community = CommunityModel([bu, ss],flavor='reframed', add_compartments=True, merge_biomasses=True,abundances=[abundances['bu'], abundances['ss']])
     else:
         sys.exit('No possible combination found!')
 

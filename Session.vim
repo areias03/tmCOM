@@ -13,12 +13,11 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +21 scripts/media_testing_single.py
 argglobal
 %argdel
-$argadd ./
-edit scripts/media_testing_single.py
+$argadd .
 argglobal
+enew
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -27,20 +26,6 @@ setlocal fdl=99
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-silent! normal! zE
-40,42fold
-39,42fold
-47,53fold
-37,58fold
-61,62fold
-let &fdl = &fdl
-let s:l = 21 - ((20 * winheight(0) + 37) / 74)
-if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
-normal! zt
-keepjumps 21
-normal! 0
-if exists(':tcd') == 2 | tcd ~/Documents/Mestrado/DISSERTAÇÃO/tmCOM | endif
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf

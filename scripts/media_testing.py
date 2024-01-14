@@ -86,13 +86,11 @@ def media_growth_test(model: Model):
 
     for m in media_l:
         res = sim.simulate(constraints=m)
-        print(res.objective_value)
         sol_list.append(res.objective_value)
 
     data = {'Constraints': media_name_l, model_id: sol_list}
     df = pd.DataFrame(data)
     df = df.set_index('Constraints')
-    print(model.id)
     print(df)
     return df
 

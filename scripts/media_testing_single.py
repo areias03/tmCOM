@@ -33,7 +33,7 @@ M9 = {'EX_fe2(e)_REV': (0, 0.000000125), 'EX_pheme(e)_REV': (0, 0.000000125), 'D
 M10 = {'prot_pool_exchange': (0, 1.0)}
 
 
-def find_iron_reactions(model: Model):
+def find_compatible_media(model: Model):
     fe_reaction = 'EX_fe2(e)_REV'
     heme_exchange = 'EX_pheme(e)_REV'
     heme_demand = 'DM_pheme(c)'
@@ -64,9 +64,8 @@ def media_growth_test(model: Model):
     media_l = [M1, M2, M3, M4, M5, M6, M7, M8, M9, M10]
     sol_list: List = []
     model_id = str(model.id.strip('M_'))
+    sim: Simulator = get_simulator(model)
     for m in media_l:
-        sim: Simulator = get_simulator(model)
-        # sim.set_environmental_conditions(m)
         res = sim.simulate(constraints=m)
         print(res.find(['fe2', 'pheme', 'Iron']))
         print(res.objective_value)
@@ -79,8 +78,5 @@ def media_growth_test(model: Model):
 
 
 if __name__ == "__main__":
-    # for r in model.reactions:
-    #     if any(x in r.name for x in ['heme', 'iron']):
-    #         print(f'Id: {r.id}\tName: {r.name}')
-    find_iron_reactions(model)
+    find_compatible_media(model)
     print(media_growth_test(model))
