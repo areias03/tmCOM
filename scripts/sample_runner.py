@@ -24,9 +24,9 @@ bu = read_sbml_model('../models/non-ec/agora/Bacteroides_uniformis_ATCC_8492.xml
 ec_bt = read_sbml_model('../models/ec/ec_Bacteroides_thetaiotaomicron_VPI_5482.xml')
 ec_bu = read_sbml_model('../models/ec/ec_Bacteroides_uniformis_ATCC_8492.xml')
 ec_ec = read_sbml_model('../models/ec/ec_Escherichia_coli_ED1a.xml')
-# ec_fn = read_sbml_model('../models/ec/ec_Fusobacterium_nucleatum_subsp_nucleatum_ATCC_25586.xml')
-# ec_ri = read_sbml_model('../models/ec/ec_Roseburia_intestinalis_L1_82.xml')
-# ec_sp = read_sbml_model('../models/ec/ec_Streptococcus_parasanguinis_ATCC_15912.xml')
+ec_fn = read_sbml_model('../models/ec/ec_Fusobacterium_nucleatum_subsp_nucleatum_ATCC_25586.xml')
+ec_ri = read_sbml_model('../models/ec/ec_Roseburia_intestinalis_L1_82.xml')
+ec_sp = read_sbml_model('../models/ec/ec_Streptococcus_parasanguinis_ATCC_15912.xml')
 ec_ss = read_sbml_model('../models/ec/ec_Streptococcus_salivarius_DSM_20560.xml')
 
 # Abundances
@@ -114,7 +114,7 @@ def main():
     merge_all: List = []
     merge_single: List = []
     with ProcessPoolExecutor() as p:
-        for result_all, result_single in p.map(generate_com, [[ec_bt, ec_bu], [ec_bt, ec_ec], [ec_bu, ec_ec], [ec_bt. ec_ss]]):
+        for result_all, result_single in p.map(generate_com, [[ec_bt, ec_bu], [ec_bt, ec_ec], [ec_bt, ec_fn], [ec_bt, ec_ri], [ec_bt, ec_sp]]):
             merge_all.append(result_all)
             merge_single.append(result_single)
     df_all = pd.concat(merge_all, axis=1)
@@ -123,8 +123,8 @@ def main():
     df_single = pd.concat(merge_single, axis=1)
     print('Single:\n')
     print(df_single)
-    df_all.to_csv('../data/results/fba_all.csv')
-    df_single.to_csv('../data/results/fba_single.csv')
+    df_all.to_csv('../data/results/ec_fba_all.csv')
+    df_single.to_csv('../data/results/ec_fba_single.csv')
 
 
 if __name__ == "__main__":
