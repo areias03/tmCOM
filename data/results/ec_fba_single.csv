@@ -1,0 +1,61 @@
+,Constraints,Partner,Growth
+0,33 uM Fe,M_Bacteroides_uniformis_ATCC_8492,8.81631606225922e-07
+1,0 uM Fe/H,M_Bacteroides_uniformis_ATCC_8492,0.0
+2,"0,7 uM H; 8,2 uM Fe",M_Bacteroides_uniformis_ATCC_8492,2.190720960925019e-07
+3,"2,7 uM H; 33 uM Fe",M_Bacteroides_uniformis_ATCC_8492,8.81631606225922e-07
+4,"2,7 uM H",M_Bacteroides_uniformis_ATCC_8492,8.719522041014049e-07
+5,125 uM Fe,M_Bacteroides_uniformis_ATCC_8492,3.3395136599466746e-06
+6,125 uM H,M_Bacteroides_uniformis_ATCC_8492,4.036815759728726e-05
+7,125 uM H; 2 mM Fe,M_Bacteroides_uniformis_ATCC_8492,4.036815759728726e-05
+8,125 uM H; 125 uM Fe,M_Bacteroides_uniformis_ATCC_8492,3.3395136599466746e-06
+9,No constraints,M_Bacteroides_uniformis_ATCC_8492,0.0002044708119859
+10,33 uM Fe,M_Escherichia_coli_ED1a,5.328596802841918e-06
+11,0 uM Fe/H,M_Escherichia_coli_ED1a,0.0
+12,"0,7 uM H; 8,2 uM Fe",M_Escherichia_coli_ED1a,2.2606168254480867e-07
+13,"2,7 uM H; 33 uM Fe",M_Escherichia_coli_ED1a,8.719522041014049e-07
+14,"2,7 uM H",M_Escherichia_coli_ED1a,8.719522041014049e-07
+15,125 uM Fe,M_Escherichia_coli_ED1a,2.018407879864363e-05
+16,125 uM H,M_Escherichia_coli_ED1a,4.036815759728726e-05
+17,125 uM H; 2 mM Fe,M_Escherichia_coli_ED1a,4.036815759728726e-05
+18,125 uM H; 125 uM Fe,M_Escherichia_coli_ED1a,2.018407879864363e-05
+19,No constraints,M_Escherichia_coli_ED1a,0.0003697298473531
+20,33 uM Fe,M_Fusobacterium_nucleatum_subsp_nucleatum_ATCC_25586,5.328596802841918e-06
+21,0 uM Fe/H,M_Fusobacterium_nucleatum_subsp_nucleatum_ATCC_25586,0.0
+22,"0,7 uM H; 8,2 uM Fe",M_Fusobacterium_nucleatum_subsp_nucleatum_ATCC_25586,1.1303084127240433e-07
+23,"2,7 uM H; 33 uM Fe",M_Fusobacterium_nucleatum_subsp_nucleatum_ATCC_25586,4.359761020507025e-07
+24,"2,7 uM H",M_Fusobacterium_nucleatum_subsp_nucleatum_ATCC_25586,4.359761020507025e-07
+25,125 uM Fe,M_Fusobacterium_nucleatum_subsp_nucleatum_ATCC_25586,2.018407879864363e-05
+26,125 uM H,M_Fusobacterium_nucleatum_subsp_nucleatum_ATCC_25586,2.018407879864363e-05
+27,125 uM H; 2 mM Fe,M_Fusobacterium_nucleatum_subsp_nucleatum_ATCC_25586,2.018407879864363e-05
+28,125 uM H; 125 uM Fe,M_Fusobacterium_nucleatum_subsp_nucleatum_ATCC_25586,2.018407879864363e-05
+29,No constraints,M_Fusobacterium_nucleatum_subsp_nucleatum_ATCC_25586,0.0003697298473531
+30,33 uM Fe,M_Roseburia_intestinalis_L1_82,2.356738844769468e-06
+31,0 uM Fe/H,M_Roseburia_intestinalis_L1_82,0.0
+32,"0,7 uM H; 8,2 uM Fe",M_Roseburia_intestinalis_L1_82,2.2606168254480867e-07
+33,"2,7 uM H; 33 uM Fe",M_Roseburia_intestinalis_L1_82,8.719522041014049e-07
+34,"2,7 uM H",M_Roseburia_intestinalis_L1_82,8.719522041014049e-07
+35,125 uM Fe,M_Roseburia_intestinalis_L1_82,8.927041078672227e-06
+36,125 uM H,M_Roseburia_intestinalis_L1_82,4.036815759728726e-05
+37,125 uM H; 2 mM Fe,M_Roseburia_intestinalis_L1_82,4.036815759728726e-05
+38,125 uM H; 125 uM Fe,M_Roseburia_intestinalis_L1_82,8.927041078672227e-06
+39,No constraints,M_Roseburia_intestinalis_L1_82,0.0003697298473531
+40,33 uM Fe,M_Streptococcus_parasanguinis_ATCC_15912,5.328596802841918e-06
+41,0 uM Fe/H,M_Streptococcus_parasanguinis_ATCC_15912,0.0
+42,"0,7 uM H; 8,2 uM Fe",M_Streptococcus_parasanguinis_ATCC_15912,6.342762907522516e-08
+43,"2,7 uM H; 33 uM Fe",M_Streptococcus_parasanguinis_ATCC_15912,2.446494264330114e-07
+44,"2,7 uM H",M_Streptococcus_parasanguinis_ATCC_15912,2.446494264330114e-07
+45,125 uM Fe,M_Streptococcus_parasanguinis_ATCC_15912,2.018407879864363e-05
+46,125 uM H,M_Streptococcus_parasanguinis_ATCC_15912,1.1326362334861636e-05
+47,125 uM H; 2 mM Fe,M_Streptococcus_parasanguinis_ATCC_15912,1.1326362334861638e-05
+48,125 uM H; 125 uM Fe,M_Streptococcus_parasanguinis_ATCC_15912,1.1326362334861638e-05
+49,No constraints,M_Streptococcus_parasanguinis_ATCC_15912,0.0003697298473531
+0,33 uM Fe,M_Streptococcus_salivarius_DSM_20560,3.552397868561279e-06
+1,0 uM Fe/H,M_Streptococcus_salivarius_DSM_20560,0.0
+2,"0,7 uM H; 8,2 uM Fe",M_Streptococcus_salivarius_DSM_20560,1.1303084127240433e-07
+3,"2,7 uM H; 33 uM Fe",M_Streptococcus_salivarius_DSM_20560,4.359761020507025e-07
+4,"2,7 uM H",M_Streptococcus_salivarius_DSM_20560,4.359761020507025e-07
+5,125 uM Fe,M_Streptococcus_salivarius_DSM_20560,1.3456052532429088e-05
+6,125 uM H,M_Streptococcus_salivarius_DSM_20560,2.018407879864363e-05
+7,125 uM H; 2 mM Fe,M_Streptococcus_salivarius_DSM_20560,2.018407879864363e-05
+8,125 uM H; 125 uM Fe,M_Streptococcus_salivarius_DSM_20560,1.3456052532429088e-05
+9,No constraints,M_Streptococcus_salivarius_DSM_20560,0.0003697298473531

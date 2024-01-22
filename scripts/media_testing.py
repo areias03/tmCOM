@@ -8,22 +8,14 @@ from mewpy.simulation import Simulator, get_simulator
 
 # Models
 
-ec_bt = read_sbml_model(
-    '../models/ec/ec_Bacteroides_thetaiotaomicron_VPI_5482.xml')
-ec_bu = read_sbml_model(
-    '../models/ec/ec_Bacteroides_uniformis_ATCC_8492.xml')
-ec_ec = read_sbml_model(
-    '../models/ec/ec_Escherichia_coli_ED1a.xml')
-ec_fn = read_sbml_model(
-    '../models/ec/ec_Fusobacterium_nucleatum_subsp_nucleatum_ATCC_25586.xml')
-ec_ri = read_sbml_model(
-    '../models/ec/ec_Roseburia_intestinalis_L1_82.xml')
-ec_sp = read_sbml_model(
-    '../models/ec/ec_Streptococcus_parasanguinis_ATCC_15912.xml')
-ec_ss = read_sbml_model(
-    '../models/ec/ec_Streptococcus_salivarius_DSM_20560.xml')
-ec_cc = read_sbml_model(
-    '../models/ec/ec_Coprococcus_comes_ATCC_27758.xml')
+bt = read_sbml_model('../models/non-ec/agora/Bacteroides_thetaiotaomicron_VPI_5482.xml')
+bu = read_sbml_model('../models/non-ec/agora/Bacteroides_uniformis_ATCC_8492.xml')
+ec = read_sbml_model('../models/non-ec/agora/Escherichia_coli_ED1a.xml')
+fn = read_sbml_model('../models/non-ec/agora/Fusobacterium_nucleatum_subsp_nucleatum_ATCC_25586.xml')
+ri = read_sbml_model('../models/non-ec/agora/Roseburia_intestinalis_L1_82.xml')
+sp = read_sbml_model('../models/non-ec/agora/Streptococcus_parasanguinis_ATCC_15912.xml')
+ss = read_sbml_model('../models/non-ec/agora/Streptococcus_salivarius_DSM_20560.xml')
+cc = read_sbml_model('../models/non-ec/agora/Coprococcus_comes_ATCC_27758.xml')
 
 # Medias
 
@@ -53,6 +45,7 @@ def find_iron_reactions(model: Model):
     has_heme_exchange = False
     has_fe_exchange = False
     has_heme_demand = False
+    is_ec = False
     media_l = [M1, M2, M3, M4, M5, M6, M7, M8, M9, M10]
     for r in model.reactions:
         if 'exchange reaction for heme' in r.name:
@@ -71,6 +64,8 @@ def find_iron_reactions(model: Model):
         if not has_heme_demand:
             if heme_demand in m.keys():
                 del m[heme_demand]
+        if not is_ec:
+            del m['prot_pool_exchange']
 
 
 def media_growth_test(model: Model):
@@ -103,12 +98,12 @@ def main(model: Model):
 
 if __name__ == "__main__":
     merged: List = []
-    model_l = [ec_bt, ec_bu, ec_ec, ec_fn, ec_ri, ec_sp, ec_ss]
+    model_l = [bt, bu, ec, fn, ri, sp, ss]
 
     with ProcessPoolExecutor() as p:
         solution_list = []
         for result in p.map(main, model_l):
             merged.append(result)
     df = pd.concat(merged, axis=1)
-    df.to_csv('../data/media_testing/media_growth_test.csv')
+    df.to_csv('../data/media_testing/ne_media_growth_test.csv')
     print(df)
