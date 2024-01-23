@@ -1,89 +1,26 @@
-import os
-import pandas as pd
-import numpy as np
-import seaborn as sns
-import matplotlib.pyplot as plt
+from mewpy.model.com import CommunityModel
+from cobra.io import read_sbml_model
+from mewpy.cobra.com import SteadyCom
+from concurrent.futures import ProcessPoolExecutor
 
-path = '../data/model_tuning/'
 
-files = [f for f in os.listdir(path) if os.path.isfile(os.path.join(path, f))]
-files = sorted(files)
-ind_list = []
-merged = []
+ec_bt = read_sbml_model('../models/ec/ec_Bacteroides_thetaiotaomicron_VPI_5482.xml')
+ec_ec = read_sbml_model('../models/ec/ec_Escherichia_coli_ED1a.xml')
 
-l_va = np.linspace(0.1, 1.0, num=10)
+sample = CommunityModel([ec_bt, ec_ec], abundances=[1, 0.5])
 
-for i in range(len(l_va)):
-    ind_list.append(f'{round(l_va[i], 1)}')
 
-ind = {'Protein pool exchange': ind_list}
+def main(val: int):
+    constraints = {'R_EX_fe2[e]': (-0.00007, 0), 'R_EX_pheme[e]': (-0.0000001, 0)
+                   , 'R_prot_pool_exchange_M_Bacteroides_thetaiotaomicron_VPI_5482': (0, val)
+                   , 'R_prot_pool_exchange_M_Escherichia_coli_ED1a': (0, 0.095)}
+    try:
+        SteadyCom(sample, constraints=constraints)
+        print(f'Grew at {val}')
+    except ZeroDivisionError:
+        print(f'Did not grow at {val}')
 
-df_ind = pd.DataFrame(ind)
 
-merged.append(df_ind)
-
-for p in files:
-    p = path + p
-    print(p)
-    r = pd.read_csv(p)
-    r = r.drop(r.columns[0], axis=1)
-    merged.append(r)
-
-df = pd.concat(merged, axis=1)
-df.to_csv('../data/model_tuning/results/prot_pool_all.csv')
-df = df.set_index('Protein pool exchange')
-df = df.loc[:, ~df.columns.duplicated()]
-print(df)
-'''
-
-# Generate clustermap
-
-x_labels = ['Bt VPI-5482','Bu ATCC-8492','Ec ED1a','Fn ATCC-25586','Ri L1-82','Sp ATCC-15912','Ss DSM-20560']
-g = sns.clustermap(df, row_cluster = False, vmin = 0, xticklabels = x_labels)
-g.tick_params(axis='both', which='both', length=0)
-g.ax_heatmap.set_ylabel(g.ax_heatmap.get_ylabel(), labelpad = 20)
-plt.setp(g.ax_heatmap.get_yticklabels(), rotation=0)  # For y axis
-plt.setp(g.ax_heatmap.get_xticklabels(), rotation=90) # For x axis
-plt.savefig('../data/images/prot_pool_all.png', bbox_inches='tight')
-'''
-
-df_inv = df.T
-print(df_inv)
-
-# Generate violin plot
-v = sns.violinplot(data=df_inv, inner="point", palette="Blues")
-v.tick_params(axis='both', which='both', length=0)
-v.set_ylabel("Growth", labelpad=15)
-v.set_xlabel(v.get_xlabel(), labelpad=15)
-plt.setp(v.get_yticklabels(), rotation=0)  # For y axis
-plt.setp(v.get_xticklabels(), rotation=90)  # For x axis
-plt.savefig('../data/images/prot_pool_violin.png', bbox_inches='tight')
-
-'''
-df_inv = df.T
-print(df_inv)
-
-x_labels = ['Bt VPI-5482','Bu ATCC-8492','Ec ED1a','Fn ATCC-25586','Ri L1-82','Sp ATCC-15912','Ss DSM-20560']
-
-#First create the clustermap figure
-g = sns.clustermap(df, row_cluster = False, vmin = 0, xticklabels = x_labels, figsize=(15,10))
-g.tick_params(axis='both', which='both', length=0)
-g.ax_heatmap.set_ylabel(g.ax_heatmap.get_ylabel(), labelpad = 20)
-plt.setp(g.ax_heatmap.get_yticklabels(), rotation=0)  # For y axis
-plt.setp(g.ax_heatmap.get_xticklabels(), rotation=90) # For x axis
-# set the gridspec to only cover half of the figure
-g.gs.update(left=0.05, right=0.45)
-
-#create new gridspec for the right part
-gs2 = matplotlib.gridspec.GridSpec(1,1, left=0.6)
-# create axes within this new gridspec
-ax2 = g.fig.add_subplot(gs2[0])
-# plot boxplot in the new axes
-v = sns.violinplot(data=df_inv, inner="point", ax = ax2)
-v.tick_params(axis='both', which='both', length=0)
-v.set_ylabel("Growth", labelpad = 15)
-v.set_xlabel(v.get_xlabel(), labelpad = 15)
-plt.setp(v.get_yticklabels(), rotation=0)  # For y axis
-plt.setp(v.get_xticklabels(), rotation=90) # For x axis
-plt.savefig('../data/images/prot_pool.png', bbox_inches='tight')
-'''
+if __name__ == "__main__":
+    with ProcessPoolExecutor() as p:
+        p.map(main, [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0])
