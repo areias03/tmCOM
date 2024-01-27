@@ -1,0 +1,11 @@
+Constraints,M_Bacteroides_thetaiotaomicron_VPI_5482 + M_Bacteroides_uniformis_ATCC_8492,M_Bacteroides_thetaiotaomicron_VPI_5482 + M_Fusobacterium_nucleatum_subsp_nucleatum_ATCC_25586,M_Bacteroides_thetaiotaomicron_VPI_5482 + M_Roseburia_intestinalis_L1_82,M_Bacteroides_thetaiotaomicron_VPI_5482 + M_Streptococcus_parasanguinis_ATCC_15912
+33 uM Fe,0,0,0.0,0
+0 uM Fe/H,0,0,0.0,0
+"0,7 uM H; 8,2 uM Fe",0,0,0.0,0
+"2,7 uM H; 33 uM Fe",0,0,0.0,0
+"2,7 uM H",0,0,0.0,0
+125 uM Fe,0,0,0.0,0
+125 uM H,0,0,0.0,0
+125 uM H; 2 mM Fe,0,0,0.0,0
+125 uM H; 125 uM Fe,0,0,0.0,0
+No constraints,0,0,0.0009765625,0

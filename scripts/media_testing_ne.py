@@ -6,7 +6,7 @@ from cobra.io import read_sbml_model
 from cobra.io.sbml import Model
 from mewpy.simulation import Simulator, get_simulator
 
-# Models
+# Non-ec Models
 
 bt = read_sbml_model('../models/non-ec/agora/Bacteroides_thetaiotaomicron_VPI_5482.xml')
 bu = read_sbml_model('../models/non-ec/agora/Bacteroides_uniformis_ATCC_8492.xml')
@@ -19,33 +19,32 @@ cc = read_sbml_model('../models/non-ec/agora/Coprococcus_comes_ATCC_27758.xml')
 
 # Medias
 
-M1 = {'EX_fe2(e)_REV': (0, 0.000000033), 'prot_pool_exchange': (0, 1.0)}
-M2 = {'EX_fe2(e)_REV': (0, 0), 'EX_pheme(e)_REV': (0, 0),
-      'DM_pheme(c)': (0, 0), 'prot_pool_exchange': (0, 1.0)}
-M3 = {'EX_fe2(e)_REV': (0, 0.0000000082), 'EX_pheme(e)_REV': (
-    0, 0.0000000007), 'DM_pheme(c)': (0, 0.0000000007), 'prot_pool_exchange': (0, 1.0)}
-M4 = {'EX_fe2(e)_REV': (0, 0.000000033), 'EX_pheme(e)_REV': (
-    0, 0.0000000027), 'DM_pheme(c)': (0, 0.0000000027), 'prot_pool_exchange': (0, 1.0)}
-M5 = {'EX_pheme(e)_REV': (0, 0.0000000027), 'DM_pheme(c)': (
-    0, 0.0000000027), 'prot_pool_exchange': (0, 1.0)}
-M6 = {'EX_fe2(e)_REV': (0, 0.000000125), 'prot_pool_exchange': (0, 1.0)}
-M7 = {'EX_pheme(e)_REV': (0, 0.000000125), 'DM_pheme(c)': (
-    0, 0.000000125), 'prot_pool_exchange': (0, 1.0)}
-M8 = {'EX_fe2(e)_REV': (0, 0.000002), 'EX_pheme(e)_REV': (
-    0, 0.000000125), 'DM_pheme(c)': (0, 0.000000125), 'prot_pool_exchange': (0, 1.0)}
-M9 = {'EX_fe2(e)_REV': (0, 0.000000125), 'EX_pheme(e)_REV': (
-    0, 0.000000125), 'DM_pheme(c)': (0, 0.000000125), 'prot_pool_exchange': (0, 1.0)}
-M10 = {'prot_pool_exchange': (0, 1.0)}
+M1 = {'EX_fe2(e)': (-0.000000033, 0)}
+M2 = {'EX_fe2(e)': (0, 0), 'EX_pheme(e)': (0, 0),
+      'DM_pheme(c)': (0, 0)}
+M3 = {'EX_fe2(e)': (-0.0000000082, 0), 'EX_pheme(e)': (
+    -0.0000000007, 0), 'DM_pheme(c)': (-0.0000000007, 0)}
+M4 = {'EX_fe2(e)': (-0.000000033, 0), 'EX_pheme(e)': (
+    -0.0000000027, 0), 'DM_pheme(c)': (-0.0000000027, 0)}
+M5 = {'EX_pheme(e)': (-0.0000000027, 0), 'DM_pheme(c)': (
+    -0.0000000027, 0)}
+M6 = {'EX_fe2(e)': (-0.000000125, 0)}
+M7 = {'EX_pheme(e)': (-0.000000125, 0), 'DM_pheme(c)': (
+    -0.000000125, 0)}
+M8 = {'EX_fe2(e)': (-0.000002, 0), 'EX_pheme(e)': (
+    -0.000000125, 0), 'DM_pheme(c)': (-0.000000125, 0)}
+M9 = {'EX_fe2(e)': (-0.000000125, 0), 'EX_pheme(e)': (
+    -0.000000125, 0), 'DM_pheme(c)': (-0.000000125, 0)}
+M10 = {}
 
 
 def find_iron_reactions(model: Model):
-    fe_reaction = 'EX_fe2(e)_REV'
-    heme_exchange = 'EX_pheme(e)_REV'
+    fe_reaction = 'EX_fe2(e)'
+    heme_exchange = 'EX_pheme(e)'
     heme_demand = 'DM_pheme(c)'
     has_heme_exchange = False
     has_fe_exchange = False
     has_heme_demand = False
-    is_ec = False
     media_l = [M1, M2, M3, M4, M5, M6, M7, M8, M9, M10]
     for r in model.reactions:
         if 'exchange reaction for heme' in r.name:
@@ -64,12 +63,10 @@ def find_iron_reactions(model: Model):
         if not has_heme_demand:
             if heme_demand in m.keys():
                 del m[heme_demand]
-        if not is_ec:
-            del m['prot_pool_exchange']
+            
 
 
 def media_growth_test(model: Model):
-    media_l = [M1, M2, M3, M4, M5, M6, M7, M8, M9, M10]
     media_name_l = ['33 uM Fe', '0 uM Fe/H',
                     '0,7 uM H; 8,2 uM Fe', '2,7 uM H; 33 uM Fe',
                     '2,7 uM H', '125 uM Fe',
@@ -78,32 +75,33 @@ def media_growth_test(model: Model):
     sim: Simulator = get_simulator(model)
     sol_list: List = []
     model_id = str(model.id.strip('M_'))
-
+    media_l = [M1, M2, M3, M4, M5, M6, M7, M8, M9, M10]
     for m in media_l:
+        print(model_id,'\t', m)
         res = sim.simulate(constraints=m)
         sol_list.append(res.objective_value)
 
     data = {'Constraints': media_name_l, model_id: sol_list}
-    df = pd.DataFrame(data)
-    df = df.set_index('Constraints')
-    print(df)
-    return df
+    data = {'Constraints': media_name_l, model_id: sol_list}
+    df_res = pd.DataFrame(data)
+    df_res = df_res.set_index('Constraints')
+    print(df_res)
+    return df_res
 
 
 def main(model: Model):
     find_iron_reactions(model)
-    df = media_growth_test(model)
-    return df
+    df_res = media_growth_test(model)
+    return df_res
 
 
 if __name__ == "__main__":
     merged: List = []
     model_l = [bt, bu, ec, fn, ri, sp, ss]
-
     with ProcessPoolExecutor() as p:
         solution_list = []
         for result in p.map(main, model_l):
             merged.append(result)
-    df = pd.concat(merged, axis=1)
-    df.to_csv('../data/media_testing/ne_media_growth_test.csv')
-    print(df)
+    df_res = pd.concat(merged, axis=1)
+    df_res.to_csv('../data/media_testing/ne_media_growth_test.csv')
+    print(df_res)
