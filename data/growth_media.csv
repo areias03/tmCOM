@@ -1,0 +1,41 @@
+Reaction,Compound,Lower bound,Upper bound
+R_EX_glc_D[e],D-glucose,-5.0,100.0
+R_EX_fru[e],Fructose,-1.0,0.0
+R_EX_cellb[e],Cellobiose,-1.0,100.0
+R_EX_malt[e],Maltose,-1.0,100.0
+R_EX_lcts[e],Lactose,-1.0,100.0
+R_EX_inulin[e],Inulin,-1.0,100.0
+R_EX_nad[e],NAD,-1.0,100.0
+R_EX_his_L[e],L-Histidine,-0.171,100.0
+R_EX_ile_L[e],L-Isoleucine,-0.24,100.0
+R_EX_leu_L[e],L-Leucine,-1.0,100.0
+R_EX_met_L[e],L-Methionine,-0.125,100.0
+R_EX_val_L[e],L-Valine,-0.7,100.0
+R_EX_arg_L[e],L-Arginine,-0.72,100.0
+R_EX_cys_L[e],L-Cysteine,-0.5,100.0
+R_EX_glu_L[e],L-Glutamate,-0.6,100.0
+R_EX_phe_L[e],L-Phenylalanine,-0.4,100.0
+R_EX_pro_L[e],L-Proline,-0.7,100.0
+R_EX_asn_L[e],L-Asparagine,-0.5,100.0
+R_EX_asp_L[e],L-Aspartate,-0.05,100.0
+R_EX_gln_L[e],L-Glutamine,-0.6,100.0
+R_EX_ser_L[e],L-Serine,-0.5,100.0
+R_EX_thr_L[e],L-Threonine,-0.5,100.0
+R_EX_ala_L[e],L-Alanine,-0.4,100.0
+R_EX_gly[e],Glycine,-0.3,100.0
+R_EX_lys_L[e],L-Lysine,-0.5,100.0
+R_EX_trp_L[e],L-Tryptophan,-0.2,100.0
+R_EX_tyr_L[e],L-Tyrosine,-0.3,100.0
+R_EX_ade[e],Adenine,-0.011,100.0
+R_EX_gua[e],Guanine,-0.0056,100.0
+R_EX_ura[e],Uracil,-0.023,100.0
+R_EX_xan[e],Xanthine,-0.0038,100.0
+R_EX_mgcl2[e],Magnesium Chloride,-0.386,100.0
+R_EX_btn[e],Biotin,-6.02,100.0
+R_EX_ribflv[e],Riboflavin,-0.9,100.0
+R_EX_fol[e],Folate,-0.56,100.0
+R_EX_nac[e],Niacin,-0.9,100.0
+R_EX_inost[e],Inositol,-0.2,100.0
+R_EX_gthrd[e],L-Glutathione reduced,-0.9,100.0
+R_EX_pheme[e],Heme (organic iron),min,max
+R_EX_fe2[e],Iron (Fe2+),min,max

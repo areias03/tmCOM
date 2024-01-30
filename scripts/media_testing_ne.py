@@ -17,24 +17,25 @@ sp = read_sbml_model('../models/non-ec/agora/Streptococcus_parasanguinis_ATCC_15
 ss = read_sbml_model('../models/non-ec/agora/Streptococcus_salivarius_DSM_20560.xml')
 cc = read_sbml_model('../models/non-ec/agora/Coprococcus_comes_ATCC_27758.xml')
 
-# Medias
+# Media
 
-M1 = {'EX_fe2(e)': (-0.000000033, 0)}
-M2 = {'EX_fe2(e)': (0, 0), 'EX_pheme(e)': (0, 0),
+
+M1 = {'EX_fe2(e)_REV': (0, 0.000000033)}
+M2 = {'EX_fe2(e)_REV': (0, 0), 'EX_pheme(e)_REV': (0, 0),
       'DM_pheme(c)': (0, 0)}
-M3 = {'EX_fe2(e)': (-0.0000000082, 0), 'EX_pheme(e)': (
-    -0.0000000007, 0), 'DM_pheme(c)': (-0.0000000007, 0)}
-M4 = {'EX_fe2(e)': (-0.000000033, 0), 'EX_pheme(e)': (
-    -0.0000000027, 0), 'DM_pheme(c)': (-0.0000000027, 0)}
-M5 = {'EX_pheme(e)': (-0.0000000027, 0), 'DM_pheme(c)': (
-    -0.0000000027, 0)}
-M6 = {'EX_fe2(e)': (-0.000000125, 0)}
-M7 = {'EX_pheme(e)': (-0.000000125, 0), 'DM_pheme(c)': (
-    -0.000000125, 0)}
-M8 = {'EX_fe2(e)': (-0.000002, 0), 'EX_pheme(e)': (
-    -0.000000125, 0), 'DM_pheme(c)': (-0.000000125, 0)}
-M9 = {'EX_fe2(e)': (-0.000000125, 0), 'EX_pheme(e)': (
-    -0.000000125, 0), 'DM_pheme(c)': (-0.000000125, 0)}
+M3 = {'EX_fe2(e)_REV': (0, 0.0000000082), 'EX_pheme(e)_REV': (
+    0, 0.0000000007), 'DM_pheme(c)': (0, 0.0000000007)}
+M4 = {'EX_fe2(e)_REV': (0, 0.000000033), 'EX_pheme(e)_REV': (
+    0, 0.0000000027), 'DM_pheme(c)': (0, 0.0000000027)}
+M5 = {'EX_pheme(e)_REV': (0, 0.0000000027), 'DM_pheme(c)': (
+    0, 0.0000000027)}
+M6 = {'EX_fe2(e)_REV': (0, 0.000000125)}
+M7 = {'EX_pheme(e)_REV': (0, 0.000000125), 'DM_pheme(c)': (
+    0, 0.000000125)}
+M8 = {'EX_fe2(e)_REV': (0, 0.000002), 'EX_pheme(e)_REV': (
+    0, 0.000000125), 'DM_pheme(c)': (0, 0.000000125)}
+M9 = {'EX_fe2(e)_REV': (0, 0.000000125), 'EX_pheme(e)_REV': (
+    0, 0.000000125), 'DM_pheme(c)': (0, 0.000000125)}
 M10 = {}
 
 
@@ -77,6 +78,7 @@ def media_growth_test(model: Model):
     model_id = str(model.id.strip('M_'))
     media_l = [M1, M2, M3, M4, M5, M6, M7, M8, M9, M10]
     for m in media_l:
+        m = m | constraints
         print(model_id,'\t', m)
         res = sim.simulate(constraints=m)
         sol_list.append(res.objective_value)

@@ -1,0 +1,21 @@
+,Constraints,Partner,Growth
+0,33 uM Fe,M_Escherichia_coli_ED1a,0.0
+1,0 uM Fe/H,M_Escherichia_coli_ED1a,0.0
+2,"0,7 uM H; 8,2 uM Fe",M_Escherichia_coli_ED1a,2.2606168254480864e-07
+3,"2,7 uM H; 33 uM Fe",M_Escherichia_coli_ED1a,8.719522041014049e-07
+4,"2,7 uM H",M_Escherichia_coli_ED1a,0.0
+5,125 uM Fe,M_Escherichia_coli_ED1a,0.0
+6,125 uM H,M_Escherichia_coli_ED1a,0.0
+7,125 uM H; 2 mM Fe,M_Escherichia_coli_ED1a,4.036815759728726e-05
+8,125 uM H; 125 uM Fe,M_Escherichia_coli_ED1a,2.018407879864363e-05
+9,No constraints,M_Escherichia_coli_ED1a,0.9549529590172389
+0,33 uM Fe,M_Streptococcus_salivarius_DSM_20560,0.0
+1,0 uM Fe/H,M_Streptococcus_salivarius_DSM_20560,0.0
+2,"0,7 uM H; 8,2 uM Fe",M_Streptococcus_salivarius_DSM_20560,2.2606187912162582e-07
+3,"2,7 uM H; 33 uM Fe",M_Streptococcus_salivarius_DSM_20560,8.71952092807215e-07
+4,"2,7 uM H",M_Streptococcus_salivarius_DSM_20560,0.0
+5,125 uM Fe,M_Streptococcus_salivarius_DSM_20560,0.0
+6,125 uM H,M_Streptococcus_salivarius_DSM_20560,0.0
+7,125 uM H; 2 mM Fe,M_Streptococcus_salivarius_DSM_20560,0.0
+8,125 uM H; 125 uM Fe,M_Streptococcus_salivarius_DSM_20560,0.0
+9,No constraints,M_Streptococcus_salivarius_DSM_20560,0.9549529590172389

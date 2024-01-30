@@ -17,7 +17,16 @@ ec_sp = read_sbml_model('../models/ec/ec_Streptococcus_parasanguinis_ATCC_15912.
 ec_ss = read_sbml_model('../models/ec/ec_Streptococcus_salivarius_DSM_20560.xml')
 
 
-# Medias
+prot_pool = {'M_Bacteroides_thetaiotaomicron_VPI_5482': (0,0.075),
+              'M_Bacteroides_uniformis_ATCC_8492': (0,0.075),
+              'M_Escherichia_coli_ED1a': (0,0.13),
+              'M_Fusobacterium_nucleatum_subsp_nucleatum_ATCC_25586': (0,0.046),
+              'M_Roseburia_intestinalis_L1_82': (0,0.078),
+              'M_Streptococcus_parasanguinis_ATCC_15912': (0,0.082),
+              'M_Streptococcus_salivarius_DSM_20560': (0,0.048)}
+
+# Media
+
 
 M1 = {'EX_fe2(e)_REV': (0, 0.000000033)}
 M2 = {'EX_fe2(e)_REV': (0, 0), 'EX_pheme(e)_REV': (0, 0),
@@ -36,15 +45,6 @@ M8 = {'EX_fe2(e)_REV': (0, 0.000002), 'EX_pheme(e)_REV': (
 M9 = {'EX_fe2(e)_REV': (0, 0.000000125), 'EX_pheme(e)_REV': (
     0, 0.000000125), 'DM_pheme(c)': (0, 0.000000125)}
 M10 = {}
-
-prot_pool = {'M_Bacteroides_thetaiotaomicron_VPI_5482': (0,0.3),
-              'M_Bacteroides_uniformis_ATCC_8492': (0,0.3),
-              'M_Escherichia_coli_ED1a': (0,0.13),
-              'M_Fusobacterium_nucleatum_subsp_nucleatum_ATCC_25586': (0,0.32),
-              'M_Roseburia_intestinalis_L1_82': (0,0.26),
-              'M_Streptococcus_parasanguinis_ATCC_15912': (0,0.2),
-              'M_Streptococcus_salivarius_DSM_20560': (0,0.3)}
-
 
 def find_iron_reactions(model: Model):
     fe_reaction = 'EX_fe2(e)_REV'
@@ -105,7 +105,7 @@ def main(model: Model):
 
 if __name__ == "__main__":
     merged: List = []
-    model_l = [bt, bu, ec, fn, ri, sp, ss]
+    model_l = [ec_bt, ec_bu, ec_ec, ec_fn, ec_ri, ec_sp, ec_ss]
     with ProcessPoolExecutor() as p:
         solution_list = []
         for result in p.map(main, model_l):

@@ -8,7 +8,7 @@
 6,125 uM H,M_Bacteroides_uniformis_ATCC_8492,0.0
 7,125 uM H; 2 mM Fe,M_Bacteroides_uniformis_ATCC_8492,0.0
 8,125 uM H; 125 uM Fe,M_Bacteroides_uniformis_ATCC_8492,0.0
-9,No constraints,M_Bacteroides_uniformis_ATCC_8492,0.0
+9,No constraints,M_Bacteroides_uniformis_ATCC_8492,1.0
 0,33 uM Fe,M_Fusobacterium_nucleatum_subsp_nucleatum_ATCC_25586,0.0
 1,0 uM Fe/H,M_Fusobacterium_nucleatum_subsp_nucleatum_ATCC_25586,0.0
 2,"0,7 uM H; 8,2 uM Fe",M_Fusobacterium_nucleatum_subsp_nucleatum_ATCC_25586,0.0
@@ -18,7 +18,7 @@
 6,125 uM H,M_Fusobacterium_nucleatum_subsp_nucleatum_ATCC_25586,0.0
 7,125 uM H; 2 mM Fe,M_Fusobacterium_nucleatum_subsp_nucleatum_ATCC_25586,0.0
 8,125 uM H; 125 uM Fe,M_Fusobacterium_nucleatum_subsp_nucleatum_ATCC_25586,0.0
-9,No constraints,M_Fusobacterium_nucleatum_subsp_nucleatum_ATCC_25586,0.0
+9,No constraints,M_Fusobacterium_nucleatum_subsp_nucleatum_ATCC_25586,0.9917417532847376
 0,33 uM Fe,M_Roseburia_intestinalis_L1_82,0.0
 1,0 uM Fe/H,M_Roseburia_intestinalis_L1_82,0.0
 2,"0,7 uM H; 8,2 uM Fe",M_Roseburia_intestinalis_L1_82,0.0
@@ -28,7 +28,7 @@
 6,125 uM H,M_Roseburia_intestinalis_L1_82,0.0
 7,125 uM H; 2 mM Fe,M_Roseburia_intestinalis_L1_82,0.0
 8,125 uM H; 125 uM Fe,M_Roseburia_intestinalis_L1_82,0.0
-9,No constraints,M_Roseburia_intestinalis_L1_82,0.10331186142746905
+9,No constraints,M_Roseburia_intestinalis_L1_82,0.017449903316275495
 0,33 uM Fe,M_Streptococcus_parasanguinis_ATCC_15912,0.0
 1,0 uM Fe/H,M_Streptococcus_parasanguinis_ATCC_15912,0.0
 2,"0,7 uM H; 8,2 uM Fe",M_Streptococcus_parasanguinis_ATCC_15912,0.0
@@ -38,4 +38,4 @@
 6,125 uM H,M_Streptococcus_parasanguinis_ATCC_15912,0.0
 7,125 uM H; 2 mM Fe,M_Streptococcus_parasanguinis_ATCC_15912,0.0
 8,125 uM H; 125 uM Fe,M_Streptococcus_parasanguinis_ATCC_15912,0.0
-9,No constraints,M_Streptococcus_parasanguinis_ATCC_15912,0.0
+9,No constraints,M_Streptococcus_parasanguinis_ATCC_15912,0.5762356099196538

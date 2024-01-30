@@ -1,0 +1,11 @@
+Constraints,M_Bacteroides_thetaiotaomicron_VPI_5482 + M_Escherichia_coli_ED1a,M_Bacteroides_thetaiotaomicron_VPI_5482 + M_Streptococcus_salivarius_DSM_20560
+33 uM Fe,153.5048828125,0.0
+0 uM Fe/H,153.5048828125,0.0
+"0,7 uM H; 8,2 uM Fe",153.5048828125,0.0
+"2,7 uM H; 33 uM Fe",153.5048828125,0.0
+"2,7 uM H",153.5048828125,0.0
+125 uM Fe,153.5048828125,0.0
+125 uM H,153.50488281250009,0.0
+125 uM H; 2 mM Fe,153.5048828125,0.0
+125 uM H; 125 uM Fe,153.5048828125,0.0
+No constraints,153.6357421875,41.80078125000001
